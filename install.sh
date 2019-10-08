@@ -4026,7 +4026,7 @@ echo "\n\n\n\n"
 
 
 
-echo "\n\n"
+
 echo "\t\t---== Animism Internet Privacy ==---\t\t"
 echo "\n\n"
 echo "\n\n"
