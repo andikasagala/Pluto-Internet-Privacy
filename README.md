@@ -44,7 +44,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - There are 3 options: 1. Public Privacy Server, 2. Private Privacy Server, 3. Science Laboratory <br>
 - Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/GoHome " for finish using "Pluto Internet Privacy" . <br>
 - Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/SelfDestruction " for fresh start.  <br>
-- Video Tutorial link: https://youtu.be/DEbx64IIUWQ <br>
+
 <br><br>
 <br>
 
