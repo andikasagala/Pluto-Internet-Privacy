@@ -28,7 +28,7 @@
 				printf "\n\n\n" 
 				echo $VarIPPortLogQuery
 				printf "\n"
-				echo "Connected. Run: sh /usr/bin/EarthPlanet/SelfDestruction if stuck." 
+				echo "Connected. Run: sh /usr/bin/EarthPlanet/Shutdown if stuck." 
 						
 				echo "`date` - Connected to Public Access. Tor mode."  >> /var/log/pagan.log
 		                ;;

@@ -75,7 +75,7 @@ case "$Myos" in
         Myosvalue=15
                 ;;
    
-    *)echo "Your Operating System is not compatible for \"Animism Internet Privacy\""
+    *)echo "Your Operating System is not compatible for \"Pluto Internet Privacy\""
         ;;
 esac
 
@@ -271,27 +271,27 @@ esac
 #### need revision, will do next day
 case "$MyOsValueGlobal" in
     1)
-         DetectPaganFreeBSD=`ls -a /etc |grep pagan`
-        case $DetectPaganFreeBSD in
-        paganimism)
-        echo "Animism Internet Privacy was installed in this machine."
+         DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet`
+        case $DetectEarthPlanetFreeBSD in
+        EarthPlanet)
+        echo "Pluto Internet Privacy was installed in this machine."
         echo "Run in console: sh /usr/bin/EarthPlanet/GoToPluto"
         echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  "
         echo "Do you want to [U]ninstall/[R]einstall/[Q]uit it? [U/R/Q]"
         echo "Please input 'U' or 'R' or 'Q'"
-        read VarPaganStatusFreeBSD
-        case $VarPaganStatusFreeBSD in
+        read VarEarthPlanetStatusFreeBSD
+        case $VarEarthPlanetStatusFreeBSD in
         	U) ######################### Uninstall Statement ###########################
                  echo "Processing..."                
                  RestoreResolvConfFreeBSD=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
              	 echo $RestoreResolvConfFreeBSD
              	 Set4FreeBSD=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
-             	 RemPaganStatusFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+             	 RemEarthPlanetStatusFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
              	 VarLinuxCmdUFreeBSD=`pkg remove squid -y;pkg remove privoxy -y;pkg remove tor -y;pkg remove openvpn -y`
              	 RMTorUFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
              	 RMPrivoxyUFreeBSD=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /usr/local/etc/privoxy/config;rm -rf /usr/local/etc/privoxy/config2;rm -rf /usr/local/etc/privoxy/config3; rm -rf /usr/local/etc/privoxy/config4; rm -rf /usr/local/etc/privoxy/config5; rm -rf /usr/local/etc/privoxy/config6; rm -rf /usr/local/etc/privoxy/config7; rm -rf /usr/local/etc/privoxy/config8`
              	 echo $Set4FreeBSD
-             	 echo $RemPaganStatusFreeBSD
+             	 echo $RemEarthPlanetStatusFreeBSD
              	 echo $VarLinuxCmdUFreeBSD
              	 echo $RMTorUFreeBSD
              	 echo $RMPrivoxyUFreeBSD
@@ -305,7 +305,7 @@ case "$MyOsValueGlobal" in
              	 RestoreResolvConfFreeBSD=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
              	 echo $RestoreResolvConfFreeBSD
              	 Set5FreeBSD=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
-             	 RemPaganStatusRFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+             	 RemEarthPlanetStatusRFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
              	 RMTorRFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
              	 RMPrivoxyRFreeBSD=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /usr/local/etc/privoxy/config;rm -rf /usr/local/etc/privoxy/config2;rm -rf /usr/local/etc/privoxy/config3; rm -rf /usr/local/etc/privoxy/config4; rm -rf /usr/local/etc/privoxy/config5; rm -rf /usr/local/etc/privoxy/config6; rm -rf /usr/local/etc/privoxy/config7; rm -rf /usr/local/etc/privoxy/config8`
              	 Varcmd1RFreeBSD=`mkdir /etc/EarthPlanet`
@@ -318,12 +318,12 @@ case "$MyOsValueGlobal" in
              	 echo $Varcmd2RFreeBSD
              	 echo $Varcmd3RFreeBSD
              	 echo $Varcmd4RFreeBSD
-             	 echo $RemPaganStatusRFreeBSD
+             	 echo $RemEarthPlanetStatusRFreeBSD
              	 echo $RMTorRFreeBSD
              	 echo $RMPrivoxyRFreeBSD
                
 
-                 echo "`date`" - Animism Internet Privacy was reinstalled." " >> /var/log/earth.log
+                 echo "`date`" - Pluto Internet Privacy was reinstalled." " >> /var/log/earth.log
                  exit 0
             ########################### done #########################################
                 ;;
@@ -349,31 +349,31 @@ case "$MyOsValueGlobal" in
 
 
     2)
-    DetectPaganLinux=`ls -a /etc |grep pagan`
-    case "$DetectPaganLinux" in
-        paganimism)
+    DetectEarthPlanetLinux=`ls -a /etc |grep EarthPlanet`
+    case "$DetectEarthPlanetLinux" in
+        EarthPlanet)
         case MyOSSettingValue in
             ########## Parrot OS ################
             ParrotOS) 
-            echo "Animism Internet Privacy was installed in this machine."
+            echo "Pluto Internet Privacy was installed in this machine."
             echo "Run in console \"sh /usr/bin/EarthPlanet/GoToPluto\""
             echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  "
             echo "Do you want to [U]ninstall/[R]einstall/[Q]uit it? [U/R/Q]"
             echo "Please input 'U' or 'R' or 'Q'"
-            read VarPaganStatusLinux
-            case "$VarPaganStatusLinux" in
+            read VarEarthPlanetStatusLinux
+            case "$VarEarthPlanetStatusLinux" in
                  U) ######################### Uninstall Statement ######################################
                     echo "Processing..."  
                     RestoreResolvConfLinux=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
                     echo $RestoreResolvConfLinux
                     Set4Linux=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
-                    RemPaganStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+                    RemEarthPlanetStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
                     VarLinuxCmdULinux=`apt-get autoremove squid -y;apt-get autoremove privoxy -y;apt-get autoremove tor -y;apt-get autoremove openvpn -y`
                     RMTorULinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
                     RMPrivoxyULinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
                     RMSysctl=`/usr/sbin/sysctl -w net.ipv4.ip_forward=0;/usr/sbin/sysctl -p`
                     echo $Set4Linux
-                    echo $RemPaganStatusLinux
+                    echo $RemEarthPlanetStatusLinux
                     echo $VarLinuxCmdULinux
                     echo $RMTorULinux
                     echo $RMPrivoxyULinux
@@ -386,21 +386,21 @@ case "$MyOsValueGlobal" in
                     echo "Processing..."  
                     RestoreResolvConfLinux=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
                     echo $RestoreResolvConfLinux
-                    RemPaganStatusRLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+                    RemEarthPlanetStatusRLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
                     RMTorRLinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
                     RMPrivoxyRLinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
                     Varcmd1RLinux=`mkdir /etc/EarthPlanet`
                     Varcmd2RLinux=`chmod 755 /etc/EarthPlanet`
                     Varcmd3RLinux=`touch /var/log/earth.cfg`
                     Varcmd4RLinux=`chmod 755 /var/log/earth.cfg`
-                    echo $RemPaganStatusRLinux
+                    echo $RemEarthPlanetStatusRLinux
                     echo $RMTorRLinux
                     echo $RMPrivoxyRLinux
                     echo $Varcmd1RLinux
                     echo $Varcmd2RLinux
                     echo $Varcmd3RLinux
                     echo $Varcmd4RLinux
-                    echo "`date`" - Animism Internet Privacy was reinstalled." " >> /var/log/earth.log
+                    echo "`date`" - Pluto Internet Privacy was reinstalled." " >> /var/log/earth.log
                     exit 0
                     ;;
 
@@ -424,26 +424,26 @@ case "$MyOsValueGlobal" in
        
         esac   
 
-        echo "Animism Internet Privacy was installed in this machine."
+        echo "Pluto Internet Privacy was installed in this machine."
         echo "Run in console \"sh /usr/bin/EarthPlanet/GoToPluto\""
         echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  "
         echo "Do you want to [U]ninstall/[R]einstall/[Q]uit it? [U/R/Q]"
         echo "Please input 'U' or 'R' or 'Q'"
-        read VarPaganStatusLinux
-        case "$VarPaganStatusLinux" in
+        read VarEarthPlanetStatusLinux
+        case "$VarEarthPlanetStatusLinux" in
             U) ######################### Uninstall Statement ######################################
             echo "Processing..."                
             RestoreResolvConfLinux=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
             echo $RestoreResolvConfLinux
             Set4Linux=`/sbin/iptables-restore /etc/EarthPlanet/iptables-backup.txt;rm -rf /etc/EarthPlanet/iptables-backup.txt;cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
-            RemPaganStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+            RemEarthPlanetStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
             VarLinuxCmdULinux=`apt-get autoremove squid -y;apt-get autoremove privoxy -y;apt-get autoremove tor -y;apt-get autoremove openvpn -y`
             RMTorULinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
             RMPrivoxyULinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
             ALLCmdSolus=`eopkg remove privoxy -y;eopkg remove tor -y;/sbin/sysctl -w net.ipv4.ip_forward=0;rm -rf /usr/src/data;rm -rf /usr/local/etc/tor/torrc /usr/local/etc/tor/torrc2 /usr/local/etc/tor/torrc3 /usr/local/etc/tor/torrc4 /usr/local/etc/tor/torrc5 /usr/local/etc/tor/torrc6 /usr/local/etc/tor/torrc7 /usr/local/etc/tor/torrc8`
             ALLCmdManjaro=`pacman -R openvpn squid privoxy tor --noconfirm`
             echo $Set4Linux
-            echo $RemPaganStatusLinux
+            echo $RemEarthPlanetStatusLinux
             echo $VarLinuxCmdULinux
             echo $RMTorULinux
             echo $RMPrivoxyULinux
@@ -460,7 +460,7 @@ case "$MyOsValueGlobal" in
             RestoreResolvConfLinux=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
             echo $RestoreResolvConfLinux
             Set5Linux=`/sbin/iptables-restore /etc/EarthPlanet/iptables-backup.txt;rm -rf /etc/EarthPlanet/iptables-backup.txt;cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
-            RemPaganStatusRLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/SelfDestruction`
+            RemEarthPlanetStatusRLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
             RMTorRLinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
             RMPrivoxyRLinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
             Varcmd1RLinux=`mkdir /etc/EarthPlanet`
@@ -472,11 +472,11 @@ case "$MyOsValueGlobal" in
             echo "$Varcmd2RLinux"
             echo "$Varcmd3RLinux"
             echo "$Varcmd4RLinux"
-            echo "$RemPaganStatusRLinux"
+            echo "$RemEarthPlanetStatusRLinux"
             echo "$RMTorRLinux"
             echo "$RMPrivoxyRLinux"
 
-            echo "`date`" - Animism Internet Privacy was reinstalled." " >> /var/log/earth.log
+            echo "`date`" - Pluto Internet Privacy was reinstalled." " >> /var/log/earth.log
             exit 0
             ;;
             ######################### done ##########################################################
@@ -712,15 +712,15 @@ case "$MyOSSettingValue" in
 
 
     Ubuntu)
-    Var1AnimismLinux="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
+    Var1PlutoLinux="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/local/bin/tor -f /etc/tor/torrc;/usr/local/bin/tor -f /etc/tor/torrc2;/usr/local/bin/tor -f /etc/tor/torrc3;/usr/local/bin/tor -f /etc/tor/torrc4;/usr/local/bin/tor -f /etc/tor/torrc5;/usr/local/bin/tor -f /etc/tor/torrc6;/usr/local/bin/tor -f /etc/tor/torrc7;/usr/local/bin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/local/bin/tor -f /etc/tor/torrc;/usr/local/bin/tor -f /etc/tor/torrc2;/usr/local/bin/tor -f /etc/tor/torrc3;/usr/local/bin/tor -f /etc/tor/torrc4;/usr/local/bin/tor -f /etc/tor/torrc5;/usr/local/bin/tor -f /etc/tor/torrc6;/usr/local/bin/tor -f /etc/tor/torrc7;/usr/local/bin/tor -f /etc/tor/torrc8"
 
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -737,14 +737,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -784,14 +784,14 @@ case "$MyOSSettingValue" in
 
 
   Debian)
-    Var1AnimismLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -808,14 +808,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -857,14 +857,14 @@ case "$MyOSSettingValue" in
 
 
   Knoppix)
-    Var1AnimismLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -881,14 +881,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -931,14 +931,14 @@ case "$MyOSSettingValue" in
 
 
   Solus)
-    Var1AnimismLinux="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid stop; /usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
+    Var1PlutoLinux="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid stop; /usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -955,14 +955,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1005,14 +1005,14 @@ case "$MyOSSettingValue" in
 
 
   ZorinOS)
-    Var1AnimismLinux="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid stop; /usr/sbin/squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid stop; /usr/sbin/squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1029,14 +1029,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1079,14 +1079,14 @@ case "$MyOSSettingValue" in
 
 
  MXLinux)
-    Var1AnimismLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1103,14 +1103,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1154,14 +1154,14 @@ case "$MyOSSettingValue" in
 
 
     ManjaroLinux)
-    Var1AnimismLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1178,14 +1178,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1229,14 +1229,14 @@ case "$MyOSSettingValue" in
 
 
     LinuxMint)
-    Var1AnimismLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1253,14 +1253,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1302,14 +1302,14 @@ case "$MyOSSettingValue" in
 
 
     elementaryOS)
-    Var1AnimismLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1326,14 +1326,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1374,14 +1374,14 @@ case "$MyOSSettingValue" in
  
 
     ParrotOS)
-    Var1AnimismLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2AnimismLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3AnimismLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Animism Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1398,14 +1398,14 @@ case "$MyOSSettingValue" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3AnimismLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/SelfDestruction\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
     echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
@@ -1822,8 +1822,8 @@ case "$MyOSSettingValue" in
     echo "access_log /var/log/squid/access.log" >> /usr/local/etc/squid/squid.conf
     HostnameFreeBSD=`uname -n`
     echo "visible_hostname $HostnameFreeBSD" >> /usr/local/etc/squid/squid.conf
-    echo "`date` - Animism Internet Privacy using IP: $IPAdrFreeBSD Port: $PortFreeBSD" >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: $IPAdrFreeBSD Port: $PortFreeBSD" >> /var/log/ipport.txt
+    echo "`date` - Pluto Internet Privacy using IP: $IPAdrFreeBSD Port: $PortFreeBSD" >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: $IPAdrFreeBSD Port: $PortFreeBSD" >> /var/log/ipport.txt
     echo `date` - Setting Squid done. >> /var/log/earth.log
     ;;
 
@@ -1886,8 +1886,8 @@ case "$MyOSSettingValue" in
     echo "access_log /usr/local/squid/var/logs/access.log" >> /etc/squid/squid.conf
     HostnameUbuntu=`uname -n`
     echo "visible_hostname $HostnameUbuntu" >> /etc/squid/squid.conf
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -1946,8 +1946,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2008,8 +2008,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2070,8 +2070,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /usr/local/squid/etc/squid.conf
     echo "access_log /usr/local/squid/var/logs/access.log" >> /usr/local/squid/etc/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2131,8 +2131,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /usr/local/squid/var/logs/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2193,8 +2193,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2254,8 +2254,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2315,8 +2315,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2377,8 +2377,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -2438,8 +2438,8 @@ case "$MyOSSettingValue" in
     echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
     echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
-    echo "Animism Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/earth.log
+    echo "Pluto Internet Privacy using IP: "$MyiplanLinux" Port: "$MyPortAdrLinux""  >> /var/log/ipport.txt
     echo "`date`" - Setting Squid done." " >> /var/log/earth.log
     ;;
 
@@ -3823,84 +3823,84 @@ esac
 sleep 0.1
 echo "*********"
 ####################################
-## setting /usr/bin/EarthPlanet/SelfDestruction
+## setting /usr/bin/EarthPlanet/Shutdown
 case "$MyOSSettingValue" in
     FreeBSD)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Ubuntu)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Debian)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Knoppix)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Solus)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     ZorinOS)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
 
     MXLinux)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
 
     ManjaroLinux)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     LinuxMint)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     elementaryOS)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     ParrotOS)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "echo \"\`date\` - Doing Harakiri of Dynamism... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/SelfDestruction
-    echo "`date` - Setting Harakiri of Dynamism done."  >> /var/log/earth.log
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1" >> /usr/bin/EarthPlanet/Shutdown
+    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
 
@@ -3909,7 +3909,7 @@ case "$MyOSSettingValue" in
 esac
 
 
-## setting /usr/bin/EarthPlanet/SelfDestruction done ##
+## setting /usr/bin/EarthPlanet/Shutdown done ##
 ############################################################
 sleep 0.1
 echo "**********"
@@ -4027,7 +4027,7 @@ echo "\n\n\n\n"
 
 
 
-echo "\t\t---== Animism Internet Privacy ==---\t\t"
+echo "\t\t---== Pluto Internet Privacy ==---\t\t"
 echo "\n\n"
 echo "\n\n"
 echo "Done! Run in your console sh /usr/bin/EarthPlanet/GoToPluto "

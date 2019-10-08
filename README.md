@@ -40,11 +40,11 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Run " $git clone https://github.com/andikasagala/Pluto-Internet-Privacy " <br>
 - Run in your terminal console " $sh install.sh " for the first time to install the " Pluto Internet Privacy ". <br>
 - Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  <br>
-- Run in your terminal console "$sh /usr/bin/EarthPlanet/GoToPluto" to start/activate it.<br>
+- Run in your terminal console "$sh /usr/bin/pagPluto/Pluto" to start/activate it.<br>
 - There are 3 options: 1. Public Privacy Server, 2. Private Privacy Server, 3. Science Laboratory <br>
 - Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/GoHome " for finish using "Pluto Internet Privacy" . <br>
 - Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/SelfDestruction " for fresh start.  <br>
-
+- Video Tutorial link: https://youtu.be/DEbx64IIUWQ <br>
 <br><br>
 <br>
 
@@ -78,7 +78,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Mobile Version<br>
 - Free charged of money. <br>
 - Clean, no logs and spy. <br>
-- Will be listed on website www.scientificsoftwares.com <br><br><br>
+- Will be listed on website www.scientificsoftwares.com <br><br><br><br>
 
 Nickname Creator: Asterix The Kratos <br>
 
