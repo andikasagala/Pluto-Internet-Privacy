@@ -80,6 +80,3 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Clean, no logs and spy. <br>
 - Will be listed on website www.scientificsoftwares.com <br><br><br><br>
 
-Nickname Creator: Asterix The Kratos <br>
-
-
