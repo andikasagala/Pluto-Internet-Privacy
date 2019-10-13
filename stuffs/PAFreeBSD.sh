@@ -18,13 +18,13 @@
 			read PublicAccessMode
 			case "$PublicAccessMode" in
 				a) 
-				Var1AnimismFreeBSD=`killall squid;squid -k parse;squid -f /usr/local/etc/squid/squid.conf`
-				Var2AnimismFreeBSD=`killall privoxy;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config2;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config3;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config4;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config5;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config6;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config7;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config8`
-				Var3AnimismFreeBSD=`killall tor;/usr/local/bin/tor -f /etc/tor/torrc;/usr/local/bin/tor -f /etc/tor/torrc2;/usr/local/bin/tor -f /etc/tor/torrc3;/usr/local/bin/tor -f /etc/tor/torrc4;/usr/local/bin/tor -f /etc/tor/torrc5;/usr/local/bin/tor -f /etc/tor/torrc6;/usr/local/bin/tor -f /etc/tor/torrc7;/usr/local/bin/tor -f /etc/tor/torrc8`
+				FreeBSDSquidRun=`killall squid;/usr/local/sbin/squid -k parse;/usr/local/sbin/squid -f /usr/local/etc/squid/squid.conf`
+				FreeBSDPrivoxyRun=`killall privoxy;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config2;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config3;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config4;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config5;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config6;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config7;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config8`
+				FreeBSDTorRun=`killall tor;/usr/local/bin/tor -f /etc/tor/torrc;/usr/local/bin/tor -f /etc/tor/torrc2;/usr/local/bin/tor -f /etc/tor/torrc3;/usr/local/bin/tor -f /etc/tor/torrc4;/usr/local/bin/tor -f /etc/tor/torrc5;/usr/local/bin/tor -f /etc/tor/torrc6;/usr/local/bin/tor -f /etc/tor/torrc7;/usr/local/bin/tor -f /etc/tor/torrc8`
 				VarIPPortLogQuery=`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt`
-				echo $Var3AnimismFreeBSD
-				echo $Var2AnimismFreeBSD
-				echo $Var1AnimismFreeBSD
+				echo $FreeBSDTorRun
+				echo $FreeBSDPrivoxyRun
+				echo $FreeBSDSquidRun
 				printf "\n\n\n" 
 				echo $VarIPPortLogQuery
 				printf "\n"

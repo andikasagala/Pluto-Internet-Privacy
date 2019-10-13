@@ -779,7 +779,7 @@ case "$MyOSConfigValue" in
         ################### FreeBSD  ############################
     FreeBSD)
         echo "I'm FreeBSD, hola Papacito & Mamacita !!!"  ################### tested by coder FreeBSD 12.0 ##########################
-        FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y`
+        FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y; pkg install psmisc -y`
         echo $FreeBSDInstallPkgs
         MyOSSettingValueLauncher="FreeBSD"
         MyOSSettingValueMachine="FreeBSD"
@@ -796,7 +796,7 @@ case "$MyOSConfigValue" in
     Ubuntu)  
         ################### Ubuntu  ############################
         echo "I'm Ubuntu, hola Papacito & Mamacita !!!" ########## tested by coder Ubuntu 19.04 ################
-        UbuntuInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid -y`
+        UbuntuInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid psmisc -y`
         echo $UbuntuInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -814,7 +814,7 @@ case "$MyOSConfigValue" in
  
     Debian)
         echo "I'm Debian, hola Papacito & Mamacita !!!" ############## tested by coder Debian 10.1.0 ###############
-        DebianInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        DebianInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn psmisc -y`
         echo $DebianInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -834,9 +834,9 @@ case "$MyOSConfigValue" in
             echo "I'm Solus, hola Papacito & Mamacita !!!" ############## tested by coder Solus 4.0 ###############
             SolusCreateSoftwareFolder=`cd /usr/src;mkdir /usr/src/data;cd /usr/src/data`
             echo $SolusCreateSoftwareFolder
-            SolusInstallSquid=`wget -O /usr/src/data/squid-4.8.tar.gz http://www.squid-cache.org/Versions/v4/squid-4.8.tar.gz;cd /usr/src/data; tar -zxvf squid-4.8.tar.gz; cd squid-4.8; eopkg install gcc -y;eopkg install  automake -y;eopkg install  cmake -y;eopkg it -c system.devel -y;eopkg it solbuild -y;solbuild init; cd /usr/src/data/squid-4.8; ./configure; make; make install`
+            SolusInstallSquid=`wget -O /usr/src/data/squid-4.8.tar.gz http://www.squid-cache.org/Versions/v4/squid-4.8.tar.gz;cd /usr/src/data; tar -zxvf squid-4.8.tar.gz; cd squid-4.8; eopkg install gcc -y;eopkg install psmisc; eopkg install  automake -y;eopkg install  cmake -y;eopkg it -c system.devel -y;eopkg it solbuild -y;solbuild init; cd /usr/src/data/squid-4.8; ./configure; make; make install`
             SolusInstallSoftwares1=`eopkg upgrade -y;eopkg install privoxy -y;eopkg install openvpn;eopkg install tor -y;eopkg install lz4 lz4-devel dialog -y`
-            SolusFixingSquid=`cd /usr/src;mkdir PIP;cd PIP;touch /usr/local/squid/var/logs/cache.log;touch /usr/local/squid/var/logs/access.log;chmod 777 /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/access.log`
+            SolusFixingSquid=`cd /usr/src/data;mkdir PIP;cd PIP;touch /usr/local/squid/var/logs/cache.log;touch /usr/local/squid/var/logs/access.log;chmod 777 /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/access.log`
             SolusInstallSoftwares2=`eopkg install libevent-devel -y; eopkg install openssl-devel -y; eopkg install zlib; eopkg install zlib-devel;wget -O /usr/src/data/tor-0.4.1.6.tar.gz https://dist.torproject.org/tor-0.4.1.6.tar.gz;cd /usr/src/data; tar -zxvf tor-0.4.1.6.tar.gz; cd /usr/src/data/tor-0.4.1.6; ./configure; make; make install`
             echo $SolusInstallSoftwares1
             echo $SolusInstallSquid
@@ -858,7 +858,7 @@ case "$MyOSConfigValue" in
 
     Knoppix)
         echo "I'm Knoppix, hola Papacito & Mamacita !!!" ############## tested by coder KNOPPIX V8.6 ###############
-        KnoppixInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        KnoppixInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $KnoppixInstallSoftwares
         MyOSSettingValueLauncher="Knoppix"
         MyOSSettingValueMachine="Knoppix"
@@ -874,7 +874,7 @@ case "$MyOSConfigValue" in
 
     ZorinOS)
         echo "I'm Zorin OS, hola Papacito & Mamacita !!!" ############## tested by coder Zorin OS 12.4 ###############
-        ZorinOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        ZorinOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $ZorinOSInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -893,7 +893,7 @@ case "$MyOSConfigValue" in
  
     MXLinux)
         echo "I'm MX Linux, hola Papacito & Mamacita !!!" ############## tested by coder MX-18.3 Continuum ###############
-        MXLinuxInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        MXLinuxInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $MXLinuxInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -912,7 +912,7 @@ case "$MyOSConfigValue" in
  
     ManjaroLinux)
         echo "I'm Manjaro Linux, hola Papacito & Mamacita !!!" ############## tested by coder Manjaro Linux ###############
-        ManjaroLinuxInstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor --noconfirm`
+        ManjaroLinuxInstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor psmisc --noconfirm`
         echo $ManjaroLinuxInstallSoftwares
         MyOSSettingValueLauncher="ManjaroLinux"
         MyOSSettingValueMachine="ManjaroLinux"
@@ -929,7 +929,7 @@ case "$MyOSConfigValue" in
         ################## elementary OS #############################
     elementaryOS)
         echo "I'm elementary OS, hola Papacito & Mamacita !!!" ############## tested by coder elementary OS 5.0 Juno ###############
-        elementaryOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        elementaryOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $elementaryOSInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -945,7 +945,7 @@ case "$MyOSConfigValue" in
         ################## Parrot OS #############################
     ParrotOS)
         echo "I'm Parrot OS, hola Papacito & Mamacita !!!" ############## tested by coder Parrot OS 4.6 ###############
-        ParrotOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        ParrotOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $ParrotOSInstallSoftwares
         ParrotOSFixingSource=`rm -rf /etc/apt/sources.list.d/parrot.list; touch /etc/apt/sources.list.d/parrot.list; cat /etc/apt/sources.list.d/parrot.list.bak > /etc/apt/sources.list.d/parrot.list`
         echo $ParrotOSFixingSource
@@ -965,7 +965,7 @@ case "$MyOSConfigValue" in
         ################## Linux Mint OS #############################
     LinuxMint)
         echo "I'm Linux Mint, hola Papacito & Mamacita !!!" ############## tested by coder Linux Mint 19.2 Tina ###############
-        LinuxMintInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        LinuxMintInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $LinuxMintInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -983,7 +983,7 @@ case "$MyOSConfigValue" in
         ################## Fedora OS #############################
     Fedora)
         echo "I'm Fedora, hola Papacito & Mamacita !!!" ############## tested by coder Fedora release 30 ###############
-        FedoraInstallSoftwares=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn -y`
+        FedoraInstallSoftwares=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn psmisc -y`
         echo $FedoraInstallSoftwares
         MyOSSettingValueLauncher="Fedora"
         MyOSSettingValueMachine="Fedora"
@@ -1000,7 +1000,7 @@ case "$MyOSConfigValue" in
         ################## openSUSE #############################
     openSUSE)
         echo "I'm openSUSE, hola Papacito & Mamacita !!!" ############## tested by coder openSUSE Leap 15.1 ###############
-        openSUSEInstallSoftwares=`zypper patch;zypper update;zypper --non-interactive in tor squid privoxy openvpn`
+        openSUSEInstallSoftwares=`zypper patch;zypper update;zypper --non-interactive in tor squid privoxy openvpn psmisc`
         echo $openSUSEInstallSoftwares
         MyOSSettingValueLauncher="openSUSE"
         MyOSSettingValueMachine="openSUSE"
@@ -1017,7 +1017,7 @@ case "$MyOSConfigValue" in
         ################## antiX #############################
     antiX)
         echo "I'm antiX, hola Papacito & Mamacita !!!" ############## tested by coder openSUSE Leap 15.1 ###############
-        antiXInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        antiXInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $antiXInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
@@ -3360,15 +3360,15 @@ echo "*********"
 ## setting /usr/bin/EarthPlanet/Shutdown
 case "$MyOSSettingValueShutdown" in
     FreeBSD)
-    echo "echo Doing Harakiri of Dynamism... " >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
+    echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now; /sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     DebianCommon)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "/usr/sbin/poweroff;/usr/sbin/shutdown 1;/usr/sbin/poweroff -f;/usr/sbin/shutdown now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
@@ -3377,14 +3377,14 @@ case "$MyOSSettingValueShutdown" in
     Knoppix)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Solus)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
@@ -3393,7 +3393,7 @@ case "$MyOSSettingValueShutdown" in
     ManjaroLinux)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
@@ -3402,14 +3402,14 @@ case "$MyOSSettingValueShutdown" in
     ParrotOS)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
     Fedora)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
@@ -3417,7 +3417,7 @@ case "$MyOSSettingValueShutdown" in
     openSUSE)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f" >> /usr/bin/EarthPlanet/Shutdown
+    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
 
