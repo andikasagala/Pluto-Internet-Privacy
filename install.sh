@@ -193,9 +193,9 @@ case "$MyOsValueGlobal" in
         #################### end of Solus ###########################
 
         #################### Knoppix Verifier ###########################
-        UnixVerifierKnoppix=`ls -al /etc/syslog-knoppix.conf| wc -l`
+        UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep knoppix -c`
         case "$UnixVerifierKnoppix" in
-            1)MyOSConfigValue="Knoppix"
+            2)MyOSConfigValue="Knoppix"
             ;;
             *)echo "It is no problem."
             ;;
