@@ -747,7 +747,7 @@ echo "**"
     #################### setting the package sources #################
 case "$MyOSConfigValue" in
     ParrotOS)
-    VarParrotOSSetSource=`cat /etc/apt/sources.list.d/parrot.list > /etc/apt/sources.list.d/parrot.list.bak;rm -rf /etc/apt/sources.list.d/parrot.list;touch /etc/apt/sources.list.d/parrot.list; apt-get update`
+    ParrotOSSetSource=`cat /etc/apt/sources.list.d/parrot.list > /etc/apt/sources.list.d/parrot.list.bak;rm -rf /etc/apt/sources.list.d/parrot.list;touch /etc/apt/sources.list.d/parrot.list; apt-get update`
     echo "deb http://mirror.math.princeton.edu/pub/debian/ buster main"  >> /etc/apt/sources.list.d/parrot.list
     echo "deb-src http://mirror.math.princeton.edu/pub/debian/ buster main" >> /etc/apt/sources.list.d/parrot.list
     echo "deb http://security.debian.org/debian-security buster/updates main contrib" >> /etc/apt/sources.list.d/parrot.list
@@ -756,7 +756,7 @@ case "$MyOSConfigValue" in
     echo "deb-src http://mirror.math.princeton.edu/pub/debian/ buster-updates main contrib" >> /etc/apt/sources.list.d/parrot.list
     echo "Your Source has changed and saved in /etc/apt/sources.list.d/parrot.list.bak" 
 
-    echo $VarParrotOSSetSource
+    echo $ParrotOSSetSource
     ;;
 
 esac    
@@ -779,8 +779,8 @@ case "$MyOSConfigValue" in
         ################### FreeBSD  ############################
     FreeBSD)
         echo "I'm FreeBSD, hola Papacito & Mamacita !!!"  ################### tested by coder FreeBSD 12.0 ##########################
-        VarUnixCmdFreeBSD=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y`
-        echo $VarUnixCmdFreeBSD
+        FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y`
+        echo $FreeBSDInstallPkgs
         MyOSSettingValueLauncher="FreeBSD"
         MyOSSettingValueMachine="FreeBSD"
         MyOSSettingValueHosts="FreeBSD"
@@ -796,8 +796,8 @@ case "$MyOSConfigValue" in
     Ubuntu)  
         ################### Ubuntu  ############################
         echo "I'm Ubuntu, hola Papacito & Mamacita !!!" ########## tested by coder Ubuntu 19.04 ################
-        VarLinuxCmdUbuntu=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid -y`
-        echo $VarLinuxCmdUbuntu
+        UbuntuInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid -y`
+        echo $UbuntuInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -814,8 +814,8 @@ case "$MyOSConfigValue" in
  
     Debian)
         echo "I'm Debian, hola Papacito & Mamacita !!!" ############## tested by coder Debian 10.1.0 ###############
-        VarLinuxCmdDebian=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdDebian
+        DebianInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $DebianInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -832,16 +832,16 @@ case "$MyOSConfigValue" in
         #################### Solus Verifier ###########################
     Solus)
             echo "I'm Solus, hola Papacito & Mamacita !!!" ############## tested by coder Solus 4.0 ###############
-            VarLinuxCmdSolus=`cd /usr/src;mkdir /usr/src/data;cd /usr/src/data`
-            echo $VarLinuxCmdSolus
-            VarLinuxCmdSolus2=`wget -O /usr/src/data/squid-4.8.tar.gz http://www.squid-cache.org/Versions/v4/squid-4.8.tar.gz;cd /usr/src/data; tar -zxvf squid-4.8.tar.gz; cd squid-4.8; eopkg install gcc -y;eopkg install  automake -y;eopkg install  cmake -y;eopkg it -c system.devel -y;eopkg it solbuild -y;solbuild init; cd /usr/src/data/squid-4.8; ./configure; make; make install`
-            VarLinuxCmdSolus3=`eopkg upgrade -y;eopkg install privoxy -y;eopkg install openvpn;eopkg install tor -y;eopkg install lz4 lz4-devel dialog -y`
-            VarLinuxCmdSolus4=`cd /usr/src;mkdir PIP;cd PIP;touch /usr/local/squid/var/logs/cache.log;touch /usr/local/squid/var/logs/access.log;chmod 777 /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/access.log`
-            VarLinuxCmdSolus5=`eopkg install libevent-devel -y; eopkg install openssl-devel -y; eopkg install zlib; eopkg install zlib-devel;wget -O /usr/src/data/tor-0.4.1.6.tar.gz https://dist.torproject.org/tor-0.4.1.6.tar.gz;cd /usr/src/data; tar -zxvf tor-0.4.1.6.tar.gz; cd /usr/src/data/tor-0.4.1.6; ./configure; make; make install`
-            echo $VarLinuxCmdSolus3
-            echo $VarLinuxCmdSolus2
-            echo $VarLinuxCmdSolus4
-            echo $VarLinuxCmdSolus5
+            SolusCreateSoftwareFolder=`cd /usr/src;mkdir /usr/src/data;cd /usr/src/data`
+            echo $SolusCreateSoftwareFolder
+            SolusInstallSquid=`wget -O /usr/src/data/squid-4.8.tar.gz http://www.squid-cache.org/Versions/v4/squid-4.8.tar.gz;cd /usr/src/data; tar -zxvf squid-4.8.tar.gz; cd squid-4.8; eopkg install gcc -y;eopkg install  automake -y;eopkg install  cmake -y;eopkg it -c system.devel -y;eopkg it solbuild -y;solbuild init; cd /usr/src/data/squid-4.8; ./configure; make; make install`
+            SolusInstallSoftwares1=`eopkg upgrade -y;eopkg install privoxy -y;eopkg install openvpn;eopkg install tor -y;eopkg install lz4 lz4-devel dialog -y`
+            SolusFixingSquid=`cd /usr/src;mkdir PIP;cd PIP;touch /usr/local/squid/var/logs/cache.log;touch /usr/local/squid/var/logs/access.log;chmod 777 /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/access.log`
+            SolusInstallSoftwares2=`eopkg install libevent-devel -y; eopkg install openssl-devel -y; eopkg install zlib; eopkg install zlib-devel;wget -O /usr/src/data/tor-0.4.1.6.tar.gz https://dist.torproject.org/tor-0.4.1.6.tar.gz;cd /usr/src/data; tar -zxvf tor-0.4.1.6.tar.gz; cd /usr/src/data/tor-0.4.1.6; ./configure; make; make install`
+            echo $SolusInstallSoftwares1
+            echo $SolusInstallSquid
+            echo $SolusFixingSquid
+            echo $SolusInstallSoftwares2
             MyOSSettingValueLauncher="Solus"
             MyOSSettingValueMachine="Solus"
             MyOSSettingValueHosts="Solus"
@@ -858,8 +858,8 @@ case "$MyOSConfigValue" in
 
     Knoppix)
         echo "I'm Knoppix, hola Papacito & Mamacita !!!" ############## tested by coder KNOPPIX V8.6 ###############
-        VarLinuxCmdKnoppix=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdKnoppix
+        KnoppixInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $KnoppixInstallSoftwares
         MyOSSettingValueLauncher="Knoppix"
         MyOSSettingValueMachine="Knoppix"
         MyOSSettingValueHosts="Knoppix"
@@ -874,8 +874,8 @@ case "$MyOSConfigValue" in
 
     ZorinOS)
         echo "I'm Zorin OS, hola Papacito & Mamacita !!!" ############## tested by coder Zorin OS 12.4 ###############
-        VarLinuxCmdZorinOS=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdZorinOS
+        ZorinOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $ZorinOSInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -893,8 +893,8 @@ case "$MyOSConfigValue" in
  
     MXLinux)
         echo "I'm MX Linux, hola Papacito & Mamacita !!!" ############## tested by coder MX-18.3 Continuum ###############
-        VarLinuxCmdMXLinux=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdMXLinux
+        MXLinuxInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $MXLinuxInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -912,8 +912,8 @@ case "$MyOSConfigValue" in
  
     ManjaroLinux)
         echo "I'm Manjaro Linux, hola Papacito & Mamacita !!!" ############## tested by coder Manjaro Linux ###############
-        VarLinuxCmdManjaroLinux=`pacman -Sy;pacman -S openvpn squid privoxy tor --noconfirm`
-        echo $VarLinuxCmdManjaroLinux
+        ManjaroLinuxInstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor --noconfirm`
+        echo $ManjaroLinuxInstallSoftwares
         MyOSSettingValueLauncher="ManjaroLinux"
         MyOSSettingValueMachine="ManjaroLinux"
         MyOSSettingValueHosts="ManjaroLinux"
@@ -929,8 +929,8 @@ case "$MyOSConfigValue" in
         ################## elementary OS #############################
     elementaryOS)
         echo "I'm elementary OS, hola Papacito & Mamacita !!!" ############## tested by coder elementary OS 5.0 Juno ###############
-        VarLinuxCmdelementaryOS=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdelementaryOS
+        elementaryOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $elementaryOSInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -945,10 +945,10 @@ case "$MyOSConfigValue" in
         ################## Parrot OS #############################
     ParrotOS)
         echo "I'm Parrot OS, hola Papacito & Mamacita !!!" ############## tested by coder Parrot OS 4.6 ###############
-        VarLinuxCmdParrotOS=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdParrotOS
-        VarParrotOSRestoreSource=`rm -rf /etc/apt/sources.list.d/parrot.list; touch /etc/apt/sources.list.d/parrot.list; cat /etc/apt/sources.list.d/parrot.list.bak > /etc/apt/sources.list.d/parrot.list`
-        echo $VarParrotOSRestoreSource
+        ParrotOSInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $ParrotOSInstallSoftwares
+        ParrotOSFixingSource=`rm -rf /etc/apt/sources.list.d/parrot.list; touch /etc/apt/sources.list.d/parrot.list; cat /etc/apt/sources.list.d/parrot.list.bak > /etc/apt/sources.list.d/parrot.list`
+        echo $ParrotOSFixingSource
         echo "Your source has restored from /etc/apt/sources.list.d/parrot.list.bak inside /etc/apt/sources.list.d/parrot.list"
         MyOSSettingValueLauncher="ParrotOS"
         MyOSSettingValueMachine="ParrotOS"
@@ -965,8 +965,8 @@ case "$MyOSConfigValue" in
         ################## Linux Mint OS #############################
     LinuxMint)
         echo "I'm Linux Mint, hola Papacito & Mamacita !!!" ############## tested by coder Linux Mint 19.2 Tina ###############
-        VarLinuxCmdLinuxMint=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdLinuxMint
+        LinuxMintInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $LinuxMintInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -983,8 +983,8 @@ case "$MyOSConfigValue" in
         ################## Fedora OS #############################
     Fedora)
         echo "I'm Fedora, hola Papacito & Mamacita !!!" ############## tested by coder Fedora release 30 ###############
-        VarLinuxCmdFedora=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn -y`
-        echo $VarLinuxCmdFedora
+        FedoraInstallSoftwares=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn -y`
+        echo $FedoraInstallSoftwares
         MyOSSettingValueLauncher="Fedora"
         MyOSSettingValueMachine="Fedora"
         MyOSSettingValueHosts="Fedora"
@@ -1000,8 +1000,8 @@ case "$MyOSConfigValue" in
         ################## openSUSE #############################
     openSUSE)
         echo "I'm openSUSE, hola Papacito & Mamacita !!!" ############## tested by coder openSUSE Leap 15.1 ###############
-        VarLinuxCmdopenSUSE=`zypper patch;zypper update;zypper --non-interactive in tor squid privoxy openvpn`
-        echo $VarLinuxCmdopenSUSE
+        openSUSEInstallSoftwares=`zypper patch;zypper update;zypper --non-interactive in tor squid privoxy openvpn`
+        echo $openSUSEInstallSoftwares
         MyOSSettingValueLauncher="openSUSE"
         MyOSSettingValueMachine="openSUSE"
         MyOSSettingValueHosts="openSUSE"
@@ -1017,8 +1017,8 @@ case "$MyOSConfigValue" in
         ################## antiX #############################
     antiX)
         echo "I'm antiX, hola Papacito & Mamacita !!!" ############## tested by coder openSUSE Leap 15.1 ###############
-        VarLinuxCmdantiX=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
-        echo $VarLinuxCmdantiX
+        antiXInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y`
+        echo $antiXInstallSoftwares
         MyOSSettingValueLauncher="DebianCommon"
         MyOSSettingValueMachine="DebianCommon"
         MyOSSettingValueHosts="DebianCommon"
@@ -1058,8 +1058,8 @@ echo "***"
 case "$MyOSSettingValueLauncher" in
 
     FreeBSD)
-    VarFirstFreeBSD=`echo tor_enable=YES >> /etc/rc.conf;echo "privoxy_enable=YES" >> /etc/rc.conf;echo "squid_enable=YES" >> /etc/rc.conf`
-    echo $VarFirstFreeBSD
+    FreeBSDSettingRC=`echo tor_enable=YES >> /etc/rc.conf;echo "privoxy_enable=YES" >> /etc/rc.conf;echo "squid_enable=YES" >> /etc/rc.conf`
+    echo $FreeBSDSettingRC
     CopyFilesPAFreeBSD=`mkdir /usr/bin/EarthPlanet;chmod 755 /usr/bin/EarthPlanet;cd stuff;cp PAFreeBSD.sh /usr/bin/EarthPlanet/GoToPluto;chmod 755 /usr/bin/EarthPlanet/GoToPluto`
     echo $CopyFilesPAFreeBSD
     echo "`date`" - Creating file /usr/bin/EarthPlanet/GoToPluto done 1." " >> /var/log/earth.log
@@ -1067,11 +1067,11 @@ case "$MyOSSettingValueLauncher" in
 
 
     DebianCommon)
-    Var1PlutoLinux="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
+    DebianCommonSquidRun="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    DebianCommonPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    DebianCommonTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1092,9 +1092,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$DebianCommonTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1140,11 +1140,11 @@ case "$MyOSSettingValueLauncher" in
 
 
   Knoppix)
-    Var1PlutoLinux="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
+    KnoppixSquidRun="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    KnoppixPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    KnoppixTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1164,9 +1164,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$KnoppixSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$KnoppixPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$KnoppixTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1214,11 +1214,11 @@ case "$MyOSSettingValueLauncher" in
 
 
   Solus)
-    Var1PlutoLinux="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid stop; /usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
+    SolusSquidRun="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid stop; /usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    SolusPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
+    SolusTorRun="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1238,9 +1238,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$SolusSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$SolusPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$SolusTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1285,11 +1285,11 @@ case "$MyOSSettingValueLauncher" in
 
 
     ManjaroLinux)
-    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    ManjaroLinuxSquidRun="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    ManjaroLinuxPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    ManjaroLinuxTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1309,9 +1309,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ManjaroLinuxSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ManjaroLinuxPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ManjaroLinuxTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1356,11 +1356,11 @@ case "$MyOSSettingValueLauncher" in
 
 
     ParrotOS)
-    Var1PlutoLinux="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+    ParrotOSSquidRun="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    ParrotOSPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    ParrotOSTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1380,9 +1380,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ParrotOSSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ParrotOSPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$ParrotOSTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1427,11 +1427,11 @@ case "$MyOSSettingValueLauncher" in
  
  
     Fedora)
-    Var1PlutoLinux="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
+    FedoraSquidRun="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+    FedoraPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    FedoraTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1452,9 +1452,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$FedoraSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$FedoraPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$FedoraTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1501,11 +1501,11 @@ case "$MyOSSettingValueLauncher" in
 
 
     openSUSE)
-    Var1PlutoLinux="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
+    openSUSESquidRun="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
     sleep 2
-    Var2PlutoLinux="killall privoxy;/usr/sbin/privoxy /var/lib/privoxy/etc/config;/usr/sbin/privoxy /var/lib/privoxy/etc/config2;/usr/sbin/privoxy /var/lib/privoxy/etc/config3;/usr/sbin/privoxy /var/lib/privoxy/etc/config4;/usr/sbin/privoxy /var/lib/privoxy/etc/config5;/usr/sbin/privoxy /var/lib/privoxy/etc/config6;/usr/sbin/privoxy /var/lib/privoxy/etc/config7;/usr/sbin/privoxy /var/lib/privoxy/etc/config8"
+    openSUSEPrivoxyRun="killall privoxy;/usr/sbin/privoxy /var/lib/privoxy/etc/config;/usr/sbin/privoxy /var/lib/privoxy/etc/config2;/usr/sbin/privoxy /var/lib/privoxy/etc/config3;/usr/sbin/privoxy /var/lib/privoxy/etc/config4;/usr/sbin/privoxy /var/lib/privoxy/etc/config5;/usr/sbin/privoxy /var/lib/privoxy/etc/config6;/usr/sbin/privoxy /var/lib/privoxy/etc/config7;/usr/sbin/privoxy /var/lib/privoxy/etc/config8"
     sleep 2
-    Var3PlutoLinux="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+    openSUSETorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
 
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1526,9 +1526,9 @@ case "$MyOSSettingValueLauncher" in
     echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
     echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
     echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var1PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var2PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$Var3PlutoLinux" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$openSUSESquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$openSUSEPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+    echo "$openSUSETorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1587,8 +1587,8 @@ case "$MyOSSettingValueMachine" in
 
     FreeBSD)
          ##sysctl FreeBSD
-    Set1FreeBSD=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
-    echo $Set1FreeBSD
+    FreeBSDSysctlBackup=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
+    echo $FreeBSDSysctlBackup
     echo "net.inet.ip.forwarding=1"   >> /etc/sysctl.conf
     echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
     echo "`date`" - Setting machine done." " >> /var/log/earth.log
@@ -1597,8 +1597,8 @@ case "$MyOSSettingValueMachine" in
 
     DebianCommon)
     ##sysctl linux
-    Set1DebianCommon=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $Set1DebianCommon
+    DebianCommonIPForwardSetting=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+    echo $DebianCommonIPForwardSetting
     echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
     ##done
 
@@ -1608,8 +1608,8 @@ case "$MyOSSettingValueMachine" in
 
     Knoppix)
     ##sysctl linux
-    Set1Knoppix=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
-    echo $Set1Knoppix
+    KnoppixSysctlBackup=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
+    echo $KnoppixSysctlBackup
     echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
     echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
     ##done
@@ -1621,8 +1621,8 @@ case "$MyOSSettingValueMachine" in
 
     Solus)
     ##sysctl linux
-    Set1Solus=`/sbin/sysctl -a > /usr/src/data/sysctl.conf;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $Set1Solus
+    SolusIPForwardSetting=`/sbin/sysctl -a > /usr/src/data/sysctl.conf;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+    echo $SolusIPForwardSetting
     echo "Your sysctl configuration was changed and saved in /usr/src/data/sysctl.conf"
     
 
@@ -1633,8 +1633,8 @@ case "$MyOSSettingValueMachine" in
 
     ManjaroLinux)
     ##sysctl linux
-    Set1ManjaroLinux=`/usr/bin/sysctl -a > /etc/sysctl.conf;/usr/bin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $Set1ManjaroLinux
+    ManjaroLinuxIPForwardSetting=`/usr/bin/sysctl -a > /etc/sysctl.conf;/usr/bin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+    echo $ManjaroLinuxIPForwardSetting
 
     echo "Your sysctl file sysctl was changed and saved in /etc/sysctl.conf.bak"
     ##done
@@ -1643,8 +1643,8 @@ case "$MyOSSettingValueMachine" in
 
     ParrotOS)
     ##sysctl linux
-    Set1ParrotOS=`/usr/bin/sysctl -a > /etc/sysctl.conf;/usr/bin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $Set1ParrotOS
+    ParrotOSIPForwardSetting=`/usr/bin/sysctl -a > /etc/sysctl.conf;/usr/bin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+    echo $ParrotOSIPForwardSetting
 
     echo "Your sysctl file sysctl was changed and saved in /etc/sysctl.conf.bak"
     ##done
@@ -1652,8 +1652,8 @@ case "$MyOSSettingValueMachine" in
 
     Fedora)
     ##sysctl linux
-    Set1Fedora=`/usr/sbin/sysctl -a > /etc/sysctl.conf.bak;/usr/sbin/sysctl -w net.ipv4.ip_forward=1; /usr/sbin/sysctl -p`
-    echo $Set1Fedora
+    FedoraIPForwardSetting=`/usr/sbin/sysctl -a > /etc/sysctl.conf.bak;/usr/sbin/sysctl -w net.ipv4.ip_forward=1; /usr/sbin/sysctl -p`
+    echo $FedoraIPForwardSetting
     echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
     ##done
 
@@ -1664,8 +1664,8 @@ case "$MyOSSettingValueMachine" in
 
     openSUSE)
     ##sysctl linux
-    Set1openSUSE=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $Set1openSUSE
+    openSUSEIPForwardSetting=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+    echo $openSUSEIPForwardSetting
     echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
     ##done
 
@@ -2338,8 +2338,8 @@ echo "*******"
 case "$MyOSSettingValuePrivoxy" in
     FreeBSD)
     #Privoxy 1
-    RMP1Free=`rm -rf /usr/local/etc/privoxy/config`
-    echo $RMP1Free
+    FreeBSDRemovePrivoxyConfig=`rm -rf /usr/local/etc/privoxy/config`
+    echo $FreeBSDRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /usr/local/etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /usr/local/etc/privoxy/config
     echo "confdir /usr/local/etc/privoxy"  >> /usr/local/etc/privoxy/config
@@ -2384,8 +2384,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     DebianCommon)
     #Privoxy 1
-    VarPrivoxyDebianCommon=`rm -rf /etc/privoxy/config`
-    echo $VarPrivoxyDebianCommon
+    DebianCommonRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $DebianCommonRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2431,8 +2431,8 @@ case "$MyOSSettingValuePrivoxy" in
    
     Knoppix)
     #Privoxy 1
-    VarPrivoxyKnoppix=`rm -rf /etc/privoxy/config`
-    echo VarPrivoxyKnoppix
+    KnoppixRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $KnoppixRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2477,8 +2477,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     Solus)
     #Privoxy 1
-    VarPrivoxySolus=`rm -rf /etc/privoxy/config`
-    echo VarPrivoxySolus
+    SolusRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $SolusRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2527,8 +2527,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     ManjaroLinux)
     #Privoxy 1
-    VarPrivoxyManjaroLinux=`rm -rf /etc/privoxy/config`
-    echo VarPrivoxyManjaroLinux
+    ManjaroLinuxRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $ManjaroLinuxRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2575,8 +2575,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     ParrotOS)
     #Privoxy 1
-    VarPrivoxyParrotOS=`rm -rf /etc/privoxy/config`
-    echo VarPrivoxyParrotOS
+    ParrotOSRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $ParrotOSRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2622,8 +2622,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     Fedora)
     #Privoxy 1
-    VarPrivoxyFedora=`rm -rf /etc/privoxy/config`
-    echo $VarPrivoxyFedora
+    FedoraRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+    echo $FedoraRemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
     echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -2671,8 +2671,8 @@ case "$MyOSSettingValuePrivoxy" in
 
     openSUSE)
     #Privoxy 1
-    VarPrivoxyopenSUSE=`rm -rf /var/lib/privoxy/etc/config`
-    echo $VarPrivoxyopenSUSE
+    openSUSERemovePrivoxyConfig=`rm -rf /var/lib/privoxy/etc/config`
+    echo $openSUSERemovePrivoxyConfig
     echo "listen-address  127.0.0.1:8118" >> /var/lib/privoxy/etc/config
     echo "forward-socks4a   /               127.0.0.1:9050 ." >> /var/lib/privoxy/etc/config
     echo "confdir /var/lib/privoxy/etc"  >> /var/lib/privoxy/etc/config
@@ -2729,8 +2729,8 @@ echo "********"
 case "$MyOSSettingValueTor" in
     FreeBSD)
 
-    VarTorFreeBSD=`mkdir /var/lib;mkdir /etc/tor;chmod 755 /etc/tor;chmod 755 /var/lib;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorFreeBSD 
+    FreeBSDSettingTor=`mkdir /var/lib;mkdir /etc/tor;chmod 755 /etc/tor;chmod 755 /var/lib;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $FreeBSDSettingTor 
  
 
 
@@ -2798,8 +2798,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodFreeBSD=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodFreeBSD
+    FreeBSDTorChangeAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $FreeBSDTorChangeAccess
 
  
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -2807,8 +2807,8 @@ case "$MyOSSettingValueTor" in
 
 
     DebianCommon)
-    VarTorDebianCommon=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorDebianCommon
+    DebianCommonSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $DebianCommonSettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -2874,8 +2874,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodDebianCommon=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodDebianCommon
+    DebianCommonChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $DebianCommonChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -2884,8 +2884,8 @@ case "$MyOSSettingValueTor" in
   
 
     Knoppix)
-    VarTorKnoppix=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorKnoppix 
+    KnoppixSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $KnoppixSettingTor 
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -2951,8 +2951,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodLinux=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodLinux
+    KnoppixChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $KnoppixChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -2960,8 +2960,8 @@ case "$MyOSSettingValueTor" in
 
 
     Solus)
-    VarTorSolus=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorSolus
+    SolusSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $SolusSettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /usr/local/etc/tor/torrc
@@ -3027,8 +3027,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /usr/local/etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /usr/local/etc/tor/torrc8
 
-    VarTorChmodSolus=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodSolus
+    SolusChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $SolusChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -3038,8 +3038,8 @@ case "$MyOSSettingValueTor" in
 
 
     ManjaroLinux)
-    VarTorManjaroLinux=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorManjaroLinux
+    ManjaroLinuxSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $ManjaroLinuxSettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -3105,8 +3105,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodManjaroLinux=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodManjaroLinux
+    ManjaroLinuxChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $ManjaroLinuxChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -3116,8 +3116,8 @@ case "$MyOSSettingValueTor" in
    
 
    ParrotOS)
-    VarTorParrotOS=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorParrotOS
+    ParrotOSSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $ParrotOSSettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -3183,8 +3183,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodParrotOS=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodParrotOS
+    ParrotOSChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $ParrotOSChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -3192,8 +3192,8 @@ case "$MyOSSettingValueTor" in
 
 
     Fedora)
-    VarTorFedora=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarTorFedora
+    FedoraSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $FedoraSettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -3259,8 +3259,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodFedora=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodFedora
+    FedoraChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $FedoraChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
@@ -3271,8 +3271,8 @@ case "$MyOSSettingValueTor" in
 
 
     openSUSE)
-    VarToropenSUSE=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $VarToropenSUSE
+    openSUSESettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+    echo $openSUSESettingTor
    
     #Tor 1
     echo "SocksPort 9050" >> /etc/tor/torrc
@@ -3338,8 +3338,8 @@ case "$MyOSSettingValueTor" in
     echo "User root" >> /etc/tor/torrc8
     echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-    VarTorChmodopenSUSE=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $VarTorChmodopenSUSE
+    openSUSEChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+    echo $openSUSEChangeTorAccess
 
   
     echo "`date`" - Setting Tor done." " >> /var/log/earth.log
