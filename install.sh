@@ -846,13 +846,13 @@ case "$MyOSConfigValue" in
             echo $SolusFixingSquid
             echo $SolusInstallSoftwares2
             MyOSSettingValueLauncher="Solus"
-            MyOSSettingValueMachine="Solus"
-            MyOSSettingValueHosts="Solus"
+            MyOSSettingValueMachine="DebianCommon"
+            MyOSSettingValueHosts="DebianCommon"
             MyOSSettingValueSquid="Solus"
-            MyOSSettingValuePrivoxy="Solus"
+            MyOSSettingValuePrivoxy="DebianCommon"
             MyOSSettingValueTor="Solus"
-            MyOSSettingValueShutdown="Solus"
-            MyOSSettingValueOpenvpn="Solus"
+            MyOSSettingValueShutdown="Knoppix"
+            MyOSSettingValueOpenvpn="DebianCommon"
         ;;
 
         #################### end of Solus ###########################
@@ -863,14 +863,14 @@ case "$MyOSConfigValue" in
         echo "I'm Knoppix, hola Papacito & Mamacita !!!" ############## tested by coder KNOPPIX V8.6 ###############
         KnoppixInstallSoftwares=`apt-get update -y;apt-get upgrade -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
         echo $KnoppixInstallSoftwares
-        MyOSSettingValueLauncher="Knoppix"
-        MyOSSettingValueMachine="Knoppix"
-        MyOSSettingValueHosts="Knoppix"
-        MyOSSettingValueSquid="Knoppix"
-        MyOSSettingValuePrivoxy="Knoppix"
-        MyOSSettingValueTor="Knoppix"
+        MyOSSettingValueLauncher="DebianCommon"
+        MyOSSettingValueMachine="DebianCommon"
+        MyOSSettingValueHosts="DebianCommon"
+        MyOSSettingValueSquid="DebianCommon"
+        MyOSSettingValuePrivoxy="DebianCommon"
+        MyOSSettingValueTor="DebianCommon"
         MyOSSettingValueShutdown="Knoppix"
-        MyOSSettingValueOpenvpn="Knoppix"
+        MyOSSettingValueOpenvpn="DebianCommon"
         ;;
 
         #################### end of Knoppix ###########################
@@ -1098,78 +1098,6 @@ case "$MyOSSettingValueLauncher" in
     echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "$DebianCommonTorRun" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "\"b\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"OpenVPN in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "\"c\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"IPsec/L2TP in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "\"d\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"SoftEther in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "*)"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"None, bye...\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "        esac" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "           ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "2)"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"Private Server Access will available soon in next version update\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "3)"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"Science access is a access to server which you can do Networking Experiment, Operating System, Scientific Software, etc inside the server. Science Server Access will available soon in next version update.\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "*)"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"None, bye...\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "   esac" >> /usr/bin/EarthPlanet/GoToPluto
-
-
-    echo "`date`" - Creating file /usr/bin/EarthPlanet/GoToPluto done." " >> /var/log/earth.log
-    ;;
-
-
-
-
-  Knoppix)
-    KnoppixSquidRun="killall squid;service squid stop;squid -k parse;squid -f /etc/squid/squid.conf"
-    sleep 2
-    KnoppixPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
-    sleep 2
-    KnoppixTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
-
-    echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"3. Science Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"Your access (1/2/3):\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "read MyaccessLinux" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "case \"\$MyaccessLinux\" in" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "        \"1\")" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"a. Tor mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"b. OpenVPN mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"c. IPsec/L2TP mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"d. SoftEther VPN mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "echo \"Option mode (a/b/c/d):\"" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
-    echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$KnoppixSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$KnoppixPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
-    echo "$KnoppixTorRun" >> /usr/bin/EarthPlanet/GoToPluto
     echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -1609,29 +1537,6 @@ case "$MyOSSettingValueMachine" in
     ##done
     ;;
 
-    Knoppix)
-    ##sysctl linux
-    KnoppixSysctlBackup=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
-    echo $KnoppixSysctlBackup
-    echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-    echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
-    ##done
-
-  
-    echo "`date`" - Setting machine done." " >> /var/log/earth.log
-    ##done
-    ;;
-
-    Solus)
-    ##sysctl linux
-    SolusIPForwardSetting=`/sbin/sysctl -a > /usr/src/data/sysctl.conf;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
-    echo $SolusIPForwardSetting
-    echo "Your sysctl configuration was changed and saved in /usr/src/data/sysctl.conf"
-    
-
-    echo "`date`" - Setting machine done." " >> /var/log/earth.log
-    ##done
-    ;;
 
 
     ManjaroLinux)
@@ -1716,35 +1621,6 @@ case "$MyOSSettingValueHosts" in
     echo "Your hosts config was changed and saved in /etc/hosts.bak"
     echo "`date`" - Setting hosts done." " >> /var/log/earth.log
     ;;
-
-    Knoppix)
-    SetHostKnoppix=`cp /etc/hosts /etc/hosts.bak`
-    echo $SetHostKnoppix
-    echo "127.0.0.1       localhost2" >> /etc/hosts
-    echo "127.0.0.1       localhost3" >> /etc/hosts
-    echo "127.0.0.1       localhost4" >> /etc/hosts
-    echo "127.0.0.1       localhost5" >> /etc/hosts
-    echo "127.0.0.1       localhost6" >> /etc/hosts
-    echo "127.0.0.1       localhost7" >> /etc/hosts
-    echo "127.0.0.1       localhost8" >> /etc/hosts
-    echo "Your hosts config was changed and saved in /etc/hosts.bak"
-    echo "`date`" - Setting hosts done." " >> /var/log/earth.log
-    ;;
-
-    Solus)
-    SetHostSolus=`cp /etc/hosts /etc/hosts.bak`
-    echo $SetHostSolus
-    echo "127.0.0.1       localhost2" >> /etc/hosts
-    echo "127.0.0.1       localhost3" >> /etc/hosts
-    echo "127.0.0.1       localhost4" >> /etc/hosts
-    echo "127.0.0.1       localhost5" >> /etc/hosts
-    echo "127.0.0.1       localhost6" >> /etc/hosts
-    echo "127.0.0.1       localhost7" >> /etc/hosts
-    echo "127.0.0.1       localhost8" >> /etc/hosts
-    echo "Your hosts config was changed and saved in /etc/hosts.bak"
-    echo "`date`" - Setting hosts done." " >> /var/log/earth.log
-    ;;
-
 
 
     ManjaroLinux)
@@ -1952,67 +1828,7 @@ case "$MyOSSettingValueSquid" in
 
  
 
-    Knoppix)
-    ConfQueryAllKnoppix=`rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
-    echo $ConfQueryAllKnoppix
-    echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
-    echo "Your IP address:"
-    read MyIPLanKnoppix
-    echo "acl all src all" >> /etc/squid/squid.conf
-    echo "acl manager proto cache_object" >> /etc/squid/squid.conf
-    echo "acl localhost src 127.0.0.1/32" >> /etc/squid/squid.conf
-    echo "acl to_localhost dst 127.0.0.0/8" >> /etc/squid/squid.conf
-    echo "acl LAN src $MyIPLanKnoppix/24" >> /etc/squid/squid.conf
-    echo "acl SSL_ports port 443" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 80" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 21" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 443" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 70" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 210" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 1025-65535" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 280" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 488" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 591" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 777" >> /etc/squid/squid.conf
-    echo "acl Safe_ports port 901" >> /etc/squid/squid.conf
-    echo "acl purge method PURGE" >> /etc/squid/squid.conf
-    echo "http_access allow manager localhost" >> /etc/squid/squid.conf
-    echo "http_access deny manager" >> /etc/squid/squid.conf
-    echo "http_access allow purge localhost" >> /etc/squid/squid.conf
-    echo "http_access deny purge" >> /etc/squid/squid.conf
-    echo "http_access allow LAN" >> /etc/squid/squid.conf
-    echo "http_access allow localhost" >> /etc/squid/squid.conf
-    echo "http_access deny all" >> /etc/squid/squid.conf
-    echo "icp_access deny all" >> /etc/squid/squid.conf
-    echo "Your Port:"
-    read MyPortAdrKnoppix
-    echo "http_port $MyPortAdrKnoppix" >> /etc/squid/squid.conf
-    echo "icp_port 0" >> /etc/squid/squid.conf
-    echo "refresh_pattern ^ftp:           1440    20%     10080" >> /etc/squid/squid.conf
-    echo "refresh_pattern ^gopher:        1440    0%      1440" >> /etc/squid/squid.conf
-    echo "refresh_pattern -i (/cgi-bin/|\?) 0     0%      0" >> /etc/squid/squid.conf
-    echo "refresh_pattern .               0       20%     4320" >> /etc/squid/squid.conf
-    echo "cache_peer localhost parent 8118 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost2 parent 8129 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost3 parent 8230 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost4 parent 8231 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost5 parent 8232 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost6 parent 8233 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost7 parent 8234 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "cache_peer localhost8 parent 8235 0 round-robin no-query" >> /etc/squid/squid.conf
-    echo "never_direct allow all" >> /etc/squid/squid.conf
-    echo "always_direct deny all" >> /etc/squid/squid.conf
-    echo "acl apache rep_header Server ^Apache" >> /etc/squid/squid.conf
-    echo "forwarded_for off" >> /etc/squid/squid.conf
-    echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
-    echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
-
-    echo "Pluto Internet Privacy using IP: "$MyIPLanKnoppix" Port: "$MyPortAdrKnoppix""  >> /var/log/earth.log
-    echo "Pluto Internet Privacy using IP: "$MyIPLanKnoppix" Port: "$MyPortAdrKnoppix""  >> /var/log/ipport.txt
-    echo "`date`" - Setting Squid done." " >> /var/log/earth.log
-    ;;
-
-
+ 
 
     Solus)
     ConfQueryAllSolus=`touch /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/cache.log;rm -rf /usr/local/squid/etc/squid.conf;touch /usr/local/squid/etc/squid.conf;chmod 755 /usr/local/squid/etc/squid.conf;service squid stop;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
@@ -2432,99 +2248,7 @@ case "$MyOSSettingValuePrivoxy" in
         ;;
 
    
-    Knoppix)
-    #Privoxy 1
-    KnoppixRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
-    echo $KnoppixRemovePrivoxyConfig
-    echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
-    echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config
-    echo "logdir /var/log/privoxy" >> /etc/privoxy/config
-    #Privoxy 2
-    echo "listen-address  127.0.0.1:8129" >> /etc/privoxy/config2
-    echo "forward-socks4a   /               127.0.0.1:9150 ." >> /etc/privoxy/config2
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config2
-    echo "logdir /var/log/privoxy2" >> /etc/privoxy/config2
-   #Privoxy 3
-    echo "listen-address  127.0.0.1:8230" >> /etc/privoxy/config3
-    echo "forward-socks4a   /               127.0.0.1:9250 ." >> /etc/privoxy/config3
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config3
-    echo "logdir /var/log/privoxy3" >> /etc/privoxy/config3
-    #Privoxy 4
-    echo "listen-address  127.0.0.1:8231" >> /etc/privoxy/config4
-    echo "forward-socks4a   /               127.0.0.1:9350 ." >> /etc/privoxy/config4
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config4
-    echo "logdir /var/log/privoxy4" >> /etc/privoxy/config4
-    #Privoxy 5
-    echo "listen-address  127.0.0.1:8232" >> /etc/privoxy/config5
-    echo "forward-socks4a   /               127.0.0.1:9450 ." >> /etc/privoxy/config5
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config5
-    echo "logdir /var/log/privoxy5" >> /etc/privoxy/config5
-    #Privoxy 6
-    echo "listen-address  127.0.0.1:8233" >> /etc/privoxy/config6
-    echo "forward-socks4a   /               127.0.0.1:9550 ." >> /etc/privoxy/config6
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config6
-    echo "logdir /var/log/privoxy6" >> /etc/privoxy/config6
-    #Privoxy 7
-    echo "listen-address  127.0.0.1:8234" >> /etc/privoxy/config7
-    echo "forward-socks4a   /               127.0.0.1:9650 ." >> /etc/privoxy/config7
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config7
-    echo "logdir /var/log/privoxy7" >> /etc/privoxy/config7
-    #Privoxy 8
-    echo "listen-address  127.0.0.1:8235" >> /etc/privoxy/config8
-    echo "forward-socks4a   /               127.0.0.1:9750 ." >> /etc/privoxy/config8
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config8
-    echo "logdir /var/log/privoxy8" >> /etc/privoxy/config8
-    echo "`date`" - Setting Privoxy done." " >> /var/log/earth.log
-        ;;
-
-    Solus)
-    #Privoxy 1
-    SolusRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
-    echo $SolusRemovePrivoxyConfig
-    echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
-    echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config
-    echo "logdir /var/log/privoxy" >> /etc/privoxy/config
-    #Privoxy 2
-    echo "listen-address  127.0.0.1:8129" >> /etc/privoxy/config2
-    echo "forward-socks4a   /               127.0.0.1:9150 ." >> /etc/privoxy/config2
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config2
-    echo "logdir /var/log/privoxy2" >> /etc/privoxy/config2
-   #Privoxy 3
-    echo "listen-address  127.0.0.1:8230" >> /etc/privoxy/config3
-    echo "forward-socks4a   /               127.0.0.1:9250 ." >> /etc/privoxy/config3
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config3
-    echo "logdir /var/log/privoxy3" >> /etc/privoxy/config3
-    #Privoxy 4
-    echo "listen-address  127.0.0.1:8231" >> /etc/privoxy/config4
-    echo "forward-socks4a   /               127.0.0.1:9350 ." >> /etc/privoxy/config4
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config4
-    echo "logdir /var/log/privoxy4" >> /etc/privoxy/config4
-    #Privoxy 5
-    echo "listen-address  127.0.0.1:8232" >> /etc/privoxy/config5
-    echo "forward-socks4a   /               127.0.0.1:9450 ." >> /etc/privoxy/config5
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config5
-    echo "logdir /var/log/privoxy5" >> /etc/privoxy/config5
-    #Privoxy 6
-    echo "listen-address  127.0.0.1:8233" >> /etc/privoxy/config6
-    echo "forward-socks4a   /               127.0.0.1:9550 ." >> /etc/privoxy/config6
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config6
-    echo "logdir /var/log/privoxy6" >> /etc/privoxy/config6
-    #Privoxy 7
-    echo "listen-address  127.0.0.1:8234" >> /etc/privoxy/config7
-    echo "forward-socks4a   /               127.0.0.1:9650 ." >> /etc/privoxy/config7
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config7
-    echo "logdir /var/log/privoxy7" >> /etc/privoxy/config7
-    #Privoxy 8
-    echo "listen-address  127.0.0.1:8235" >> /etc/privoxy/config8
-    echo "forward-socks4a   /               127.0.0.1:9750 ." >> /etc/privoxy/config8
-    echo "confdir /etc/privoxy"  >> /etc/privoxy/config8
-    echo "logdir /var/log/privoxy8" >> /etc/privoxy/config8
-    echo "`date`" - Setting Privoxy done." " >> /var/log/earth.log
-        ;;
-
-  
+ 
 
 
 
@@ -2885,82 +2609,6 @@ case "$MyOSSettingValueTor" in
         ;;
 
   
-
-    Knoppix)
-    KnoppixSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-    echo $KnoppixSettingTor 
-   
-    #Tor 1
-    echo "SocksPort 9050" >> /etc/tor/torrc
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc
-    echo "Log notice syslog" >> /etc/tor/torrc
-    echo "RunAsDaemon 1" >> /etc/tor/torrc
-    echo "User root" >> /etc/tor/torrc
-    echo "DataDirectory /var/lib/tor" >> /etc/tor/torrc
-
-    #Tor 2
-    echo "SocksPort 9150" >> /etc/tor/torrc2
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc2
-    echo "Log notice syslog" >> /etc/tor/torrc2
-    echo "RunAsDaemon 1" >> /etc/tor/torrc2
-    echo "User root" >> /etc/tor/torrc2
-    echo "DataDirectory /var/lib/tor2" >> /etc/tor/torrc2
-
-    #Tor 3
-    echo "SocksPort 9250" >> /etc/tor/torrc3
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc3
-    echo "Log notice syslog" >> /etc/tor/torrc3
-    echo "RunAsDaemon 1" >> /etc/tor/torrc3
-    echo "User root" >> /etc/tor/torrc3
-    echo "DataDirectory /var/lib/tor3" >> /etc/tor/torrc3
-
-    #Tor 4
-    echo "SocksPort 9350" >> /etc/tor/torrc4
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc4
-    echo "Log notice syslog" >> /etc/tor/torrc4
-    echo "RunAsDaemon 1" >> /etc/tor/torrc4
-    echo "User root" >> /etc/tor/torrc4
-    echo "DataDirectory /var/lib/tor4" >> /etc/tor/torrc4
-
-    #Tor 5
-    echo "SocksPort 9450" >> /etc/tor/torrc5
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc5
-    echo "Log notice syslog" >> /etc/tor/torrc5
-    echo "RunAsDaemon 1" >> /etc/tor/torrc5
-    echo "User root" >> /etc/tor/torrc5
-    echo "DataDirectory /var/lib/tor5" >> /etc/tor/torrc5
-
-    #Tor 6
-    echo "SocksPort 9550" >> /etc/tor/torrc6
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc6
-    echo "Log notice syslog" >> /etc/tor/torrc6
-    echo "RunAsDaemon 1" >> /etc/tor/torrc6
-    echo "User root" >> /etc/tor/torrc6
-    echo "DataDirectory /var/lib/tor6" >> /etc/tor/torrc6
-
-    #Tor 7
-    echo "SocksPort 9650" >> /etc/tor/torrc7
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc7
-    echo "Log notice syslog" >> /etc/tor/torrc7
-    echo "RunAsDaemon 1" >> /etc/tor/torrc7
-    echo "User root" >> /etc/tor/torrc7
-    echo "DataDirectory /var/lib/tor7" >> /etc/tor/torrc7
-
-    #Tor 8
-    echo "SocksPort 9750" >> /etc/tor/torrc8
-    echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc8
-    echo "Log notice syslog" >> /etc/tor/torrc8
-    echo "RunAsDaemon 1" >> /etc/tor/torrc8
-    echo "User root" >> /etc/tor/torrc8
-    echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
-
-    KnoppixChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-    echo $KnoppixChangeTorAccess
-
-  
-    echo "`date`" - Setting Tor done." " >> /var/log/earth.log
-        ;;       
-
 
     Solus)
     SolusSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
@@ -3380,13 +3028,6 @@ case "$MyOSSettingValueShutdown" in
     Knoppix)
     echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
     echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-    echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
-    echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
-    ;;
-
-    Solus)
-    echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
-    echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
     echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
     echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
     ;;
@@ -3445,18 +3086,6 @@ case "$MyOSSettingValueOpenvpn" in
     DebianCommon)
     SettingovpnDebianCommon=`mv ovpn /etc/EarthPlanet`
     echo $SettingovpnDebianCommon
-    echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
-    ;;
-
-    Knoppix)
-    SettingovpnKnoppix=`mv ovpn /etc/EarthPlanet`
-    echo $SettingovpnKnoppix
-    echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
-    ;;
-
-    Solus)
-    SettingovpnSolus=`mv ovpn /etc/EarthPlanet`
-    echo $SettingovpnSolus
     echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
     ;;
 
