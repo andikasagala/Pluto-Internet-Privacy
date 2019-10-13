@@ -148,6 +148,9 @@ case "$MyOsValueGlobal" in
             1)MyOSConfigValue="FreeBSD"
               MySoftwareStatus="FreeBSD"
                 ;;
+            *)echo "It is no problem."
+               ;;
+ 
         esac
         ;;
      #################### end of FreeBSD ###########################   
@@ -1218,7 +1221,7 @@ case "$MyOSSettingValueLauncher" in
     sleep 2
     SolusPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
     sleep 2
-    SolusTorRun="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
+    SolusTorRun="killall tor;/usr/bin/tor -f /usr/local/etc/tor/torrc;/usr/bin/tor -f /usr/local/etc/tor/torrc2;/usr/bin/tor -f /usr/local/etc/tor/torrc3;/usr/bin/tor -f /usr/local/etc/tor/torrc4;/usr/bin/tor -f /usr/local/etc/tor/torrc5;/usr/bin/tor -f /usr/local/etc/tor/torrc6;/usr/bin/tor -f /usr/local/etc/tor/torrc7;/usr/bin/tor -f /usr/local/etc/tor/torrc8"
 
     echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
     echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
