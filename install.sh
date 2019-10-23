@@ -263,6 +263,9 @@ case "$MyOsValueGlobal" in
 				if [ $UnixVerifierDebian = 2 ] && [ $UnixVerifierantiX = 1 ]
 				then
 				echo "It is no problem."
+				elif [ $UnixVerifierDebian = 2 ] && [ $UnixVerifierKnoppix = 1 ]
+				then
+				echo "It is no problem."
                 elif [ $UnixVerifierDebian = 2 ]
                 then
                 echo "I'm Debian, hola Papacito & Mamacita !" ############## tested by coder Debian 10.1.0 ###############
@@ -454,98 +457,6 @@ esac
 
 
 ######## Done, installed. ############################################
-
-
-############################# Setting Tor ######################################
-case "$MyOSSettingValueTor" in
-
-	################### setting tor FreeBSD #############################
-
-	############### setting tor FreeBSD done ##############################
-
-	########### setting tor Debian ######################################
-
-	################# setting tor Solus #############################
-	Solus)
-		SolusSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-		echo $SolusSettingTor
-
-		#Tor 1
-		echo "SocksPort 9050" >> /usr/local/etc/tor/torrc
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc
-		echo "User root" >> /usr/local/etc/tor/torrc
-		echo "DataDirectory /var/lib/tor" >> /usr/local/etc/tor/torrc
-
-		#Tor 2
-		echo "SocksPort 9150" >> /usr/local/etc/tor/torrc2
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc2
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc2
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc2
-		echo "User root" >> /usr/local/etc/tor/torrc2
-		echo "DataDirectory /var/lib/tor2" >> /usr/local/etc/tor/torrc2
-
-		#Tor 3
-		echo "SocksPort 9250" >> /usr/local/etc/tor/torrc3
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc3
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc3
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc3
-		echo "User root" >> /usr/local/etc/tor/torrc3
-		echo "DataDirectory /var/lib/tor3" >> /usr/local/etc/tor/torrc3
-
-		#Tor 4
-		echo "SocksPort 9350" >> /usr/local/etc/tor/torrc4
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc4
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc4
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc4
-		echo "User root" >> /usr/local/etc/tor/torrc4
-		echo "DataDirectory /var/lib/tor4" >> /usr/local/etc/tor/torrc4
-
-		#Tor 5
-		echo "SocksPort 9450" >> /usr/local/etc/tor/torrc5
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc5
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc5
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc5
-		echo "User root" >> /usr/local/etc/tor/torrc5
-		echo "DataDirectory /var/lib/tor5" >> /usr/local/etc/tor/torrc5
-
-		#Tor 6
-		echo "SocksPort 9550" >> /usr/local/etc/tor/torrc6
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc6
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc6
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc6
-		echo "User root" >> /usr/local/etc/tor/torrc6
-		echo "DataDirectory /var/lib/tor6" >> /usr/local/etc/tor/torrc6
-
-		#Tor 7
-		echo "SocksPort 9650" >> /usr/local/etc/tor/torrc7
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc7
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrcc7
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc7
-		echo "User root" >> /usr/local/etc/tor/torrc7
-		echo "DataDirectory /var/lib/tor7" >> /usr/local/etc/tor/torrc7
-
-		#Tor 8
-		echo "SocksPort 9750" >> /usr/local/etc/tor/torrc8
-		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc8
-		echo "Log notice syslog" >> /usr/local/etc/tor/torrc8
-		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc8
-		echo "User root" >> /usr/local/etc/tor/torrc8
-		echo "DataDirectory /var/lib/tor8" >> /usr/local/etc/tor/torrc8
-
-		SolusChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-		echo $SolusChangeTorAccess
-		echo "`date`" - Setting Tor done." " >> /var/log/earth.log
-	;;
-
-
-
-esac
-
-
-############## Setting Tor done #######################
-
 
 ################# creating /usr/bin/EarthPlanet/GoHome ###########################
 
