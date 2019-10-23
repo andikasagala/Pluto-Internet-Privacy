@@ -13,7 +13,7 @@ MyOSSettingValueHosts="DebianCommon"
 MyOSSettingValueSquid="DebianCommon"
 MyOSSettingValuePrivoxy="DebianCommon"
 MyOSSettingValueTor="DebianCommon"
-MyOSSettingValueShutdown="DebianCommon"
+MyOSSettingValueShutdown="MXLinuxShutdown"
 MyOSSettingValueOpenvpn="DebianCommon"
 
 	Varcmd1All=`mkdir /etc/EarthPlanet`
@@ -72,9 +72,9 @@ DebianCommon)
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "$DebianCommonTorRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -167,7 +167,7 @@ echo "******"
 case "$MyOSSettingValueSquid" in
 
 	DebianCommon)
-		ConfQueryAllDebianCommon=`rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
+		ConfQueryAllDebianCommon=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
 		echo $ConfQueryAllDebianCommon
 		echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
 		echo "Your IP address:"
@@ -218,8 +218,8 @@ case "$MyOSSettingValueSquid" in
 		echo "always_direct deny all" >> /etc/squid/squid.conf
 		echo "acl apache rep_header Server ^Apache" >> /etc/squid/squid.conf
 		echo "forwarded_for off" >> /etc/squid/squid.conf
-		echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
-		echo "access_log /usr/local/squid/var/logs/access.log" >> /etc/squid/squid.conf
+		echo "pid_filename /var/run/squid/squid.pid" >> /etc/squid/squid.conf
+		echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 		HostnameDebianCommon=`uname -n`
 		echo "visible_hostname $HostnameDebianCommon" >> /etc/squid/squid.conf
 		echo "Pluto Internet Privacy using IP: "$MyIPLanDebianCommon" Port: "$MyPortAdrDebianCommon""  >> /var/log/earth.log
@@ -378,10 +378,10 @@ echo "*********"
 #####################################################################
 
 case "$MyOSSettingValueShutdown" in
-	DebianCommon)
+	MXLinuxShutdown)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "/usr/sbin/poweroff;/usr/sbin/shutdown 1;/usr/sbin/poweroff -f;/usr/sbin/shutdown now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now;/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 esac

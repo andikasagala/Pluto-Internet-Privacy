@@ -78,9 +78,9 @@ case "$MyOSSettingValueLauncher" in
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$ManjaroLinuxSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$ManjaroLinuxPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "$ManjaroLinuxTorRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$ManjaroLinuxPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$ManjaroLinuxSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -374,7 +374,7 @@ case "$MyOSSettingValueShutdown" in
 	ManjaroLinux)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "/usr/bin/poweroff;/usr/bin/shutdown 1;/usr/bin/poweroff -f;/usr/bin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 

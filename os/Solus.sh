@@ -2,7 +2,7 @@
 
 
 ####
-#software existence checker here
+#software existence checker here later
 ###
 
 ##################################################################
@@ -82,9 +82,9 @@ case "$MyOSSettingValueLauncher" in
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$SolusSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$SolusPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "$SolusTorRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$SolusPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$SolusSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto

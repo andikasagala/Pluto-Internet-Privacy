@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-DetectEarthPlanetopenSUSE=`ls -a /etc |grep EarthPlanet`
+DetectEarthPlanetopenSUSE=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetopenSUSE in
-	EarthPlanet)
+	1)
 		echo "Pluto Internet Privacy was installed in this machine."
 		echo "Run in console \"sh /usr/bin/EarthPlanet/GoToPluto\""
 		echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log"
@@ -64,6 +64,10 @@ case $DetectEarthPlanetopenSUSE in
 			;;
 		esac
 	;;
+
+	*)
+		echo ""
+	;;	
 esac
 
 ##################################################################
@@ -138,9 +142,9 @@ case "$MyOSSettingValueLauncher" in
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$openSUSESquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$openSUSEPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "$openSUSETorRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$openSUSEPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$openSUSESquidRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto

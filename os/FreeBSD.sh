@@ -2,7 +2,7 @@
 
 TheInstPath=`pwd`
 
-DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet`
+DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetFreeBSD in
 	EarthPlanet)
 		echo "Pluto Internet Privacy was installed in this machine."
@@ -72,10 +72,14 @@ case $DetectEarthPlanetFreeBSD in
 					########################## Quit Statement done #######################################
 		esac
 	;;
+
+	*)
+		echo ""
+	;;	
 esac
 
 
-
+###################################### install requirement #########################
 FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y; pkg install psmisc -y`
 echo $FreeBSDInstallPkgs
 MyOSSettingValueLauncher="FreeBSD"
@@ -110,6 +114,7 @@ MyOSSettingValueOpenvpn="FreeBSD"
 
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 
+############################ install requirement end ##################################
 #########################################################
 sleep 0.1
 echo "***"

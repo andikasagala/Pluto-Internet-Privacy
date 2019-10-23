@@ -77,9 +77,9 @@ DebianCommon)
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "$DebianCommonTorRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$DebianCommonPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "$DebianCommonSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto

@@ -196,8 +196,6 @@ case "$Myosvalue" in
 
 esac
 
-	############### creating necessary files #################################
-
 	######################## done ##########################
 
 
@@ -257,7 +255,7 @@ case "$MyOsValueGlobal" in
 
 		################## Debian Verifier #############################
 
-		UnixVerifierDebianComplicated=$((UnixVerifierDebian + UnixVerifierantiX + UnixVerifierKnoppix))
+		UnixVerifierDebianComplicated=$((UnixVerifierDebian + UnixVerifierantiX + UnixVerifierKnoppix + UnixVerifierMXLinux))
 		case "$UnixVerifierDebianComplicated" in
 			2)
                 echo "I'm Debian, hola Papacito & Mamacita !" ############## tested by coder Debian 10.1.0 ###############
@@ -447,7 +445,6 @@ esac
 
 ######## Done, installed. ############################################
 
-################# creating /usr/bin/EarthPlanet/GoHome ###########################
 
 
 ################# done ########################################
