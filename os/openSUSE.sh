@@ -230,7 +230,7 @@ echo "******"
 
 case "$MyOSSettingValueSquid" in
 	openSUSE)
-		ConfQueryAllopenSUSE=`rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
+		ConfQueryAllopenSUSE=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
 		echo $ConfQueryAllopenSUSE
 		echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
 		echo "Your IP address:"
@@ -281,8 +281,8 @@ case "$MyOSSettingValueSquid" in
 		echo "always_direct deny all" >> /etc/squid/squid.conf
 		echo "acl apache rep_header Server ^Apache" >> /etc/squid/squid.conf
 		echo "forwarded_for off" >> /etc/squid/squid.conf
-		echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
-		echo "access_log /usr/local/squid/var/logs/access.log" >> /etc/squid/squid.conf
+		echo "pid_filename /var/run/squid/squid.pid" >> /etc/squid/squid.conf
+		echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 		HostnameopenSUSE=`uname -n`
 		echo "visible_hostname $HostnameopenSUSE" >> /etc/squid/squid.conf
 		echo "Pluto Internet Privacy using IP: "$MyIPLanopenSUSE" Port: "$MyPortAdropenSUSE""  >> /var/log/earth.log
@@ -354,7 +354,7 @@ echo "********"
 
 case "$MyOSSettingValueTor" in
 	openSUSE)
-		openSUSESettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		openSUSESettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $openSUSESettingTor
 
 		#Tor 1

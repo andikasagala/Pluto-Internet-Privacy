@@ -118,7 +118,7 @@ case "$MyOSSettingValueLauncher" in
 		sleep 2
 		FedoraPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
 		sleep 2
-		FedoraTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+		FedoraTorRun="killall tor;/usr/bin/tor -f /etc/tor/torrc;/usr/bin/tor -f /etc/tor/torrc2;/usr/bin/tor -f /etc/tor/torrc3;/usr/bin/tor -f /etc/tor/torrc4;/usr/bin/tor -f /etc/tor/torrc5;/usr/bin/tor -f /etc/tor/torrc6;/usr/bin/tor -f /etc/tor/torrc7;/usr/bin/tor -f /etc/tor/torrc8"
 
 
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -226,7 +226,7 @@ echo "******"
 
 case "$MyOSSettingValueSquid" in
 	Fedora)
-		ConfQueryAllFedora=`rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
+		ConfQueryAllFedora=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
 		echo $ConfQueryAllFedora
 		echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
 		echo "Your IP address:"
@@ -277,8 +277,8 @@ case "$MyOSSettingValueSquid" in
 		echo "always_direct deny all" >> /etc/squid/squid.conf
 		echo "acl apache rep_header Server ^Apache" >> /etc/squid/squid.conf
 		echo "forwarded_for off" >> /etc/squid/squid.conf
-		echo "pid_filename /var/run/squid.pid" >> /etc/squid/squid.conf
-		echo "access_log /usr/local/squid/var/logs/access.log" >> /etc/squid/squid.conf
+		echo "pid_filename /var/run/squid/squid.pid" >> /etc/squid/squid.conf
+		echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
 		HostnameFedora=`uname -n`
 		echo "visible_hostname $HostnameFedora" >> /etc/squid/squid.conf
 		echo "Pluto Internet Privacy using IP: "$MyIPLanFedora" Port: "$MyPortAdrFedora""  >> /var/log/earth.log
@@ -349,7 +349,7 @@ echo "********"
 
 case "$MyOSSettingValueTor" in
 	Fedora)
-		FedoraSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		FedoraSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $FedoraSettingTor
 
 		#Tor 1
@@ -431,7 +431,7 @@ case "$MyOSSettingValueShutdown" in
 	Fedora)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "/usr/sbin/poweroff;/usr/sbin/shutdown 1;/usr/sbin/poweroff -f;/usr/sbin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 

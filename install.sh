@@ -240,7 +240,8 @@ case "$MyOsValueGlobal" in
 		UnixVerifieropenSUSE=`cat /etc/os-release| grep openSUSE -c`
 		UnixVerifierantiX=`cat /etc/antix-version |grep antiX -c`
 
-		case "$UnixVerifierUbuntu" in
+		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
+		case "$UnixVerifierUbuntuComplicated" in
 			2)
 				echo "I'm Ubuntu, hola Papacito & Mamacita !" ########## tested by coder Ubuntu 19.04 ################
 				sh $TheInstPath/os/Ubuntu.sh

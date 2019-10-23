@@ -182,7 +182,7 @@ echo "******"
 
 case "$MyOSSettingValueSquid" in
 	Solus)
-		ConfQueryAllSolus=`touch /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/cache.log;rm -rf /usr/local/squid/etc/squid.conf;touch /usr/local/squid/etc/squid.conf;chmod 755 /usr/local/squid/etc/squid.conf;service squid stop;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
+		ConfQueryAllSolus=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;touch /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/cache.log;rm -rf /usr/local/squid/etc/squid.conf;touch /usr/local/squid/etc/squid.conf;chmod 755 /usr/local/squid/etc/squid.conf;service squid stop;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
 		echo $ConfQueryAllSolus
 		echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
 		echo "Your IP address:"
@@ -234,7 +234,7 @@ case "$MyOSSettingValueSquid" in
 		echo "acl apache rep_header Server ^Apache" >> /usr/local/squid/etc/squid.conf
 		echo "forwarded_for off" >> /usr/local/squid/etc/squid.conf
 		echo "pid_filename /var/run/squid.pid" >> /usr/local/squid/etc/squid.conf
-		echo "access_log /usr/local/squid/var/logs/access.log" >> /usr/local/squid/etc/squid.conf
+		echo "access_log /var/log/squid/access.log" >> /usr/local/squid/etc/squid.conf
 
 		echo "Pluto Internet Privacy using IP: "$MyIPLanSolus" Port: "$MyPortAdrSolus""  >> /var/log/earth.log
 		echo "Pluto Internet Privacy using IP: "$MyIPLanSolus" Port: "$MyPortAdrSolus""  >> /var/log/ipport.txt
@@ -312,7 +312,7 @@ case "$MyOSSettingValueTor" in
 
 	################# setting tor Solus #############################
 	Solus)
-		SolusSettingTor=`mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		SolusSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $SolusSettingTor
 
 		#Tor 1
