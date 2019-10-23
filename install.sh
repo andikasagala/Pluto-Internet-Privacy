@@ -260,13 +260,13 @@ case "$MyOsValueGlobal" in
 		
 		case "$UnixVerifierDebian" in
 			2)
-				if [[ $UnixVerifierDebian == 2  &&  $UnixVerifierantiX == 1 ]]
+				if [[ $UnixVerifierDebian = 2  &&  $UnixVerifierantiX = 1 ]]
 				then
 				echo "It is no problem."
-				elif [[ $UnixVerifierDebian == 2  &&  $UnixVerifierKnoppix == 1 ]]
+				elif [[ $UnixVerifierDebian = 2  &&  $UnixVerifierKnoppix = 1 ]]
 				then
 				echo "It is no problem."
-                elif [[ $UnixVerifierDebian == 2 ]]
+                elif [[ $UnixVerifierDebian = 2 && $UnixVerifierantiX != 1 && $UnixVerifierKnoppix != 1 ]]
                 then
                 echo "I'm Debian, hola Papacito & Mamacita !" ############## tested by coder Debian 10.1.0 ###############
                 sh $TheInstPath/os/DebianCommon.sh
