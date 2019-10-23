@@ -55,7 +55,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br>
 
 <h3>Requirements:</h3>
-- minimum 2 Gb proc <br>
+- minimum 2 Gb Proc <br>
 - minimum 2 Gb RAM<br>
 - Unix OS <br><br><br>
 
