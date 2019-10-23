@@ -73,6 +73,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br><br><br>
 
 <h3>Next Features:</h3><br>
+- IPV6 <br>
 - Strict Privacy and no logs stored in Private Server. Connection speed 1Gbps, location in Germany.<br>
 - Option for Double strict network security. More slow network speed, but more stable and strict security and privacy. <br>
 - CDN Technology ( Content Delivery Network/Using nearest server/more high speed server with your own network/lowest ping) in Private Server.<br>
