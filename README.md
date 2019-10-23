@@ -20,7 +20,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Disk: NVMe<br>
 - Server Location: Germany<br>
 - No logs stored in server. Your logs will be stored in your own machine<br>
-- Will be upgraded into higher server specs and server location soon<br>
+- Will be upgraded into higher server specs and more server locations soon<br>
  <br><br><br>
 
 <h3>Purposes:</h3><br>
