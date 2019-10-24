@@ -7,9 +7,9 @@ TorCommand=`which tor`
 SysctlCommand=`which sysctl`
 PoweroffCommand=`which poweroff`
 ShutdownCommand=`which shutdown`
-
-
-
+UpdatedbCommand=`which updatedb`
+UpdatedbCommand2=`echo $UpdatedbCommand`
+$UpdatedbCommand2
 
 	echo "---== Pluto Internet Privacy ==---"
 	echo "Server options:"

@@ -7,7 +7,7 @@ TorCommand=`which tor`
 SysctlCommand=`which sysctl`
 PoweroffCommand=`which poweroff`
 ShutdownCommand=`which shutdown`
-
+UpdatedbCommand=`which updatedb`
 
 
 ####
@@ -51,6 +51,8 @@ MyOSSettingValueOpenvpn="ManjaroLinux"
 	echo "$Varcmd8All"
 	echo "$Varcmd9All"
 	echo "$Varcmd10All"
+UpdatedbCommand2=`echo $UpdatedbCommand`
+$UpdatedbCommand2
 
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 

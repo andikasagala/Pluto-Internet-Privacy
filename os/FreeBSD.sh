@@ -4,7 +4,7 @@ TheInstPath=`pwd`
 
 PoweroffCommand=`which poweroff`
 ShutdownCommand=`which shutdown`
-
+UpdatedbCommand=`which updatedb`
 
 DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetFreeBSD in
@@ -115,7 +115,8 @@ MyOSSettingValueOpenvpn="FreeBSD"
 	echo "$Varcmd8All"
 	echo "$Varcmd9All"
 	echo "$Varcmd10All"
-
+UpdatedbCommand2=`echo $UpdatedbCommand`
+$UpdatedbCommand2
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 
 ############################ install requirement end ##################################

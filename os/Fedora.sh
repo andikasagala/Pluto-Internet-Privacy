@@ -6,7 +6,7 @@ TorCommand=`which tor`
 SysctlCommand=`which sysctl`
 PoweroffCommand=`which poweroff`
 ShutdownCommand=`which shutdown`
-
+UpdatedbCommand=`which updatedb`
 
 DetectEarthPlanetFedora=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetFedora in
@@ -113,7 +113,8 @@ MyOSSettingValueOpenvpn="Fedora"
 	echo "$Varcmd8All"
 	echo "$Varcmd9All"
 	echo "$Varcmd10All"
-
+UpdatedbCommand2=`echo $UpdatedbCommand`
+$UpdatedbCommand2
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 ##################################################################
 sleep 0.1
