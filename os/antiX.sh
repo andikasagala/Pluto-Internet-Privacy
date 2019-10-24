@@ -174,7 +174,7 @@ DebianCommon)
 		echo "killall squid;\$SquidCommand -k parse;\$SquidCommand -f /etc/squid/squid.conf" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto

@@ -6,15 +6,11 @@ PreTorCommand=`which tor`
 PreSysctlCommand=`which sysctl`
 PrePoweroffCommand=`which poweroff`
 PreShutdownCommand=`which shutdown`
-SquidCommand=`echo $PreSquidCommand`
-PrivoxyCommand=`echo $PrePrivoxyCommand`
-TorCommand=`echo $PreTorCommand`
 SysctlCommand=`echo $PreSysctlCommand`
 PoweroffCommand=`echo $PrePoweroffCommand`
 ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
-
-
+MyType=`which sh`
 
 DetectEarthPlanetParrotOS=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetParrotOS in
@@ -154,12 +150,12 @@ case "$MyOSSettingValueLauncher" in
 
 	################# main menu Parrot OS ###################################
 	ParrotOS)
-		ParrotOSSquidRun="killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf"
-		sleep 2
-		ParrotOSPrivoxyRun="killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8"
-		sleep 2
-		ParrotOSTorRun="killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8"
 
+		MyPathType=`echo "#!"$MyType`
+		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
+		echo "SquidCommand=\`which squid\`"  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "PrivoxyCommand=\`which privoxy\`"  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "TorCommand=\`which tor\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -178,12 +174,12 @@ case "$MyOSSettingValueLauncher" in
 		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$ParrotOSTorRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$ParrotOSPrivoxyRun" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "$ParrotOSSquidRun" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "killall tor;\$TorCommand -f /etc/tor/torrc;\$TorCommand -f /etc/tor/torrc2;\$TorCommand -f /etc/tor/torrc3;\$TorCommand -f /etc/tor/torrc4;\$TorCommand -f /etc/tor/torrc5;\$TorCommand -f /etc/tor/torrc6;\$TorCommand -f /etc/tor/torrc7;\$TorCommand -f /etc/tor/torrc8" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "killall privoxy;\$PrivoxyCommand /etc/privoxy/config;\$PrivoxyCommand /etc/privoxy/config2;\$PrivoxyCommand /etc/privoxy/config3;\$PrivoxyCommand /etc/privoxy/config4;\$PrivoxyCommand /etc/privoxy/config5;\$PrivoxyCommand /etc/privoxy/config6;\$PrivoxyCommand /etc/privoxy/config7;\$PrivoxyCommand /etc/privoxy/config8" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "killall squid;\$SquidCommand -k parse;\$SquidCommand -f /etc/squid/squid.conf" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo "$VarIPPortLogQuery""  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
