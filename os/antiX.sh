@@ -6,14 +6,11 @@ PreTorCommand=`which tor`
 PreSysctlCommand=`which sysctl`
 PrePoweroffCommand=`which poweroff`
 PreShutdownCommand=`which shutdown`
-SquidCommand=`echo $PreSquidCommand`
-PrivoxyCommand=`echo $PrePrivoxyCommand`
-TorCommand=`echo $PreTorCommand`
 SysctlCommand=`echo $PreSysctlCommand`
 PoweroffCommand=`echo $PrePoweroffCommand`
 ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
-
+MyType=`which sh`
 
 DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
 case "$DetectEarthPlanetDebianCommon" in
@@ -147,13 +144,17 @@ echo "**"
 
 case "$MyOSSettingValueLauncher" in
 DebianCommon)
-		DebianCommonSquidRun="killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf"
+		DebianCommonSquidRun="killall squid;\$SquidCommand -k parse;\$SquidCommand -f /etc/squid/squid.conf"
 		sleep 2
-		DebianCommonPrivoxyRun="killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8"
+		DebianCommonPrivoxyRun="killall privoxy;\$PrivoxyCommand /etc/privoxy/config;\$PrivoxyCommand /etc/privoxy/config2;\$PrivoxyCommand /etc/privoxy/config3;\$PrivoxyCommand /etc/privoxy/config4;\$PrivoxyCommand /etc/privoxy/config5;\$PrivoxyCommand /etc/privoxy/config6;\$PrivoxyCommand /etc/privoxy/config7;\$PrivoxyCommand /etc/privoxy/config8"
 		sleep 2
-		DebianCommonTorRun="killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8"
+		DebianCommonTorRun="killall tor;\$TorCommand -f /etc/tor/torrc;\$TorCommand -f /etc/tor/torrc2;\$TorCommand -f /etc/tor/torrc3;\$TorCommand -f /etc/tor/torrc4;\$TorCommand -f /etc/tor/torrc5;\$TorCommand -f /etc/tor/torrc6;\$TorCommand -f /etc/tor/torrc7;\$TorCommand -f /etc/tor/torrc8"
 
-
+		MyPathType=`echo "#!"$MyType`
+		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
+		echo "SquidCommand=\`echo $PreSquidCommand\`"  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "PrivoxyCommand=\`echo $PrePrivoxyCommand\`"  >> /usr/bin/EarthPlanet/GoToPluto
+		echo "TorCommand=\`echo $PreTorCommand\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
