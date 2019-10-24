@@ -1,13 +1,20 @@
 #!/bin/sh
 
 
-SquidCommand=`which squid`
-PrivoxyCommand=`which privoxy`
-TorCommand=`which tor`
-SysctlCommand=`which sysctl`
-PoweroffCommand=`which poweroff`
-ShutdownCommand=`which shutdown`
+PreSquidCommand=`which squid`
+PrePrivoxyCommand=`which privoxy`
+PreTorCommand=`which tor`
+PreSysctlCommand=`which sysctl`
+PrePoweroffCommand=`which poweroff`
+PreShutdownCommand=`which shutdown`
+SquidCommand=`echo $PreSquidCommand`
+PrivoxyCommand=`echo $PrePrivoxyCommand`
+TorCommand=`echo $PreTorCommand`
+SysctlCommand=`echo $PreSysctlCommand`
+PoweroffCommand=`echo $PrePoweroffCommand`
+ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
+
 
 DetectEarthPlanetopenSUSE=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetopenSUSE in
