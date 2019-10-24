@@ -453,6 +453,23 @@ case "$MyOsValueGlobal" in
 		##################### end of Deepin ##########################
 
 
+		################## Deepin Verifier #############################
+		
+		case "$UnixVerifierKDENeon" in
+			6)
+				echo "I'm KDE Neon, hola Papacito & Mamacita !" ############## tested by coder KDE neon User Edition 5.16 ###############
+				sh $TheInstPath/os/KDENeon.sh
+			;;
+
+			*)
+				echo "It is no problem."
+			;;
+
+		esac
+		##################### end of Deepin ##########################
+
+
+
 
 	;;
 
