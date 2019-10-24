@@ -1,6 +1,13 @@
 #!/bin/sh
 
 
+SquidCommand=`which squid`
+PrivoxyCommand=`which privoxy`
+TorCommand=`which tor`
+SysctlCommand=`which sysctl`
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
+
 DetectEarthPlanetopenSUSE=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetopenSUSE in
 	1)
@@ -15,7 +22,7 @@ case $DetectEarthPlanetopenSUSE in
 				echo "Processing..."
 				RestoreResolvConfLinux=`cat /etc/resolv.conf.bak > /etc/resolv.conf;rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
 				echo $RestoreResolvConfLinux
-				Set4Linux=`/usr/sbin/sysctl -w net.ipv4.ip_forward=0; /usr/sbin/sysctl -p`
+				Set4Linux=`$SysctlCommand -w net.ipv4.ip_forward=0; $SysctlCommand -p`
 				RemEarthPlanetStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
 				VarLinuxCmdULinux=`zypper --non-interactive rm tor squid privoxy openvpn`
 				RMTorULinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
@@ -117,11 +124,11 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 	openSUSE)
-		openSUSESquidRun="killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
+		openSUSESquidRun="killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf"
 		sleep 2
-		openSUSEPrivoxyRun="killall privoxy;/usr/sbin/privoxy /var/lib/privoxy/etc/config;/usr/sbin/privoxy /var/lib/privoxy/etc/config2;/usr/sbin/privoxy /var/lib/privoxy/etc/config3;/usr/sbin/privoxy /var/lib/privoxy/etc/config4;/usr/sbin/privoxy /var/lib/privoxy/etc/config5;/usr/sbin/privoxy /var/lib/privoxy/etc/config6;/usr/sbin/privoxy /var/lib/privoxy/etc/config7;/usr/sbin/privoxy /var/lib/privoxy/etc/config8"
+		openSUSEPrivoxyRun="killall privoxy;$PrivoxyCommand /var/lib/privoxy/etc/config;$PrivoxyCommand /var/lib/privoxy/etc/config2;$PrivoxyCommand /var/lib/privoxy/etc/config3;$PrivoxyCommand /var/lib/privoxy/etc/config4;$PrivoxyCommand /var/lib/privoxy/etc/config5;$PrivoxyCommand /var/lib/privoxy/etc/config6;$PrivoxyCommand /var/lib/privoxy/etc/config7;$PrivoxyCommand /var/lib/privoxy/etc/config8"
 		sleep 2
-		openSUSETorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+		openSUSETorRun="killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8"
 
 
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -194,7 +201,7 @@ echo "****"
 
 case "$MyOSSettingValueMachine" in
 	openSUSE)
-		openSUSEIPForwardSetting=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+		openSUSEIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $openSUSEIPForwardSetting
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
 		echo "`date`" - Setting machine done." " >> /var/log/earth.log
@@ -437,7 +444,7 @@ case "$MyOSSettingValueShutdown" in
 	openSUSE)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "poweroff;shutdown 1;poweroff -f;shutdown now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 
