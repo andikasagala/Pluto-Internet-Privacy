@@ -17,7 +17,7 @@ MyType=`which sh`
 ######
 
 
-MXLinuxInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
+MXLinuxInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate -y`
 echo $MXLinuxInstallSoftwares
 MyOSSettingValueLauncher="DebianCommon"
 MyOSSettingValueMachine="DebianCommon"

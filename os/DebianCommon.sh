@@ -94,7 +94,7 @@ sleep 0.1
 echo "**"
 ################################################################
 
-InstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid psmisc -y`
+InstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid psmisc mlocate -y`
 echo $InstallSoftwares
 MyOSSettingValueLauncher="DebianCommon"
 MyOSSettingValueMachine="DebianCommon"

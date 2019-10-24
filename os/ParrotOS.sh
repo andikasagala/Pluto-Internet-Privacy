@@ -101,7 +101,7 @@ echo "deb-src http://mirror.math.princeton.edu/pub/debian/ buster-updates main c
 echo "#This apt source touched by Cowboy of Unix source. Leave it alone!" >> /etc/apt/sources.list.d/parrot.list
 echo "Your Source has changed and saved in /etc/apt/sources.list.d/parrot.list.bak"
 echo $ParrotOSSetSource
-ParrotOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
+ParrotOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate -y`
 echo $ParrotOSInstallSoftwares
 ParrotOSFixingSource=`rm -rf /etc/apt/sources.list.d/parrot.list; touch /etc/apt/sources.list.d/parrot.list; cat /etc/apt/sources.list.d/parrot.list.bak > /etc/apt/sources.list.d/parrot.list`
 echo $ParrotOSFixingSource

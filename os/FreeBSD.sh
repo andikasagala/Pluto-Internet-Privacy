@@ -95,7 +95,7 @@ esac
 
 
 ###################################### install requirement #########################
-FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y; pkg install psmisc -y`
+FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y; pkg install psmisc mlocate -y`
 echo $FreeBSDInstallPkgs
 MyOSSettingValueLauncher="FreeBSD"
 MyOSSettingValueMachine="FreeBSD"
@@ -116,18 +116,17 @@ MyOSSettingValueOpenvpn="FreeBSD"
 	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
 	Varcmd9All=`mkdir /etc/privoxy`
 	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo "$Varcmd1All"
-	echo "$Varcmd2All"
-	echo "$Varcmd3All"
-	echo "$Varcmd4All"
-	echo "$Varcmd5All"
-	echo "$Varcmd6All"
-	echo "$Varcmd7All"
-	echo "$Varcmd8All"
-	echo "$Varcmd9All"
-	echo "$Varcmd10All"
-UpdatedbCommand2=`echo $UpdatedbCommand`
-$UpdatedbCommand2
+	echo $Varcmd1All
+	echo $Varcmd2All
+	echo $Varcmd3All
+	echo $Varcmd4All
+	echo $Varcmd5All
+	echo $Varcmd6All
+	echo $Varcmd7All
+	echo $Varcmd8All
+	echo $Varcmd9All
+	echo $Varcmd10All
+/usr/libexec/locate.updatedb
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 
 ############################ install requirement end ##################################

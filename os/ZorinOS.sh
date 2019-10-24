@@ -18,7 +18,7 @@ MyType=`which sh`
 ######
 
         	
-ZorinOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc -y`
+ZorinOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate -y`
 echo $ZorinOSInstallSoftwares
 MyOSSettingValueLauncher="DebianCommon"
 MyOSSettingValueMachine="DebianCommon"

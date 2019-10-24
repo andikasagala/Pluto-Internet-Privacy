@@ -23,7 +23,7 @@ echo "**"
 ###########################################################
 
 
-ManjaroLinuxInstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor psmisc --noconfirm`
+ManjaroLinuxInstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor psmisc mlocate --noconfirm`
 echo $ManjaroLinuxInstallSoftwares
 MyOSSettingValueLauncher="ManjaroLinux"
 MyOSSettingValueMachine="ManjaroLinux"

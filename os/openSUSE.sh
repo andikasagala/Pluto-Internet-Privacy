@@ -88,7 +88,7 @@ sleep 0.1
 echo "**"
 ################################################################
 
-openSUSEInstallSoftwares=`zypper update;zypper --non-interactive in tor squid privoxy openvpn psmisc`
+openSUSEInstallSoftwares=`zypper update;zypper --non-interactive in tor squid privoxy openvpn psmisc mlocate`
 echo $openSUSEInstallSoftwares
 MyOSSettingValueLauncher="openSUSE"
 MyOSSettingValueMachine="openSUSE"

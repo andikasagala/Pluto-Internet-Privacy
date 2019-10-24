@@ -87,7 +87,7 @@ sleep 0.1
 echo "**"
 ################################################################
 
-FedoraInstallSoftwares=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn psmisc -y`
+FedoraInstallSoftwares=`dnf update -y; dnf upgrade -y; dnf install tor privoxy squid openvpn psmisc mlocate -y`
 echo $FedoraInstallSoftwares
 MyOSSettingValueLauncher="Fedora"
 MyOSSettingValueMachine="Fedora"

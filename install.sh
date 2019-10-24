@@ -239,6 +239,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierFedora=`cat /etc/fedora-release| grep Fedora -c`
 		UnixVerifieropenSUSE=`cat /etc/os-release| grep openSUSE -c`
 		UnixVerifierantiX=`cat /etc/antix-version |grep antiX -c`
+		UnixVerifierDeepin=`cat /etc/os-release |grep Deepin -c`
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
 		case "$UnixVerifierUbuntuComplicated" in
@@ -435,6 +436,22 @@ case "$MyOsValueGlobal" in
 
 		esac
 		##################### end of antiX ##########################
+
+		################## Deepin Verifier #############################
+		
+		case "$UnixVerifierDeepin" in
+			2)
+				echo "I'm Deepin, hola Papacito & Mamacita !" ############## tested by coder Deepin 15.11 ###############
+				sh $TheInstPath/os/Deepin.sh
+			;;
+
+			*)
+				echo "It is no problem."
+			;;
+
+		esac
+		##################### end of Deepin ##########################
+
 
 
 	;;

@@ -23,7 +23,7 @@ echo "**"
 SolusCreateSoftwareFolder=`cd /usr/src;mkdir /usr/src/data;cd /usr/src/data`
 echo $SolusCreateSoftwareFolder
 SolusInstallSquid=`wget -O /usr/src/data/squid-4.8.tar.gz http://www.squid-cache.org/Versions/v4/squid-4.8.tar.gz;cd /usr/src/data; tar -zxvf squid-4.8.tar.gz; cd squid-4.8; eopkg install gcc -y;eopkg install psmisc; eopkg install  automake -y;eopkg install  cmake -y;eopkg it -c system.devel -y;eopkg it solbuild -y;solbuild init; cd /usr/src/data/squid-4.8; ./configure; make; make install`
-SolusInstallSoftwares1=`eopkg update -y;eopkg install privoxy -y;eopkg install openvpn;eopkg install tor -y;eopkg install lz4 lz4-devel dialog -y`
+SolusInstallSoftwares1=`eopkg update -y;eopkg install privoxy -y;eopkg install openvpn;eopkg install tor -y;eopkg install lz4 lz4-devel dialog mlocate -y`
 SolusFixingSquid=`cd /usr/src/data;mkdir PIP;cd PIP;touch /usr/local/squid/var/logs/cache.log;touch /usr/local/squid/var/logs/access.log;chmod 777 /usr/local/squid/var/logs/cache.log;chmod 777 /usr/local/squid/var/logs/access.log`
 SolusInstallSoftwares2=`eopkg install libevent-devel -y; eopkg install openssl-devel -y; eopkg install zlib; eopkg install zlib-devel;wget -O /usr/src/data/tor-0.4.1.6.tar.gz https://dist.torproject.org/tor-0.4.1.6.tar.gz;cd /usr/src/data; tar -zxvf tor-0.4.1.6.tar.gz; cd /usr/src/data/tor-0.4.1.6; ./configure; make; make install`
 echo $SolusInstallSoftwares1

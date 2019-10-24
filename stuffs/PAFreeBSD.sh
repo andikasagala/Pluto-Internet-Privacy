@@ -9,7 +9,7 @@ PoweroffCommand=`which poweroff`
 ShutdownCommand=`which shutdown`
 UpdatedbCommand=`which updatedb`
 UpdatedbCommand2=`echo $UpdatedbCommand`
-$UpdatedbCommand2
+/usr/libexec/locate.updatedb
 
 	echo "---== Pluto Internet Privacy ==---"
 	echo "Server options:"
