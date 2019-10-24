@@ -1,6 +1,12 @@
 #!/bin/sh
 
 
+SquidCommand=`which squid`
+PrivoxyCommand=`which privoxy`
+TorCommand=`which tor`
+SysctlCommand=`which sysctl`
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
 
 
 
@@ -21,9 +27,9 @@
 			read PublicAccessMode
 			case "$PublicAccessMode" in
 				a)
-				FreeBSDSquidRun=`killall squid;/usr/local/sbin/squid -k parse;/usr/local/sbin/squid -f /usr/local/etc/squid/squid.conf`
-				FreeBSDPrivoxyRun=`killall privoxy;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config2;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config3;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config4;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config5;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config6;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config7;/usr/local/sbin/privoxy /usr/local/etc/privoxy/config8`
-				FreeBSDTorRun=`killall tor;/usr/local/bin/tor -f /etc/tor/torrc;/usr/local/bin/tor -f /etc/tor/torrc2;/usr/local/bin/tor -f /etc/tor/torrc3;/usr/local/bin/tor -f /etc/tor/torrc4;/usr/local/bin/tor -f /etc/tor/torrc5;/usr/local/bin/tor -f /etc/tor/torrc6;/usr/local/bin/tor -f /etc/tor/torrc7;/usr/local/bin/tor -f /etc/tor/torrc8`
+				FreeBSDSquidRun=`killall squid;$SquidCommand -k parse;$SquidCommand -f /usr/local/etc/squid/squid.conf`
+				FreeBSDPrivoxyRun=`killall privoxy;$PrivoxyCommand /usr/local/etc/privoxy/config;$PrivoxyCommand /usr/local/etc/privoxy/config2;$PrivoxyCommand /usr/local/etc/privoxy/config3;$PrivoxyCommand /usr/local/etc/privoxy/config4;$PrivoxyCommand /usr/local/etc/privoxy/config5;$PrivoxyCommand /usr/local/etc/privoxy/config6;$PrivoxyCommand /usr/local/etc/privoxy/config7;$PrivoxyCommand /usr/local/etc/privoxy/config8`
+				FreeBSDTorRun=`killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8`
 				VarIPPortLogQuery=`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt`
 				echo $FreeBSDTorRun
 				echo $FreeBSDPrivoxyRun

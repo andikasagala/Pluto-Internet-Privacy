@@ -2,6 +2,10 @@
 
 TheInstPath=`pwd`
 
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
+
+
 DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetFreeBSD in
 	EarthPlanet)
@@ -370,7 +374,7 @@ echo "*********"
 case "$MyOSSettingValueShutdown" in
 	FreeBSD)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
-		echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now; /sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now; /sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 

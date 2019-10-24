@@ -1,5 +1,13 @@
 #!/bin/sh
 
+SquidCommand=`which squid`
+PrivoxyCommand=`which privoxy`
+TorCommand=`which tor`
+SysctlCommand=`which sysctl`
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
+
+
 
 ####
 #software existence checker here later
@@ -58,11 +66,11 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 	Solus)
-		SolusSquidRun="killall squid;/usr/local/squid/sbin/squid -k parse;/usr/local/squid/sbin/squid stop; /usr/local/squid/sbin/squid -f /usr/local/squid/etc/squid.conf"
+		SolusSquidRun="killall squid;$SquidCommand -k parse;$SquidCommand stop; $SquidCommand -f /usr/local/squid/etc/squid.conf"
 		sleep 2
-		SolusPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+		SolusPrivoxyRun="killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8"
 		sleep 2
-		SolusTorRun="killall tor;/usr/bin/tor -f /usr/local/etc/tor/torrc;/usr/bin/tor -f /usr/local/etc/tor/torrc2;/usr/bin/tor -f /usr/local/etc/tor/torrc3;/usr/bin/tor -f /usr/local/etc/tor/torrc4;/usr/bin/tor -f /usr/local/etc/tor/torrc5;/usr/bin/tor -f /usr/local/etc/tor/torrc6;/usr/bin/tor -f /usr/local/etc/tor/torrc7;/usr/bin/tor -f /usr/local/etc/tor/torrc8"
+		SolusTorRun="killall tor;$TorCommand -f /usr/local/etc/tor/torrc;$TorCommand -f /usr/local/etc/tor/torrc2;$TorCommand -f /usr/local/etc/tor/torrc3;$TorCommand -f /usr/local/etc/tor/torrc4;$TorCommand -f /usr/local/etc/tor/torrc5;$TorCommand -f /usr/local/etc/tor/torrc6;$TorCommand -f /usr/local/etc/tor/torrc7;$TorCommand -f /usr/local/etc/tor/torrc8"
 
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -141,7 +149,7 @@ case "$MyOSSettingValueMachine" in
 
 	########### setting sysctl Debian ###########################
 	DebianCommon)
-		DebianCommonIPForwardSetting=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+		DebianCommonIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $DebianCommonIPForwardSetting
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
 		echo "`date`" - Setting machine done." " >> /var/log/earth.log
@@ -396,7 +404,7 @@ case "$MyOSSettingValueShutdown" in
 	Knoppix)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "/sbin/poweroff;/sbin/shutdown 1;/sbin/poweroff -f;/sbin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 

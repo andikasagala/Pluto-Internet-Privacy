@@ -1,5 +1,15 @@
 #!/bin/sh
 
+
+SquidCommand=`which squid`
+PrivoxyCommand=`which privoxy`
+TorCommand=`which tor`
+SysctlCommand=`which sysctl`
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
+
+
+
 ####
 ## uninstall statement here
 ######
@@ -54,11 +64,11 @@ case "$MyOSSettingValueLauncher" in
 
 	################# main menu Manjaro Linux ###########################
 	ManjaroLinux)
-		ManjaroLinuxSquidRun="killall squid;squid -k parse;squid -f /etc/squid/squid.conf"
+		ManjaroLinuxSquidRun="killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf"
 		sleep 2
-		ManjaroLinuxPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+		ManjaroLinuxPrivoxyRun="killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8"
 		sleep 2
-		ManjaroLinuxTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+		ManjaroLinuxTorRun="killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8"
 
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -135,7 +145,7 @@ echo "****"
 	############### setting sysctl Manjaro Linux #######################
 case "$MyOSSettingValueMachine" in	
 	ManjaroLinux)
-		ManjaroLinuxIPForwardSetting=`/usr/bin/sysctl -a > /etc/sysctl.conf;/usr/bin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+		ManjaroLinuxIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $ManjaroLinuxIPForwardSetting
 		echo "Your sysctl file sysctl was changed and saved in /etc/sysctl.conf.bak"
 	;;
@@ -374,7 +384,7 @@ case "$MyOSSettingValueShutdown" in
 	ManjaroLinux)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "/usr/bin/poweroff;/usr/bin/shutdown 1;/usr/bin/poweroff -f;/usr/bin/shutdown now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 

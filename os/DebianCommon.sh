@@ -1,5 +1,15 @@
 #!/bin/sh
 
+SquidCommand=`which squid`
+PrivoxyCommand=`which privoxy`
+TorCommand=`which tor`
+SysctlCommand=`which sysctl`
+PoweroffCommand=`which poweroff`
+ShutdownCommand=`which shutdown`
+
+
+
+
 DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
 case "$DetectEarthPlanetDebianCommon" in
 	1)
@@ -14,7 +24,7 @@ case "$DetectEarthPlanetDebianCommon" in
 				echo "Processing..."
 				RestoreResolvConfLinux=`rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
 				echo $RestoreResolvConfLinux
-				Set4Linux=`/sbin/sysctl -w net.ipv4.ip_forward=0; /sbin/sysctl -p`
+				Set4Linux=`$SysctlCommand -w net.ipv4.ip_forward=0; $SysctlCommand -p`
 				RemEarthPlanetStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
 				VarLinuxCmdULinux=`apt-get autoremove squid -y;apt-get autoremove privoxy -y;apt-get autoremove tor -y;apt-get autoremove openvpn -y`
 				RMTorULinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
@@ -122,11 +132,11 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 DebianCommon)
-		DebianCommonSquidRun="/usr/sbin/service squid stop;killall squid;/usr/sbin/squid -k parse;/usr/sbin/squid -f /etc/squid/squid.conf"
+		DebianCommonSquidRun="/usr/sbin/service squid stop;killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf"
 		sleep 2
-		DebianCommonPrivoxyRun="killall privoxy;/usr/sbin/privoxy /etc/privoxy/config;/usr/sbin/privoxy /etc/privoxy/config2;/usr/sbin/privoxy /etc/privoxy/config3;/usr/sbin/privoxy /etc/privoxy/config4;/usr/sbin/privoxy /etc/privoxy/config5;/usr/sbin/privoxy /etc/privoxy/config6;/usr/sbin/privoxy /etc/privoxy/config7;/usr/sbin/privoxy /etc/privoxy/config8"
+		DebianCommonPrivoxyRun="killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8"
 		sleep 2
-		DebianCommonTorRun="killall tor;/usr/sbin/tor -f /etc/tor/torrc;/usr/sbin/tor -f /etc/tor/torrc2;/usr/sbin/tor -f /etc/tor/torrc3;/usr/sbin/tor -f /etc/tor/torrc4;/usr/sbin/tor -f /etc/tor/torrc5;/usr/sbin/tor -f /etc/tor/torrc6;/usr/sbin/tor -f /etc/tor/torrc7;/usr/sbin/tor -f /etc/tor/torrc8"
+		DebianCommonTorRun="killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8"
 
 
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -202,7 +212,7 @@ case "$MyOSSettingValueMachine" in
 
 	########### setting sysctl Debian ###########################
 	DebianCommon)
-		DebianCommonIPForwardSetting=`/sbin/sysctl -a > /etc/sysctl.conf.bak;/sbin/sysctl -w net.ipv4.ip_forward=1; /sbin/sysctl -p`
+		DebianCommonIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $DebianCommonIPForwardSetting
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
 		echo "`date`" - Setting machine done." " >> /var/log/earth.log
@@ -456,7 +466,7 @@ case "$MyOSSettingValueShutdown" in
 	DebianCommon)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "/usr/sbin/poweroff;/usr/sbin/shutdown 1;/usr/sbin/poweroff -f;/usr/sbin/shutdown now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 esac

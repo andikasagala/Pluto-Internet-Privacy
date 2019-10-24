@@ -226,7 +226,7 @@ case "$MyOsValueGlobal" in
 	############################# Linux Verifier ########################
 		################### Ubuntu Verifier ############################
 	2)
-		UnixVerifierUbuntu=`cat /etc/os-release |grep Ubuntu -c` #recheck
+		UnixVerifierUbuntu=`cat /etc/os-release |grep Ubuntu -c` 
 		UnixVerifierDebian=`cat /etc/os-release |grep Debian -c`
 		UnixVerifierSolus=`cat /etc/os-release |grep Solus -c`
 		UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep knoppix -c`
@@ -256,7 +256,7 @@ case "$MyOsValueGlobal" in
 
 		################## Debian Verifier #############################
 
-		UnixVerifierDebianComplicated=$((UnixVerifierDebian + UnixVerifierantiX + UnixVerifierKnoppix + UnixVerifierMXLinux))
+		UnixVerifierDebianComplicated=$((UnixVerifierDebian + UnixVerifierantiX + UnixVerifierKnoppix + UnixVerifierMXLinux + UnixVerifierantiX))
 		case "$UnixVerifierDebianComplicated" in
 			2)
                 echo "I'm Debian, hola Papacito & Mamacita !" ############## tested by coder Debian 10.1.0 ###############
