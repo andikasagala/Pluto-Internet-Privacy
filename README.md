@@ -73,6 +73,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Fedora <br>
 - openSUSE <br>
 - antiX <br>
+- Deepin <br>
 - to be continued...... <br>
 
 
