@@ -240,6 +240,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifieropenSUSE=`cat /etc/os-release| grep openSUSE -c`
 		UnixVerifierantiX=`cat /etc/antix-version |grep antiX -c`
 		UnixVerifierDeepin=`cat /etc/os-release |grep Deepin -c`
+		UnixVerifierKDENeon=`cat /etc/os-release |grep neon -c`
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
 		case "$UnixVerifierUbuntuComplicated" in
