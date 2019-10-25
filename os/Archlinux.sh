@@ -13,26 +13,21 @@ UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
 
-#############
-# Uninstaller here later. not yet
-############
-
-
 ##################################################################
 sleep 0.1
 echo "**"
 ################################################################
 
-InstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install privoxy tor openvpn squid psmisc mlocate -y`
+InstallSoftwares=`pacman -Sy;pacman -S openvpn squid privoxy tor psmisc mlocate --noconfirm`
 echo $InstallSoftwares
-MyOSSettingValueLauncher="DebianCommon"
-MyOSSettingValueMachine="DebianCommon"
-MyOSSettingValueHosts="DebianCommon"
-MyOSSettingValueSquid="DebianCommon"
-MyOSSettingValuePrivoxy="DebianCommon"
-MyOSSettingValueTor="DebianCommon"
-MyOSSettingValueShutdown="DebianCommon"
-MyOSSettingValueOpenvpn="DebianCommon"
+MyOSSettingValueLauncher="Archlinux"
+MyOSSettingValueMachine="Archlinux"
+MyOSSettingValueHosts="Archlinux"
+MyOSSettingValueSquid="Archlinux"
+MyOSSettingValuePrivoxy="Archlinux"
+MyOSSettingValueTor="Archlinux"
+MyOSSettingValueShutdown="Archlinux"
+MyOSSettingValueOpenvpn="Archlinux"
 
 	Varcmd1All=`mkdir /etc/EarthPlanet`
 	Varcmd2All=`chmod 755 /etc/EarthPlanet`
@@ -64,7 +59,7 @@ echo "***"
 ###########################################################
 
 case "$MyOSSettingValueLauncher" in
-DebianCommon)
+Archlinux)
 	
 
 		MyPathType=`echo "#!"$MyType`
@@ -144,9 +139,9 @@ case "$MyOSSettingValueMachine" in
 
 
 	########### setting sysctl Debian ###########################
-	DebianCommon)
-		DebianCommonIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
-		echo $DebianCommonIPForwardSetting
+	Archlinux)
+		ArchlinuxIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
+		echo $ArchlinuxIPForwardSetting
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
 		echo "`date`" - Setting machine done." " >> /var/log/earth.log
 	;;
@@ -161,9 +156,9 @@ echo "*****"
 
 case "$MyOSSettingValueHosts" in
 	############ setting hosts Debian ################################
-	DebianCommon)
-		SetHostDebianCommon=`cp /etc/hosts /etc/hosts.bak`
-		echo $SetHostDebianCommon
+	Archlinux)
+		SetHostArchlinux=`cp /etc/hosts /etc/hosts.bak`
+		echo $SetHostArchlinux
 		echo "127.0.0.1       localhost2" >> /etc/hosts
 		echo "127.0.0.1       localhost3" >> /etc/hosts
 		echo "127.0.0.1       localhost4" >> /etc/hosts
@@ -184,17 +179,17 @@ echo "******"
 
 case "$MyOSSettingValueSquid" in
 
-	DebianCommon)
-		ConfQueryAllDebianCommon=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
-		echo $ConfQueryAllDebianCommon
+	Archlinux)
+		ConfQueryAllArchlinux=`touch /var/log/squid/access.log;chmod 777 /var/log/squid/access.log;rm -rf /etc/squid/squid.conf;touch /etc/squid/squid.conf;chmod 755 /etc/squid/squid.conf;service squid stop;killall squid;mkdir /var/log/privoxy2;mkdir /var/log/privoxy3;mkdir /var/log/privoxy4;mkdir /var/log/privoxy5;mkdir /var/log/privoxy6;mkdir /var/log/privoxy7;mkdir /var/log/privoxy8`
+		echo $ConfQueryAllArchlinux
 		echo "Run \"\$ifconfig -a\" or \"\$ip address\" to find out your IP address."
 		echo "Your IP address:"
-		read MyIPLanDebianCommon
+		read MyIPLanArchlinux
 		echo "acl all src all" >> /etc/squid/squid.conf
 		echo "acl manager proto cache_object" >> /etc/squid/squid.conf
 		echo "acl localhost src 127.0.0.1/32" >> /etc/squid/squid.conf
 		echo "acl to_localhost dst 127.0.0.0/8" >> /etc/squid/squid.conf
-		echo "acl LAN src $MyIPLanDebianCommon/24" >> /etc/squid/squid.conf
+		echo "acl LAN src $MyIPLanArchlinux/24" >> /etc/squid/squid.conf
 		echo "acl SSL_ports port 443" >> /etc/squid/squid.conf
 		echo "acl Safe_ports port 80" >> /etc/squid/squid.conf
 		echo "acl Safe_ports port 21" >> /etc/squid/squid.conf
@@ -217,8 +212,8 @@ case "$MyOSSettingValueSquid" in
 		echo "http_access deny all" >> /etc/squid/squid.conf
 		echo "icp_access deny all" >> /etc/squid/squid.conf
 		echo "Your Port:"
-		read MyPortAdrDebianCommon
-		echo "http_port $MyPortAdrDebianCommon" >> /etc/squid/squid.conf
+		read MyPortAdrArchlinux
+		echo "http_port $MyPortAdrArchlinux" >> /etc/squid/squid.conf
 		echo "icp_port 0" >> /etc/squid/squid.conf
 		echo "refresh_pattern ^ftp:           1440    20%     10080" >> /etc/squid/squid.conf
 		echo "refresh_pattern ^gopher:        1440    0%      1440" >> /etc/squid/squid.conf
@@ -238,10 +233,10 @@ case "$MyOSSettingValueSquid" in
 		echo "forwarded_for off" >> /etc/squid/squid.conf
 		echo "pid_filename /var/run/squid/squid.pid" >> /etc/squid/squid.conf
 		echo "access_log /var/log/squid/access.log" >> /etc/squid/squid.conf
-		HostnameDebianCommon=`uname -n`
-		echo "visible_hostname $HostnameDebianCommon" >> /etc/squid/squid.conf
-		echo "Pluto Internet Privacy using IP: "$MyIPLanDebianCommon" Port: "$MyPortAdrDebianCommon""  >> /var/log/earth.log
-		echo "Pluto Internet Privacy using IP: "$MyIPLanDebianCommon" Port: "$MyPortAdrDebianCommon""  >> /var/log/ipport.txt
+		HostnameArchlinux=`uname -n`
+		echo "visible_hostname $HostnameArchlinux" >> /etc/squid/squid.conf
+		echo "Pluto Internet Privacy using IP: "$MyIPLanArchlinux" Port: "$MyPortAdrArchlinux""  >> /var/log/earth.log
+		echo "Pluto Internet Privacy using IP: "$MyIPLanArchlinux" Port: "$MyPortAdrArchlinux""  >> /var/log/ipport.txt
 		echo "`date`" - Setting Squid done." " >> /var/log/earth.log
 	;;
 	######################### setting squid Debian done ####################################
@@ -258,10 +253,10 @@ case "$MyOSSettingValuePrivoxy" in
 
 
 	############# setting privoxy Debian ##################################
-	DebianCommon)
+	Archlinux)
 		#Privoxy 1
-		DebianCommonRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
-		echo $DebianCommonRemovePrivoxyConfig
+		ArchlinuxRemovePrivoxyConfig=`rm -rf /etc/privoxy/config`
+		echo $ArchlinuxRemovePrivoxyConfig
 		echo "listen-address  127.0.0.1:8118" >> /etc/privoxy/config
 		echo "forward-socks4a   /               127.0.0.1:9050 ." >> /etc/privoxy/config
 		echo "confdir /etc/privoxy"  >> /etc/privoxy/config
@@ -314,9 +309,9 @@ echo "********"
 ######################################################################
 
 case "$MyOSSettingValueTor" in
-	DebianCommon)
-		DebianCommonSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
-		echo $DebianCommonSettingTor
+	Archlinux)
+		ArchlinuxSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		echo $ArchlinuxSettingTor
 
 		#Tor 1
 		echo "SocksPort 9050" >> /etc/tor/torrc
@@ -382,8 +377,8 @@ case "$MyOSSettingValueTor" in
 		echo "User root" >> /etc/tor/torrc8
 		echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
 
-		DebianCommonChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
-		echo $DebianCommonChangeTorAccess
+		ArchlinuxChangeTorAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
+		echo $ArchlinuxChangeTorAccess
 		echo "`date`" - Setting Tor done." " >> /var/log/earth.log
 	;;
 	############## setting tor Debian done ############################
@@ -396,7 +391,7 @@ echo "*********"
 #####################################################################
 
 case "$MyOSSettingValueShutdown" in
-	DebianCommon)
+	Archlinux)
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
 		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
@@ -411,9 +406,9 @@ echo "**********"
 ##########################################################
 
 case "$MyOSSettingValueOpenvpn" in
-	DebianCommon)
-		SettingovpnDebianCommon=`mv ovpn /etc/EarthPlanet`
-		echo $SettingovpnDebianCommon
+	Archlinux)
+		SettingovpnArchlinux=`mv ovpn /etc/EarthPlanet`
+		echo $SettingovpnArchlinux
 		echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
 	;;
 esac	

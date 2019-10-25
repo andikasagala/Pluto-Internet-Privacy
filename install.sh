@@ -241,6 +241,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierantiX=`cat /etc/antix-version |grep antiX -c`
 		UnixVerifierDeepin=`cat /etc/os-release |grep Deepin -c`
 		UnixVerifierKDENeon=`cat /etc/os-release |grep neon -c`
+		UnixVerifierArchlinux=`cat /etc/os-release |grep Arch -c` 
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
 		case "$UnixVerifierUbuntuComplicated" in
@@ -467,7 +468,23 @@ case "$MyOsValueGlobal" in
 			;;
 
 		esac
-		##################### end of Deepin ##########################
+		##################### end of KDE neon ##########################
+
+		################## Archlinux Verifier #############################
+		
+		case "$UnixVerifierArchlinux" in
+			2)
+				echo "I'm Arch Linux, hola Papacito & Mamacita !" ############## tested by coder Arch Linux ###############
+				sh $TheInstPath/os/Archlinux.sh
+			;;
+
+			*)
+				echo "It is no problem."
+			;;
+
+		esac
+		##################### end of Archlinux ##########################
+
 
 
 
