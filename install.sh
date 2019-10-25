@@ -242,6 +242,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierDeepin=`cat /etc/os-release |grep Deepin -c`
 		UnixVerifierKDENeon=`cat /etc/os-release |grep neon -c`
 		UnixVerifierArchlinux=`cat /etc/os-release |grep Arch -c` 
+		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep ArcoLinux -c`
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
 		case "$UnixVerifierUbuntuComplicated" in
@@ -470,9 +471,9 @@ case "$MyOsValueGlobal" in
 		esac
 		##################### end of KDE neon ##########################
 
-		################## Archlinux Verifier #############################
-		
-		case "$UnixVerifierArchlinux" in
+		################## Arch Linux Verifier #############################
+		UnixVerifierArchlinuxComplicated=$((UnixVerifierArchlinux + UnixVerifierArcoLinuxB))
+		case "$UnixVerifierArchlinuxComplicated" in
 			2)
 				echo "I'm Arch Linux, hola Papacito & Mamacita !" ############## tested by coder Arch Linux ###############
 				sh $TheInstPath/os/Archlinux.sh
@@ -483,7 +484,23 @@ case "$MyOsValueGlobal" in
 			;;
 
 		esac
+		##################### end of Arch Linux ##########################
+
+		################## Arco Linux B Verifier #############################
+		
+		case "$UnixVerifierArcoLinuxB" in
+			3)
+				echo "I'm Arco Linux B, hola Papacito & Mamacita !" ############## tested by coder Arco Linux B Gnome ###############
+				sh $TheInstPath/os/ArcoLinuxB.sh
+			;;
+
+			*)
+				echo "It is no problem."
+			;;
+
+		esac
 		##################### end of Archlinux ##########################
+
 
 
 
