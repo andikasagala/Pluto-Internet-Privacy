@@ -13,6 +13,10 @@ UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
 
+###################################
+# uninstall statement here later. not yet
+################################
+
 ##################################################################
 sleep 0.1
 echo "**"
