@@ -13,7 +13,7 @@ UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
 
-####
+### 
 
 
 DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
