@@ -138,7 +138,7 @@ case "$MyOSSettingValueLauncher" in
 	FreeBSD)
 		FreeBSDSettingRC=`echo tor_enable=YES >> /etc/rc.conf;echo "privoxy_enable=YES" >> /etc/rc.conf;echo "squid_enable=YES" >> /etc/rc.conf`
 		echo $FreeBSDSettingRC
-		CopyFilesPAFreeBSD=`mkdir /usr/bin/EarthPlanet;chmod 755 /usr/bin/EarthPlanet;cp $TheInstPath/stuff/PAFreeBSD.sh /usr/bin/EarthPlanet/GoToPluto;chmod 755 /usr/bin/EarthPlanet/GoToPluto`
+		CopyFilesPAFreeBSD=`mkdir /usr/bin/EarthPlanet;chmod 755 /usr/bin/EarthPlanet;cp $TheInstPath/stuffs/PAFreeBSD.sh /usr/bin/EarthPlanet/GoToPluto;chmod 755 /usr/bin/EarthPlanet/GoToPluto`
 		echo $CopyFilesPAFreeBSD
 		echo "`date`" - Creating file /usr/bin/EarthPlanet/GoToPluto done 1." " >> /var/log/earth.log
 	;;

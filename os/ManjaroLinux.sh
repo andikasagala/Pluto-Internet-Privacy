@@ -14,7 +14,84 @@ MyType=`which sh`
 
 
 ####
-## uninstall statement here
+
+
+DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
+case "$DetectEarthPlanetDebianCommon" in
+	1)
+		echo "Pluto Internet Privacy was installed in this machine."
+		echo "Run in console \"sh /usr/bin/EarthPlanet/GoToPluto\""
+		echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  "
+		echo "Do you want to [U]ninstall/[R]einstall/[Q]uit it? [U/R/Q]"
+		echo "Please input 'U' or 'R' or 'Q'"
+		read VarEarthPlanetStatusLinux
+		case "$VarEarthPlanetStatusLinux" in
+			U) ######################### Uninstall Statement ######################################
+				echo "Processing..."
+				RestoreResolvConfLinux=`rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
+				echo $RestoreResolvConfLinux
+				Set4Linux=`$SysctlCommand -w net.ipv4.ip_forward=0; $SysctlCommand -p`
+				RemEarthPlanetStatusLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
+				VarLinuxCmdULinux=`pacman -Sy;pacman -R openvpn squid privoxy tor psmisc mlocate --noconfirm`
+				RMTorULinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
+				RMPrivoxyULinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
+				echo $Set4Linux
+				echo $RemEarthPlanetStatusLinux
+				echo $VarLinuxCmdULinux
+				echo $RMTorULinux
+				echo $RMPrivoxyULinux
+				echo "Uninstall finished!"
+				echo "Bye...."
+				exit 0
+			;;
+					########################### Uninstall Statement done #####################################################
+
+			R) ####################### Reinstall Statement ######################################
+				echo "Processing..."
+				RestoreResolvConfLinux=`rm -rf /etc/hosts;cat /etc/hosts.bak > /etc/hosts`
+				echo $RestoreResolvConfLinux
+				Set5Linux=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
+				RemEarthPlanetStatusRLinux=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
+				RMTorRLinux=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
+				RMPrivoxyRLinux=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /etc/privoxy/config;rm -rf /etc/privoxy/config2;rm -rf /etc/privoxy/config3;rm -rf /etc/privoxy/config4;rm -rf /etc/privoxy/config5;rm -rf /etc/privoxy/config6;rm -rf /etc/privoxy/config7;rm -rf /etc/privoxy/config8`
+				Varcmd1RLinux=`mkdir /etc/EarthPlanet`
+				Varcmd2RLinux=`chmod 755 /etc/EarthPlanet`
+				Varcmd3RLinux=`touch /var/log/earth.cfg`
+				Varcmd4RLinux=`chmod 755 /var/log/earth.cfg`
+				echo "$Set5Linux"
+				echo "$Varcmd1RLinux"
+				echo "$Varcmd2RLinux"
+				echo "$Varcmd3RLinux"
+				echo "$Varcmd4RLinux"
+				echo "$RemEarthPlanetStatusRLinux"
+				echo "$RMTorRLinux"
+				echo "$RMPrivoxyRLinux"
+				echo "`date`" - Pluto Internet Privacy was reinstalled." " >> /var/log/earth.log
+				exit 0
+			;;
+					######################### Reinstall Statement done ##########################################################
+
+			Q) ##################### Quit Statement ##############################################
+				echo "`date`" - Quit... Installer." " >> /var/log/earth.log
+				echo "Bye..."
+				exit 0
+
+			;;
+
+			*)
+				echo "None, bye..."
+			exit 0
+			;;
+
+		esac
+					####################### Quit Statement done ######################################################
+	;;
+	
+	*)
+		echo ""
+
+	;;
+esac
 ######
 
 #########################################################
