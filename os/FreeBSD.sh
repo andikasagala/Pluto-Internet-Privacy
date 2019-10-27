@@ -14,7 +14,7 @@ TorCommand=`echo $PreTorCommand`
 SysctlCommand=`echo $PreSysctlCommand`
 PoweroffCommand=`echo $PrePoweroffCommand`
 ShutdownCommand=`echo $PreShutdownCommand`
-UpdatedbCommand=`which updatedb`
+
 
 
 DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet |wc -l`
@@ -33,8 +33,8 @@ case $DetectEarthPlanetFreeBSD in
 				echo $RestoreResolvConfFreeBSD
 				Set4FreeBSD=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
 				RemEarthPlanetStatusFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
-				VarLinuxCmdUFreeBSD=`pkg remove squid -y;pkg remove privoxy -y;pkg remove tor -y;pkg remove openvpn -y`
-				RMTorUFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
+				VarLinuxCmdUFreeBSD=`yes | pkg remove squid;yes | pkg remove privoxy;yes | pkg remove tor;yes | pkg remove openvpn`
+				RMTorUFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /usr/local/etc/tor/torrc;rm -rf /usr/local/etc/tor/torrc2;rm -rf /usr/local/etc/tor/torrc3;rm -rf /usr/local/etc/tor/torrc4;rm -rf /usr/local/etc/tor/torrc5;rm -rf /usr/local/etc/tor/torrc6;rm -rf /usr/local/etc/tor/torrc7;rm -rf /usr/local/etc/tor/torrc8`
 				RMPrivoxyUFreeBSD=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /usr/local/etc/privoxy/config;rm -rf /usr/local/etc/privoxy/config2;rm -rf /usr/local/etc/privoxy/config3; rm -rf /usr/local/etc/privoxy/config4; rm -rf /usr/local/etc/privoxy/config5; rm -rf /usr/local/etc/privoxy/config6; rm -rf /usr/local/etc/privoxy/config7; rm -rf /usr/local/etc/privoxy/config8`
 				echo $Set4FreeBSD
 				echo $RemEarthPlanetStatusFreeBSD
@@ -54,7 +54,7 @@ case $DetectEarthPlanetFreeBSD in
 				echo $RestoreResolvConfFreeBSD
 				Set5FreeBSD=`cat /etc/sysctl.conf.bak > /etc/sysctl.conf;rm -rf /etc/sysctl.conf.bak`
 				RemEarthPlanetStatusRFreeBSD=`rm -rf /usr/bin/EarthPlanet;rm -rf /var/log/earth.cfg;rm -rf /etc/EarthPlanet;rm -rf /var/log/earth.log;rm -rf /usr/bin/EarthPlanet/GoToPluto;rm -rf /usr/bin/EarthPlanet/Shutdown`
-				RMTorRFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /etc/tor/torrc;rm -rf /etc/tor/torrc2;rm -rf /etc/tor/torrc3;rm -rf /etc/tor/torrc4;rm -rf /etc/tor/torrc5;rm -rf /etc/tor/torrc6;rm -rf /etc/tor/torrc7;rm -rf /etc/tor/torrc8`
+				RMTorRFreeBSD=`rm -rf /var/lib/tor2;rm -rf /var/lib/tor3;rm -rf /var/lib/tor4;rm -rf /var/lib/tor5;rm -rf /var/lib/tor6;rm -rf /var/lib/tor7;rm -rf /var/lib/tor8;rm -rf /usr/local/etc/tor/torrc;rm -rf /usr/local/etc/tor/torrc2;rm -rf /usr/local/etc/tor/torrc3;rm -rf /usr/local/etc/tor/torrc4;rm -rf /usr/local/etc/tor/torrc5;rm -rf /usr/local/etc/tor/torrc6;rm -rf /usr/local/etc/tor/torrc7;rm -rf /usr/local/etc/tor/torrc8`
 				RMPrivoxyRFreeBSD=`rm -rf /var/log/privoxy2;rm -rf /var/log/privoxy3;rm -rf /var/log/privoxy4;rm -rf /var/log/privoxy5;rm -rf /var/log/privoxy6;rm -rf /var/log/privoxy7;rm -rf /var/log/privoxy8;rm -rf /usr/local/etc/privoxy/config;rm -rf /usr/local/etc/privoxy/config2;rm -rf /usr/local/etc/privoxy/config3; rm -rf /usr/local/etc/privoxy/config4; rm -rf /usr/local/etc/privoxy/config5; rm -rf /usr/local/etc/privoxy/config6; rm -rf /usr/local/etc/privoxy/config7; rm -rf /usr/local/etc/privoxy/config8`
 				Varcmd1RFreeBSD=`mkdir /etc/EarthPlanet`
 				Varcmd2RFreeBSD=`chmod 755 /etc/EarthPlanet`
@@ -95,7 +95,7 @@ esac
 
 
 ###################################### install requirement #########################
-FreeBSDInstallPkgs=`pkg update;pkg install squid -y;pkg install privoxy -y;pkg install tor -y;pkg install openvpn -y; pkg install psmisc mlocate -y`
+FreeBSDInstallPkgs=`yes | pkg update;yes | pkg install squid;yes | pkg install privoxy;yes | pkg install tor;yes | kg install openvpn; yes | pkg install psmisc mlocate`
 echo $FreeBSDInstallPkgs
 MyOSSettingValueLauncher="FreeBSD"
 MyOSSettingValueMachine="FreeBSD"
@@ -305,72 +305,72 @@ echo "********"
 case "$MyOSSettingValueTor" in
 	FreeBSD)
 
-		FreeBSDSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib;mkdir /etc/tor;chmod 755 /etc/tor;chmod 755 /var/lib;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		FreeBSDSettingTor=`rm -rf /usr/local/etc/tor/torrc;mkdir /var/lib;mkdir /etc/tor;chmod 755 /etc/tor;chmod 755 /var/lib;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $FreeBSDSettingTor
 
 		#Tor 1
-		echo "SocksPort 9050" >> /etc/tor/torrc
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc
-		echo "Log notice syslog" >> /etc/tor/torrc
-		echo "RunAsDaemon 1" >> /etc/tor/torrc
-		echo "User root" >> /etc/tor/torrc
-		echo "DataDirectory /var/lib/tor" >> /etc/tor/torrc
+		echo "SocksPort 9050" >> /usr/local/etc/tor/torrc
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/usr/local/etc/tor/torrc
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc
+		echo "User root" >> /usr/local/etc/tor/torrc
+		echo "DataDirectory /var/lib/tor" >> /usr/local/etc/tor/torrc
 
 		#Tor 2
-		echo "SocksPort 9150" >> /etc/tor/torrc2
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc2
-		echo "Log notice syslog" >> /etc/tor/torrc2
-		echo "RunAsDaemon 1" >> /etc/tor/torrc2
-		echo "User root" >> /etc/tor/torrc2
-		echo "DataDirectory /var/lib/tor2" >> /etc/tor/torrc2
+		echo "SocksPort 9150" >> /usr/local/etc/tor/torrc2
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc2
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc2
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc2
+		echo "User root" >> /usr/local/etc/tor/torrc2
+		echo "DataDirectory /var/lib/tor2" >> /usr/local/etc/tor/torrc2
 
 		#Tor 3
-		echo "SocksPort 9250" >> /etc/tor/torrc3
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc3
-		echo "Log notice syslog" >> /etc/tor/torrc3
-		echo "RunAsDaemon 1" >> /etc/tor/torrc3
-		echo "User root" >> /etc/tor/torrc3
-		echo "DataDirectory /var/lib/tor3" >> /etc/tor/torrc3
+		echo "SocksPort 9250" >> /usr/local/etc/tor/torrc3
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc3
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc3
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc3
+		echo "User root" >> /usr/local/etc/tor/torrc3
+		echo "DataDirectory /var/lib/tor3" >> /usr/local/etc/tor/torrc3
 
 		#Tor 4
-		echo "SocksPort 9350" >> /etc/tor/torrc4
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc4
-		echo "Log notice syslog" >> /etc/tor/torrc4
-		echo "RunAsDaemon 1" >> /etc/tor/torrc4
-		echo "User root" >> /etc/tor/torrc4
-		echo "DataDirectory /var/lib/tor4" >> /etc/tor/torrc4
+		echo "SocksPort 9350" >> /usr/local/etc/tor/torrc4
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc4
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc4
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc4
+		echo "User root" >> /usr/local/etc/tor/torrc4
+		echo "DataDirectory /var/lib/tor4" >> /usr/local/etc/tor/torrc4
 
 		#Tor 5
-		echo "SocksPort 9450" >> /etc/tor/torrc5
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc5
-		echo "Log notice syslog" >> /etc/tor/torrc5
-		echo "RunAsDaemon 1" >> /etc/tor/torrc5
-		echo "User root" >> /etc/tor/torrc5
-		echo "DataDirectory /var/lib/tor5" >> /etc/tor/torrc5
+		echo "SocksPort 9450" >> /usr/local/etc/tor/torrc5
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc5
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc5
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc5
+		echo "User root" >> /usr/local/etc/tor/torrc5
+		echo "DataDirectory /var/lib/tor5" >> /usr/local/etc/tor/torrc5
 
 		#Tor 6
-		echo "SocksPort 9550" >> /etc/tor/torrc6
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc6
-		echo "Log notice syslog" >> /etc/tor/torrc6
-		echo "RunAsDaemon 1" >> /etc/tor/torrc6
-		echo "User root" >> /etc/tor/torrc6
-		echo "DataDirectory /var/lib/tor6" >> /etc/tor/torrc6
+		echo "SocksPort 9550" >> /usr/local/etc/tor/torrc6
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc6
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc6
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc6
+		echo "User root" >> /usr/local/etc/tor/torrc6
+		echo "DataDirectory /var/lib/tor6" >> /usr/local/etc/tor/torrc6
 
 		#Tor 7
-		echo "SocksPort 9650" >> /etc/tor/torrc7
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc7
-		echo "Log notice syslog" >> /etc/tor/torrc7
-		echo "RunAsDaemon 1" >> /etc/tor/torrc7
-		echo "User root" >> /etc/tor/torrc7
-		echo "DataDirectory /var/lib/tor7" >> /etc/tor/torrc7
+		echo "SocksPort 9650" >> /usr/local/etc/tor/torrc7
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc7
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc7
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc7
+		echo "User root" >> /usr/local/etc/tor/torrc7
+		echo "DataDirectory /var/lib/tor7" >> /usr/local/etc/tor/torrc7
 
 		#Tor 8
-		echo "SocksPort 9750" >> /etc/tor/torrc8
-		echo "SocksBindAddress 127.0.0.1" >> /etc/tor/torrc8
-		echo "Log notice syslog" >> /etc/tor/torrc8
-		echo "RunAsDaemon 1" >> /etc/tor/torrc8
-		echo "User root" >> /etc/tor/torrc8
-		echo "DataDirectory /var/lib/tor8" >> /etc/tor/torrc8
+		echo "SocksPort 9750" >> /usr/local/etc/tor/torrc8
+		echo "SocksBindAddress 127.0.0.1" >> /usr/local/etc/tor/torrc8
+		echo "Log notice syslog" >> /usr/local/etc/tor/torrc8
+		echo "RunAsDaemon 1" >> /usr/local/etc/tor/torrc8
+		echo "User root" >> /usr/local/etc/tor/torrc8
+		echo "DataDirectory /var/lib/tor8" >> /usr/local/etc/tor/torrc8
 
 		FreeBSDTorChangeAccess=`chmod 755 /var/lib/tor;chmod 755 /var/lib/tor2;chmod 755 /var/lib/tor3;chmod 755 /var/lib/tor4;chmod 755 /var/lib/tor5;chmod 755 /var/lib/tor6;chmod 755 /var/lib/tor7;chmod 755 /var/lib/tor8`
 		echo $FreeBSDTorChangeAccess

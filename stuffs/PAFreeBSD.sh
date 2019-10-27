@@ -29,7 +29,7 @@ UpdatedbCommand2=`echo $UpdatedbCommand`
 				a)
 				FreeBSDSquidRun=`killall squid;$SquidCommand -k parse;$SquidCommand -f /usr/local/etc/squid/squid.conf`
 				FreeBSDPrivoxyRun=`killall privoxy;$PrivoxyCommand /usr/local/etc/privoxy/config;$PrivoxyCommand /usr/local/etc/privoxy/config2;$PrivoxyCommand /usr/local/etc/privoxy/config3;$PrivoxyCommand /usr/local/etc/privoxy/config4;$PrivoxyCommand /usr/local/etc/privoxy/config5;$PrivoxyCommand /usr/local/etc/privoxy/config6;$PrivoxyCommand /usr/local/etc/privoxy/config7;$PrivoxyCommand /usr/local/etc/privoxy/config8`
-				FreeBSDTorRun=`killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8`
+				FreeBSDTorRun=`killall tor;$TorCommand -f /usr/local/etc/tor/torrc;$TorCommand -f /usr/local/etc/tor/torrc2;$TorCommand -f /usr/local/etc/tor/torrc3;$TorCommand -f /usr/local/etc/tor/torrc4;$TorCommand -f /usr/local/etc/tor/torrc5;$TorCommand -f /usr/local/etc/tor/torrc6;$TorCommand -f /usr/local/etc/tor/torrc7;$TorCommand -f /usr/local/etc/tor/torrc8`
 				VarIPPortLogQuery=`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt`
 				echo $FreeBSDTorRun
 				echo $FreeBSDPrivoxyRun
