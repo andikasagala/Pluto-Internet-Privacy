@@ -1,14 +1,8 @@
 #!/bin/sh
 
-PreSquidCommand=`which squid`
-PrePrivoxyCommand=`which privoxy`
+
+
 PreTorCommand=`which tor`
-PreSysctlCommand=`which sysctl`
-PrePoweroffCommand=`which poweroff`
-PreShutdownCommand=`which shutdown`
-SysctlCommand=`echo $PreSysctlCommand`
-PoweroffCommand=`echo $PrePoweroffCommand`
-ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
@@ -136,12 +130,54 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 DebianCommon)
-	
+			
+		ComplicatedSquid=`ls -al /usr/sbin |grep squid |awk '{print $9 }' |wc -l`
+		case "$ComplicatedSquid" in
+			1)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			2)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			3)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			4)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			0)
+				SquidCommand=`which squid`
+			;;
+			*)
+				SquidCommand=`which squid`
+			;;
+		esac
+
+		ComplicatedPrivoxy=`ls -al /usr/sbin |grep privoxy |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPrivoxy" in
+			1)
+				PrivoxyCommand="/usr/sbin/privoxy"
+			;;
+
+			2)
+				PrivoxyCommand="/usr/sbin/privoxy"
+			;;
+
+			0)
+				PrivoxyCommand=`which privoxy`
+			;;
+			*)
+				PrivoxyCommand=`which privoxy`
+			;;
+		esac
+		
 
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
-		echo "SquidCommand=\`which squid\`"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "PrivoxyCommand=\`which privoxy\`"  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "TorCommand=\`which tor\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -162,8 +198,8 @@ DebianCommon)
 		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "killall tor;\$TorCommand -f /etc/tor/torrc;\$TorCommand -f /etc/tor/torrc2;\$TorCommand -f /etc/tor/torrc3;\$TorCommand -f /etc/tor/torrc4;\$TorCommand -f /etc/tor/torrc5;\$TorCommand -f /etc/tor/torrc6;\$TorCommand -f /etc/tor/torrc7;\$TorCommand -f /etc/tor/torrc8" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "killall privoxy;\$PrivoxyCommand /etc/privoxy/config;\$PrivoxyCommand /etc/privoxy/config2;\$PrivoxyCommand /etc/privoxy/config3;\$PrivoxyCommand /etc/privoxy/config4;\$PrivoxyCommand /etc/privoxy/config5;\$PrivoxyCommand /etc/privoxy/config6;\$PrivoxyCommand /etc/privoxy/config7;\$PrivoxyCommand /etc/privoxy/config8" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "/usr/sbin/service squid stop;killall squid;\$SquidCommand -k parse;\$SquidCommand -f /etc/squid/squid.conf" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "/usr/sbin/service squid stop;killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/bin/EarthPlanet/GoToPluto
@@ -216,6 +252,25 @@ case "$MyOSSettingValueMachine" in
 
 	########### setting sysctl Debian ###########################
 	DebianCommon)
+		ComplicatedSysctl=`ls -al /usr/sbin |grep sysctl |awk '{print $9 }' |wc -l`
+		case "$ComplicatedSysctl" in
+			1)
+				SysctlCommand="/usr/sbin/sysctl"
+			;;
+
+			2)
+				SysctlCommand="/usr/sbin/sysctl"
+			;;
+
+			0)
+				SysctlCommand=`which sysctl`
+			;;
+			*)
+				SysctlCommand=`which sysctl`
+			;;
+		esac
+		
+
 		DebianCommonIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $DebianCommonIPForwardSetting
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
@@ -468,9 +523,66 @@ echo "*********"
 
 case "$MyOSSettingValueShutdown" in
 	DebianCommon)
+		ComplicatedPoweroff=`ls -al /usr/sbin |grep poweroff |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				PoweroffCommand="/usr/sbin/poweroff"
+			;;
+
+			2)
+				PoweroffCommand="/usr/sbin/poweroff"
+			;;
+
+			0)
+				PoweroffCommand=`which poweroff`
+			;;
+			*)
+				PoweroffCommand=`which poweroff`
+			;;
+		esac
+		
+		ComplicatedShutdown=`ls -al /usr/sbin |grep shutdown |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				ShutdownCommand="/usr/sbin/poweroff"
+			;;
+
+			2)
+				ShutdownCommand="/usr/sbin/poweroff"
+			;;
+
+			0)
+				ShutdownCommand=`which shutdown`
+			;;
+			*)
+				ShutdownCommand=`which shutdown`
+			;;
+		esac
+		
+		ComplicatedReboot=`ls -al /usr/sbin |grep reboot |awk '{print $9 }' |wc -l`
+		case "$ComplicatedReboot" in
+			1)
+				RebootCommand="/usr/sbin/reboot"
+			;;
+
+			2)
+				RebootCommand="/usr/sbin/reboot"
+			;;
+
+			0)
+				RebootCommand=`which reboot`
+			;;
+			*)
+				RebootCommand=`which reboot`
+			;;
+		esac
+		
+
+
+
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/usr/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;$RebootCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 esac
