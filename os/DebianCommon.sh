@@ -7,6 +7,27 @@ PreTorCommand=`which tor`
 UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
+ComplicatedSysctl=`ls -al /usr/sbin |grep sysctl |awk '{print $9 }' |wc -l`
+case "$ComplicatedSysctl" in
+	1)
+		SysctlCommand="/usr/sbin/sysctl"
+	;;
+
+	2)
+		SysctlCommand="/usr/sbin/sysctl"
+	;;
+
+	0)
+		SysctlCommand=`which sysctl`
+	;;
+
+	*)
+		SysctlCommand=`which sysctl`
+	;;
+esac
+		
+
+
 
 DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
 case "$DetectEarthPlanetDebianCommon" in
@@ -253,24 +274,6 @@ case "$MyOSSettingValueMachine" in
 
 	########### setting sysctl Debian ###########################
 	DebianCommon)
-		ComplicatedSysctl=`ls -al /usr/sbin |grep sysctl |awk '{print $9 }' |wc -l`
-		case "$ComplicatedSysctl" in
-			1)
-				SysctlCommand="/usr/sbin/sysctl"
-			;;
-
-			2)
-				SysctlCommand="/usr/sbin/sysctl"
-			;;
-
-			0)
-				SysctlCommand=`which sysctl`
-			;;
-			*)
-				SysctlCommand=`which sysctl`
-			;;
-		esac
-		
 
 		DebianCommonIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf.bak;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $DebianCommonIPForwardSetting
