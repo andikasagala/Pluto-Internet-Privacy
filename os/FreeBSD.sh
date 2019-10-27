@@ -19,7 +19,7 @@ ShutdownCommand=`echo $PreShutdownCommand`
 
 DetectEarthPlanetFreeBSD=`ls -a /etc |grep EarthPlanet |wc -l`
 case $DetectEarthPlanetFreeBSD in
-	EarthPlanet)
+	1)
 		echo "Pluto Internet Privacy was installed in this machine."
 		echo "Run in console: sh /usr/bin/EarthPlanet/GoToPluto"
 		echo "Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  "
