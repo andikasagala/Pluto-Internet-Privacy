@@ -501,3 +501,14 @@ echo "Not yet..  " >> /usr/bin/EarthPlanet/GoHome
 
 
 
+
+echo "\n\n\n\n"
+
+
+
+
+echo "\t\t---== Pluto Internet Privacy ==---\t\t"
+echo "\n\n"
+echo "\n\n"
+echo "Done! Run in your console sh /usr/bin/EarthPlanet/GoToPluto "
+echo " The logs are stored in /var/log/earth.log \n\n\n"
