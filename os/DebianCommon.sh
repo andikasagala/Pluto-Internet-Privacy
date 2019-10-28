@@ -173,11 +173,10 @@ DebianCommon)
 				PrivoxyCommand="/usr/sbin/privoxy"
 			;;
 
-			;;
-
 			0)
 				PrivoxyCommand=`which privoxy`
 			;;
+
 			*)
 				PrivoxyCommand=`which privoxy`
 			;;
@@ -522,6 +521,7 @@ case "$MyOSSettingValueShutdown" in
 			0)
 				PoweroffCommand=`which poweroff`
 			;;
+
 			*)
 				PoweroffCommand=`which poweroff`
 			;;
@@ -536,6 +536,7 @@ case "$MyOSSettingValueShutdown" in
 			0)
 				ShutdownCommand=`which shutdown`
 			;;
+
 			*)
 				ShutdownCommand=`which shutdown`
 			;;
@@ -554,6 +555,7 @@ case "$MyOSSettingValueShutdown" in
 			0)
 				RebootCommand=`which reboot`
 			;;
+			
 			*)
 				RebootCommand=`which reboot`
 			;;
