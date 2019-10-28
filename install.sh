@@ -226,24 +226,24 @@ case "$MyOsValueGlobal" in
 	############################# Linux Verifier ########################
 		################### Ubuntu Verifier ############################
 	2)
-		UnixVerifierUbuntu=`cat /etc/os-release |grep Ubuntu -c` 
-		UnixVerifierDebian=`cat /etc/os-release |grep Debian -c`
-		UnixVerifierSolus=`cat /etc/os-release |grep Solus -c`
-		UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep knoppix -c`
-		UnixVerifierZorinOS=`cat /etc/os-release |grep Zorin -c`
-		UnixVerifierMXLinux=`cat /etc/mx-version |grep MX -c`
-		UnixVerifierManjaroLinux=`cat /etc/arch-release |grep Manjaro -c`
-		UnixVerifierLinuxMint=`cat /etc/os-release |grep Mint -c`
-		UnixVerifierelementaryOS=`cat /etc/lsb-release |grep elementary -c`
-		UnixVerifierParrotOS=`cat /etc/os-release |grep Parrot -c`
-		UnixVerifierFedora=`cat /etc/fedora-release| grep Fedora -c`
-		UnixVerifieropenSUSE=`cat /etc/os-release| grep openSUSE -c`
-		UnixVerifierantiX=`cat /etc/antix-version |grep antiX -c`
-		UnixVerifierDeepin=`cat /etc/os-release |grep Deepin -c`
-		UnixVerifierKDENeon=`cat /etc/os-release |grep neon -c`
-		UnixVerifierArchlinux=`cat /etc/os-release |grep Arch -c` 
-		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep ArcoLinux -c`
-		UnixVerifierPCLinuxOS=`cat /etc/os-release |grep PCLinuxOS -c`
+		UnixVerifierUbuntu=`cat /etc/os-release |grep -w Ubuntu -c` 
+		UnixVerifierDebian=`cat /etc/os-release |grep -w Debian -c`
+		UnixVerifierSolus=`cat /etc/os-release |grep  -wSolus -c`
+		UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep -w knoppix -c`
+		UnixVerifierZorinOS=`cat /etc/os-release |grep -w Zorin -c`
+		UnixVerifierMXLinux=`cat /etc/mx-version |grep -w MX -c`
+		UnixVerifierManjaroLinux=`cat /etc/arch-release |grep -w Manjaro -c`
+		UnixVerifierLinuxMint=`cat /etc/os-release |grep -w Mint -c`
+		UnixVerifierelementaryOS=`cat /etc/lsb-release |grep -w elementary -c`
+		UnixVerifierParrotOS=`cat /etc/os-release |grep -w Parrot -c`
+		UnixVerifierFedora=`cat /etc/fedora-release| grep -w Fedora -c`
+		UnixVerifieropenSUSE=`cat /etc/os-release| grep -w openSUSE -c`
+		UnixVerifierantiX=`cat /etc/antix-version |grep -w antiX -c`
+		UnixVerifierDeepin=`cat /etc/os-release |grep -w Deepin -c`
+		UnixVerifierKDENeon=`cat /etc/os-release |grep -w neon -c`
+		UnixVerifierArchlinux=`cat /etc/os-release |grep -w Arch -c` 
+		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep -w ArcoLinux -c`
+		UnixVerifierPCLinuxOS=`cat /etc/os-release |grep -w PCLinuxOS -c`
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS))
 		case "$UnixVerifierUbuntuComplicated" in
