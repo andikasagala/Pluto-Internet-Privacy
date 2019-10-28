@@ -25,7 +25,7 @@ esac
 
 
 
-DetectEarthPlanetDebianCommon=`ls -a /etc |grep  -w EarthPlanet |wc -l`
+DetectEarthPlanetDebianCommon=`ls -a /etc |grep -w EarthPlanet |wc -l`
 case "$DetectEarthPlanetDebianCommon" in
 	1)
 		echo "Pluto Internet Privacy was installed in this machine."
