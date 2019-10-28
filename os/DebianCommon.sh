@@ -13,10 +13,6 @@ case "$ComplicatedSysctl" in
 		SysctlCommand="/usr/sbin/sysctl"
 	;;
 
-	2)
-		SysctlCommand="/usr/sbin/sysctl"
-	;;
-
 	0)
 		SysctlCommand=`which sysctl`
 	;;
@@ -93,7 +89,7 @@ case "$DetectEarthPlanetDebianCommon" in
 
 			*)
 				echo "None, bye..."
-			exit 0
+				exit 1
 			;;
 
 		esac
@@ -163,14 +159,6 @@ DebianCommon)
 				SquidCommand="/usr/sbin/squid"
 			;;
 
-			3)
-				SquidCommand="/usr/sbin/squid"
-			;;
-
-			4)
-				SquidCommand="/usr/sbin/squid"
-			;;
-
 			0)
 				SquidCommand=`which squid`
 			;;
@@ -185,8 +173,6 @@ DebianCommon)
 				PrivoxyCommand="/usr/sbin/privoxy"
 			;;
 
-			2)
-				PrivoxyCommand="/usr/sbin/privoxy"
 			;;
 
 			0)
@@ -533,10 +519,6 @@ case "$MyOSSettingValueShutdown" in
 				PoweroffCommand="/usr/sbin/poweroff"
 			;;
 
-			2)
-				PoweroffCommand="/usr/sbin/poweroff"
-			;;
-
 			0)
 				PoweroffCommand=`which poweroff`
 			;;
@@ -548,10 +530,6 @@ case "$MyOSSettingValueShutdown" in
 		ComplicatedShutdown=`ls -al /usr/sbin |grep -w shutdown |awk '{print $9 }' |wc -l`
 		case "$ComplicatedPoweroff" in
 			1)
-				ShutdownCommand="/usr/sbin/poweroff"
-			;;
-
-			2)
 				ShutdownCommand="/usr/sbin/poweroff"
 			;;
 
