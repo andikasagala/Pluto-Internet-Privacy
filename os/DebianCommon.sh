@@ -186,7 +186,7 @@ DebianCommon)
 		PreTorCommand2=`echo $PreTorCommand`
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/local/bin/EarthPlanet/GoToPluto
-		echo "TorCommand=\`"$PreTorCommand2"\`" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "TorCommand=\`$PreTorCommand2\`" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"Server options:\"" >> /usr/local/bin/EarthPlanet/GoToPluto
