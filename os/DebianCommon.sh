@@ -7,7 +7,7 @@ PreTorCommand=`which tor`
 UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
-ComplicatedSysctl=`ls -al /usr/sbin |grep sysctl |awk '{print $9 }' |wc -l`
+ComplicatedSysctl=`ls -al /usr/sbin |grep -w sysctl |awk '{print $9 }' |wc -l`
 case "$ComplicatedSysctl" in
 	1)
 		SysctlCommand="/usr/sbin/sysctl"
@@ -29,7 +29,7 @@ esac
 
 
 
-DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
+DetectEarthPlanetDebianCommon=`ls -a /etc |grep  -w EarthPlanet |wc -l`
 case "$DetectEarthPlanetDebianCommon" in
 	1)
 		echo "Pluto Internet Privacy was installed in this machine."
@@ -153,7 +153,7 @@ echo "***"
 case "$MyOSSettingValueLauncher" in
 DebianCommon)
 			
-		ComplicatedSquid=`ls -al /usr/sbin |grep squid |awk '{print $9 }' |wc -l`
+		ComplicatedSquid=`ls -al /usr/sbin |grep -w squid |awk '{print $9 }' |wc -l`
 		case "$ComplicatedSquid" in
 			1)
 				SquidCommand="/usr/sbin/squid"
@@ -179,7 +179,7 @@ DebianCommon)
 			;;
 		esac
 
-		ComplicatedPrivoxy=`ls -al /usr/sbin |grep privoxy |awk '{print $9 }' |wc -l`
+		ComplicatedPrivoxy=`ls -al /usr/sbin |grep -w privoxy |awk '{print $9 }' |wc -l`
 		case "$ComplicatedPrivoxy" in
 			1)
 				PrivoxyCommand="/usr/sbin/privoxy"
@@ -200,7 +200,7 @@ DebianCommon)
 		PreTorCommand2=`echo $PreTorCommand`
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/local/bin/EarthPlanet/GoToPluto
-		echo "TorCommand=\`$PreTorCommand2\`" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "TorCommand=\`"$PreTorCommand2"\`" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"Server options:\"" >> /usr/local/bin/EarthPlanet/GoToPluto
@@ -527,7 +527,7 @@ echo "*********"
 
 case "$MyOSSettingValueShutdown" in
 	DebianCommon)
-		ComplicatedPoweroff=`ls -al /usr/sbin |grep poweroff |awk '{print $9 }' |wc -l`
+		ComplicatedPoweroff=`ls -al /usr/sbin |grep -w poweroff |awk '{print $9 }' |wc -l`
 		case "$ComplicatedPoweroff" in
 			1)
 				PoweroffCommand="/usr/sbin/poweroff"
@@ -545,7 +545,7 @@ case "$MyOSSettingValueShutdown" in
 			;;
 		esac
 		
-		ComplicatedShutdown=`ls -al /usr/sbin |grep shutdown |awk '{print $9 }' |wc -l`
+		ComplicatedShutdown=`ls -al /usr/sbin |grep -w shutdown |awk '{print $9 }' |wc -l`
 		case "$ComplicatedPoweroff" in
 			1)
 				ShutdownCommand="/usr/sbin/poweroff"
@@ -563,7 +563,7 @@ case "$MyOSSettingValueShutdown" in
 			;;
 		esac
 		
-		ComplicatedReboot=`ls -al /usr/sbin |grep reboot |awk '{print $9 }' |wc -l`
+		ComplicatedReboot=`ls -al /usr/sbin |grep -w reboot |awk '{print $9 }' |wc -l`
 		case "$ComplicatedReboot" in
 			1)
 				RebootCommand="/usr/sbin/reboot"
