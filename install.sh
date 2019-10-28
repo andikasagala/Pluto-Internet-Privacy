@@ -228,7 +228,7 @@ case "$MyOsValueGlobal" in
 	2)
 		UnixVerifierUbuntu=`cat /etc/os-release |grep -w Ubuntu -c` 
 		UnixVerifierDebian=`cat /etc/os-release |grep -w Debian -c`
-		UnixVerifierSolus=`cat /etc/os-release |grep  -wSolus -c`
+		UnixVerifierSolus=`cat /etc/os-release |grep -w Solus -c`
 		UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep -w knoppix -c`
 		UnixVerifierZorinOS=`cat /etc/os-release |grep -w Zorin -c`
 		UnixVerifierMXLinux=`cat /etc/mx-version |grep -w MX -c`
