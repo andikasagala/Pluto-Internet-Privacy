@@ -46,10 +46,10 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Run " $git clone https://github.com/andikasagala/Pluto-Internet-Privacy " <br>
 - Run in your terminal console " $sh install.sh " for the first time to install the " Pluto Internet Privacy " <br>
 - Config stored in /var/log/earth.cfg and logs in /var/log/earth.log  <br>
-- Run in your terminal console "$sh /usr/bin/EarthPlanet/GoToPluto" to start/activate it<br>
+- Run in your terminal console "$sh /usr/local/bin/EarthPlanet/GoToPluto" to start/activate it<br>
 - There are 3 options: 1. Public Privacy Server, 2. Private Privacy Server, 3. Science Laboratory <br>
-- Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/GoHome " for finish using "Pluto Internet Privacy"  <br>
-- Terminate/stop it by run in console " $sh /usr/bin/EarthPlanet/Shutdown " for fresh start  <br>
+- Terminate/stop it by run in console " $sh /usr/local/bin/EarthPlanet/GoHome " for finish using "Pluto Internet Privacy"  <br>
+- Terminate/stop it by run in console " $sh /usr/local/bin/EarthPlanet/Shutdown " for fresh start  <br>
 
 <br><br>
 <br>
