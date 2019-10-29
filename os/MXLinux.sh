@@ -228,7 +228,7 @@ case "$MyOSSettingValueLauncher" in
 		echo "echo \"\\n\\n\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
-		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/local/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/local/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
@@ -583,7 +583,7 @@ case "$MyOSSettingValueShutdown" in
 
 		echo "echo Doing Shutdown... " >> /usr/local/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/local/bin/EarthPlanet/Shutdown
-		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/sbin/reboot now" >> /usr/local/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;$RebootCommand" >> /usr/local/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 esac
