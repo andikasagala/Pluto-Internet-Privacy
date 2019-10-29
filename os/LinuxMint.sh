@@ -227,8 +227,8 @@ case "$MyOSSettingValueLauncher" in
 		echo "read PublicAccessMode">> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "case \"\$PublicAccessMode\" in" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "\"a\")"  >> /usr/local/bin/EarthPlanet/GoToPluto
-		echo "killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8" >> /usr/bin/EarthPlanet/GoToPluto
+		echo "killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
