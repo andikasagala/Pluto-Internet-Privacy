@@ -1,19 +1,25 @@
 #!/bin/sh
 
-PreSquidCommand=`which squid`
-PrePrivoxyCommand=`which privoxy`
-PreTorCommand=`which tor`
-PreSysctlCommand=`which sysctl`
-PrePoweroffCommand=`which poweroff`
-PreShutdownCommand=`which shutdown`
-SysctlCommand=`echo $PreSysctlCommand`
-PoweroffCommand=`echo $PrePoweroffCommand`
-ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
 ####
-## uninstall statement here
+ComplicatedSysctl=`ls -al /sbin |grep -w sysctl |awk '{print $9 }' |wc -l`
+case "$ComplicatedSysctl" in
+	1)
+		SysctlCommand="/sbin/sysctl"
+	;;
+
+	0)
+		SysctlCommand=`which sysctl`
+	;;
+
+	*)
+		SysctlCommand=`which sysctl`
+	;;
+esac
+
+
 ######
 
 
@@ -23,7 +29,7 @@ echo "**"
 ###########################################################
 
 
-elementaryOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate -y`
+elementaryOSInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate gawk -y`
 echo $elementaryOSInstallSoftwares
 MyOSSettingValueLauncher="DebianCommon"
 MyOSSettingValueMachine="DebianCommon"
@@ -40,8 +46,8 @@ Varcmd3All=`touch /var/log/earth.cfg`
 Varcmd4All=`chmod 755 /var/log/earth.cfg`
 Varcmd5All=`touch /var/log/earth.log`
 Varcmd6All=`chmod 755 /var/log/earth.log`
-Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd7All=`mkdir /usr/local/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/local/bin/EarthPlanet`
 Varcmd9All=`mkdir /etc/privoxy`
 Varcmd10All=`chmod 755 /etc/privoxy`
 echo "$Varcmd1All"
@@ -68,71 +74,119 @@ echo "***"
 case "$MyOSSettingValueLauncher" in
 	DebianCommon)
 
+		ComplicatedSquid=`ls -al /usr/sbin |grep -w squid |awk '{print $9 }' |wc -l`
+		case "$ComplicatedSquid" in
+			1)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			2)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			0)
+				SquidCommand=`which squid`
+			;;
+			*)
+				SquidCommand=`which squid`
+			;;
+		esac
+
+		ComplicatedPrivoxy=`ls -al /usr/sbin |grep -w privoxy |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPrivoxy" in
+			1)
+				PrivoxyCommand="/usr/sbin/privoxy"
+			;;
+
+			0)
+				PrivoxyCommand=`which privoxy`
+			;;
+
+			*)
+				PrivoxyCommand=`which privoxy`
+			;;
+		esac
+
+                ComplicatedTor=`ls -al /usr/bin |grep -w tor |awk '{print $9 }' |wc -l`
+                case "$ComplicatedTor" in
+                        4)
+                                TorCommand="/usr/bin/tor"
+                        ;;
+
+                        0)
+                                TorCommand=`which tor`
+                        ;;
+
+                        *)
+                                TorCommand=`which tor`
+                        ;;
+                esac
+
+
+
+
 		MyPathType=`echo "#!"$MyType`
-		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
-		echo "SquidCommand=\`which squid\`"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "PrivoxyCommand=\`which privoxy\`"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "TorCommand=\`which tor\`" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"1. Public Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"2. Private Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"3. Science Access\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"Your access (1/2/3):\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "read MyaccessLinux" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "case \"\$MyaccessLinux\" in" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "        \"1\")" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"a. Tor mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"b. OpenVPN mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"c. IPsec/L2TP mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"d. SoftEther VPN mode\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"Option mode (a/b/c/d):\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "read PublicAccessMode">> /usr/bin/EarthPlanet/GoToPluto
-		echo "case \"\$PublicAccessMode\" in" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "\"a\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "killall tor;\$TorCommand -f /etc/tor/torrc;\$TorCommand -f /etc/tor/torrc2;\$TorCommand -f /etc/tor/torrc3;\$TorCommand -f /etc/tor/torrc4;\$TorCommand -f /etc/tor/torrc5;\$TorCommand -f /etc/tor/torrc6;\$TorCommand -f /etc/tor/torrc7;\$TorCommand -f /etc/tor/torrc8" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "killall privoxy;\$PrivoxyCommand /etc/privoxy/config;\$PrivoxyCommand /etc/privoxy/config2;\$PrivoxyCommand /etc/privoxy/config3;\$PrivoxyCommand /etc/privoxy/config4;\$PrivoxyCommand /etc/privoxy/config5;\$PrivoxyCommand /etc/privoxy/config6;\$PrivoxyCommand /etc/privoxy/config7;\$PrivoxyCommand /etc/privoxy/config8" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "killall squid;\$SquidCommand -k parse;\$SquidCommand -f /etc/squid/squid.conf" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\\n\\n\\n\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "\"b\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"OpenVPN in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "\"c\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"IPsec/L2TP in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "\"d\")"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"SoftEther in progress of development...\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "*)"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"None, bye...\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "        esac" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "           ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "2)"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"Private Server Access will available soon in next version update\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "3)"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"Science access is a access to server which you can do Networking Experiment, Operating System, Scientific Software, etc inside the server. Science Server Access will available soon in next version update.\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "*)"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "echo \"None, bye...\"" >> /usr/bin/EarthPlanet/GoToPluto
-		echo  "exit 0" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "                ;;" >> /usr/bin/EarthPlanet/GoToPluto
-		echo "   esac" >> /usr/bin/EarthPlanet/GoToPluto
+		echo $MyPathType >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"Server options:\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"1. Public Access\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"2. Private Access\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"3. Science Access\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"Your access (1/2/3):\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "read MyaccessLinux" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "case \"\$MyaccessLinux\" in" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "        \"1\")" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"a. Tor mode\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"b. OpenVPN mode\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"c. IPsec/L2TP mode\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"d. SoftEther VPN mode\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"Option mode (a/b/c/d):\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "read PublicAccessMode">> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "case \"\$PublicAccessMode\" in" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "\"a\")"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "killall tor;$TorCommand -f /etc/tor/torrc;$TorCommand -f /etc/tor/torrc2;$TorCommand -f /etc/tor/torrc3;$TorCommand -f /etc/tor/torrc4;$TorCommand -f /etc/tor/torrc5;$TorCommand -f /etc/tor/torrc6;$TorCommand -f /etc/tor/torrc7;$TorCommand -f /etc/tor/torrc8" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "killall privoxy;$PrivoxyCommand /etc/privoxy/config;$PrivoxyCommand /etc/privoxy/config2;$PrivoxyCommand /etc/privoxy/config3;$PrivoxyCommand /etc/privoxy/config4;$PrivoxyCommand /etc/privoxy/config5;$PrivoxyCommand /etc/privoxy/config6;$PrivoxyCommand /etc/privoxy/config7;$PrivoxyCommand /etc/privoxy/config8" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "killall squid;$SquidCommand -k parse;$SquidCommand -f /etc/squid/squid.conf" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "VarIPPortLogQuery=\`cat /var/log/ipport.txt;rm -rf /var/log/ipport.txt\`" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\\n\\n\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\$VarIPPortLogQuery\""  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \""Launching... Out of Atmosphere.\\n\\n Run \\\"\\\$sh /usr/local/bin/EarthPlanet/Shutdown\\\" if stuck for fresh start. Run sh /usr/local/bin/EarthPlanet/GoHome for finish using it.\""""" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\\n\\n\\n\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"\`date\`\" - Connected to Public Access. Tor mode.\" \"  >> /var/log/earth.log " >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "\"b\")"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"OpenVPN in progress of development...\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "\"c\")"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"IPsec/L2TP in progress of development...\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "\"d\")"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"SoftEther in progress of development...\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "*)"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"None, bye...\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo  "exit 0" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "        esac" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "           ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "2)"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"Private Server Access will available soon in next version update\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo  "exit 0" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "3)"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"Science access is a access to server which you can do Networking Experiment, Operating System, Scientific Software, etc inside the server. Science Server Access will available soon in next version update.\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo  "exit 0" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "*)"  >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "echo \"None, bye...\"" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo  "exit 0" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "                ;;" >> /usr/local/bin/EarthPlanet/GoToPluto
+		echo "   esac" >> /usr/local/bin/EarthPlanet/GoToPluto
 
 
-		echo "`date`" - Creating file /usr/bin/EarthPlanet/GoToPluto done." " >> /var/log/earth.log
+		echo "`date`" - Creating file /usr/local/bin/EarthPlanet/GoToPluto done." " >> /var/log/earth.log
 	;;
 esac
 
@@ -316,7 +370,7 @@ echo "********"
 
 case "$MyOSSettingValueTor" in
 	DebianCommon)
-		DebianCommonSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		DebianCommonSettingTor=`rm -rf /etc/tor/torrc;rm -rf /var/lib/tor;mkdir /var/lib/tor;chmod 755 /var/lib/tor;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $DebianCommonSettingTor
 
 		#Tor 1
@@ -398,9 +452,63 @@ echo "*********"
 
 case "$MyOSSettingValueShutdown" in
 	elementaryOSShutdown)
+
+		ComplicatedPoweroff=`ls -al /sbin |grep -w poweroff |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				PoweroffCommand="/sbin/poweroff"
+			;;
+
+			0)
+				PoweroffCommand=`which poweroff`
+			;;
+
+			*)
+				PoweroffCommand=`which poweroff`
+			;;
+		esac
+
+		ComplicatedShutdown=`ls -al /sbin |grep -w shutdown |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				ShutdownCommand="/sbin/shutdown"
+			;;
+
+			0)
+				ShutdownCommand=`which shutdown`
+			;;
+
+			*)
+				ShutdownCommand=`which shutdown`
+			;;
+		esac
+
+		ComplicatedReboot=`ls -al /sbin |grep -w reboot |awk '{print $9 }' |wc -l`
+		case "$ComplicatedReboot" in
+			1)
+				RebootCommand="/sbin/reboot"
+			;;
+
+			2)
+				RebootCommand="/sbin/reboot"
+			;;
+
+			0)
+				RebootCommand=`which reboot`
+			;;
+
+			*)
+				RebootCommand=`which reboot`
+			;;
+		esac
+
+
+
+
+
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
-		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown
+		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;$RebootCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 esac
@@ -424,7 +532,7 @@ sleep 0.1
 echo "***********"
 ####################################
 
-echo "Not yet..  " >> /usr/bin/EarthPlanet/GoHome
+echo "Not yet..  " >> /usr/local/bin/EarthPlanet/GoHome
 
 
 
@@ -437,7 +545,7 @@ echo "\n\n\n\n"
 echo "\t\t---== Pluto Internet Privacy ==---\t\t"
 echo "\n\n"
 echo "\n\n"
-echo "Done! Run in your console sh /usr/bin/EarthPlanet/GoToPluto "
+echo "Done! Run in your console sh /usr/local/bin/EarthPlanet/GoToPluto "
 echo " The logs are stored in /var/log/earth.log \n\n\n"
 
 

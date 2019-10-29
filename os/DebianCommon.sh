@@ -182,7 +182,7 @@ case "$MyOSSettingValueLauncher" in
 
                 ComplicatedTor=`ls -al /usr/bin |grep -w tor |awk '{print $9 }' |wc -l`
                 case "$ComplicatedTor" in
-                        4)
+                        3)
                                 TorCommand="/usr/bin/tor"
                         ;;
 
