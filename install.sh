@@ -234,7 +234,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierMXLinux=`cat /etc/mx-version |grep -w MX -c`
 		UnixVerifierManjaroLinux=`cat /etc/arch-release |grep -w Manjaro -c`
 		UnixVerifierLinuxMint=`cat /etc/os-release |grep -w Mint -c`
-		UnixVerifierelementaryOS=`cat /etc/lsb-release |grep -w elementary -c`
+		UnixVerifierelementaryOS=`cat /etc/os-release |grep -w elementary -c`
 		UnixVerifierParrotOS=`cat /etc/os-release |grep -w Parrot -c`
 		UnixVerifierFedora=`cat /etc/fedora-release| grep -w Fedora -c`
 		UnixVerifieropenSUSE=`cat /etc/os-release| grep -w openSUSE -c`
@@ -245,7 +245,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep -w ArcoLinux -c`
 		UnixVerifierPCLinuxOS=`cat /etc/os-release |grep -w PCLinuxOS -c`
 
-		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS + 1))
+		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu))
 		case "$UnixVerifierUbuntuComplicated" in
 			3)
 				echo "I'm Ubuntu, hola Papacito & Mamacita !" ########## tested by coder Ubuntu 19.04 ################
@@ -369,7 +369,7 @@ case "$MyOsValueGlobal" in
 		####################  elementary OS Verifier ###########################
 
 		case "$UnixVerifierelementaryOS" in
-			2)
+			7)
 				echo "I'm elementary OS, hola Papacito & Mamacita !" ############## tested by coder elementary OS 5.0 Juno ###############
 				sh $TheInstPath/os/elementaryOS.sh
 			;;
