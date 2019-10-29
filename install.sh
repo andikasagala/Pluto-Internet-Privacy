@@ -20,15 +20,15 @@ Vartitle=`which sh`
 MyAccess=`whoami`
 case "$MyAccess" in
 	root)
-			echo ""
+		echo ""
 	;;
 
 	*)
-			echo "You need root access!"
-			exit 1		
+		echo "You need root access!"
+		exit 1
 	;;
-	
-esac	
+
+esac
 
 echo "$Clr"
 echo "___________________________________________________"
@@ -226,7 +226,7 @@ case "$MyOsValueGlobal" in
 	############################# Linux Verifier ########################
 		################### Ubuntu Verifier ############################
 	2)
-		UnixVerifierUbuntu=`cat /etc/os-release |grep -w Ubuntu -c` 
+		UnixVerifierUbuntu=`cat /etc/os-release |grep -w Ubuntu -c`
 		UnixVerifierDebian=`cat /etc/os-release |grep -w Debian -c`
 		UnixVerifierSolus=`cat /etc/os-release |grep -w Solus -c`
 		UnixVerifierKnoppix=`cat /etc/syslog-knoppix.conf|grep -w knoppix -c`
@@ -241,7 +241,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierantiX=`cat /etc/antix-version |grep -w antiX -c`
 		UnixVerifierDeepin=`cat /etc/os-release |grep -w Deepin -c`
 		UnixVerifierKDENeon=`cat /etc/os-release |grep -w neon -c`
-		UnixVerifierArchlinux=`cat /etc/os-release |grep -w Arch -c` 
+		UnixVerifierArchlinux=`cat /etc/os-release |grep -w Arch -c`
 		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep -w ArcoLinux -c`
 		UnixVerifierPCLinuxOS=`cat /etc/os-release |grep -w PCLinuxOS -c`
 
@@ -277,7 +277,7 @@ case "$MyOsValueGlobal" in
 
 
 		###################### Solus Verifier ###########################
-		
+
 		case "$UnixVerifierSolus" in
 			2)
 				echo "I'm Solus, hola Papacito & Mamacita !" ############## tested by coder Solus 4.0 ###############
@@ -292,7 +292,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Solus ###########################
 
 		#################### Knoppix Verifier ###########################
-		
+
 		case "$UnixVerifierKnoppix" in
 			2)
 				echo "I'm Knoppix, hola Papacito & Mamacita !" ############## tested by coder KNOPPIX V8.6 ###############
@@ -307,7 +307,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Knoppix ###########################
 
         	#################### Zorin OS Verifier ###########################
-        	
+
         	case "$UnixVerifierZorinOS" in
 			2)
 				echo "I'm Zorin OS, hola Papacito & Mamacita !" ############## tested by coder Zorin OS 12.4 ###############
@@ -322,7 +322,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Zorin OS ###########################
 
 		#################### MX Linux Verifier ###########################
-		
+
 		case "$UnixVerifierMXLinux" in
 			1)
 				echo "I'm MX Linux, hola Papacito & Mamacita !" ############## tested by coder MX-18.3 Continuum ###############
@@ -337,7 +337,7 @@ case "$MyOsValueGlobal" in
 		#################### end of MX Linux ###########################
 
 		#################### Manjaro Linux Verifier ###########################
-		
+
 		case "$UnixVerifierManjaroLinux" in
 			1)
 				echo "I'm Manjaro Linux, hola Papacito & Mamacita !" ############## tested by coder Manjaro Linux ###############
@@ -352,7 +352,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Manjaro Linux ###########################
 
 		####################  Linux Mint 19.2 Tina Verifier ###########################
-		
+
 		case "$UnixVerifierLinuxMint" in
 			2)
 				echo "I'm Linux Mint, hola Papacito & Mamacita !" ############## tested by coder Linux Mint 19.2 Tina ###############
@@ -367,7 +367,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Linux Mint ###########################
 
 		####################  elementary OS Verifier ###########################
-		
+
 		case "$UnixVerifierelementaryOS" in
 			2)
 				echo "I'm elementary OS, hola Papacito & Mamacita !" ############## tested by coder elementary OS 5.0 Juno ###############
@@ -382,7 +382,7 @@ case "$MyOsValueGlobal" in
 		#################### end of elementary OS ###########################
 
 		####################  Parrot OS Verifier ###########################
-		
+
 		case "$UnixVerifierParrotOS" in
 			2)
 				echo "I'm Parrot OS, hola Papacito & Mamacita !" ############## tested by coder Parrot OS 4.6 ###############
@@ -397,7 +397,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Parrot OS ###########################
 
 		####################  Fedora Verifier ###########################
-		
+
 		case "$UnixVerifierFedora" in
 			1)
 				echo "I'm Fedora, hola Papacito & Mamacita !" ############## tested by coder Fedora release 30 ###############
@@ -412,7 +412,7 @@ case "$MyOsValueGlobal" in
 		#################### end of Fedora ###########################
 
 		####################  OpenSUSE Verifier ###########################
-		
+
 		case "$UnixVerifieropenSUSE" in
 			2)
 				echo "I'm openSUSE, hola Papacito & Mamacita !" ############## tested by coder openSUSE Leap 15.1 ###############
@@ -427,7 +427,7 @@ case "$MyOsValueGlobal" in
 		#################### end of OpenSUSE ###########################
 
 		################## antiX Verifier #############################
-		
+
 		case "$UnixVerifierantiX" in
 			1)
 				echo "I'm antiX, hola Papacito & Mamacita !" ############## tested by coder  ###############
@@ -442,7 +442,7 @@ case "$MyOsValueGlobal" in
 		##################### end of antiX ##########################
 
 		################## Deepin Verifier #############################
-		
+
 		case "$UnixVerifierDeepin" in
 			2)
 				echo "I'm Deepin, hola Papacito & Mamacita !" ############## tested by coder Deepin 15.11 ###############
@@ -458,7 +458,7 @@ case "$MyOsValueGlobal" in
 
 
 		################## Deepin Verifier #############################
-		
+
 		case "$UnixVerifierKDENeon" in
 			6)
 				echo "I'm KDE Neon, hola Papacito & Mamacita !" ############## tested by coder KDE neon User Edition 5.16 ###############
@@ -488,7 +488,7 @@ case "$MyOsValueGlobal" in
 		##################### end of Arch Linux ##########################
 
 		################## Arco Linux B Verifier #############################
-		
+
 		case "$UnixVerifierArcoLinuxB" in
 			3)
 				echo "I'm Arco Linux B, hola Papacito & Mamacita !" ############## tested by coder Arco Linux B Gnome V19.07.11 ###############
@@ -503,7 +503,7 @@ case "$MyOsValueGlobal" in
 		##################### end of Archlinux ##########################
 
 		################## Arco Linux B Verifier #############################
-		
+
 		case "$UnixVerifierPCLinuxOS" in
 			2)
 				echo "I'm PCLinuxOS, hola Papacito & Mamacita !" ############## tested by coder PCLinuxOS 2019 ###############

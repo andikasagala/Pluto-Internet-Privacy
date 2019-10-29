@@ -13,7 +13,7 @@ UpdatedbCommand=`which updatedb`
 MyType=`which sh`
 
 
-### 
+###
 
 
 DetectEarthPlanetDebianCommon=`ls -a /etc |grep EarthPlanet |wc -l`
@@ -86,7 +86,7 @@ case "$DetectEarthPlanetDebianCommon" in
 		esac
 					####################### Quit Statement done ######################################################
 	;;
-	
+
 	*)
 		echo ""
 
@@ -111,26 +111,26 @@ MyOSSettingValueTor="ManjaroLinux"
 MyOSSettingValueShutdown="ManjaroLinux"
 MyOSSettingValueOpenvpn="ManjaroLinux"
 
-	Varcmd1All=`mkdir /etc/EarthPlanet`
-	Varcmd2All=`chmod 755 /etc/EarthPlanet`
-	Varcmd3All=`touch /var/log/earth.cfg`
-	Varcmd4All=`chmod 755 /var/log/earth.cfg`
-	Varcmd5All=`touch /var/log/earth.log`
-	Varcmd6All=`chmod 755 /var/log/earth.log`
-	Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
-	Varcmd9All=`mkdir /etc/privoxy`
-	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo "$Varcmd1All"
-	echo "$Varcmd2All"
-	echo "$Varcmd3All"
-	echo "$Varcmd4All"
-	echo "$Varcmd5All"
-	echo "$Varcmd6All"
-	echo "$Varcmd7All"
-	echo "$Varcmd8All"
-	echo "$Varcmd9All"
-	echo "$Varcmd10All"
+Varcmd1All=`mkdir /etc/EarthPlanet`
+Varcmd2All=`chmod 755 /etc/EarthPlanet`
+Varcmd3All=`touch /var/log/earth.cfg`
+Varcmd4All=`chmod 755 /var/log/earth.cfg`
+Varcmd5All=`touch /var/log/earth.log`
+Varcmd6All=`chmod 755 /var/log/earth.log`
+Varcmd7All=`mkdir /usr/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd9All=`mkdir /etc/privoxy`
+Varcmd10All=`chmod 755 /etc/privoxy`
+echo "$Varcmd1All"
+echo "$Varcmd2All"
+echo "$Varcmd3All"
+echo "$Varcmd4All"
+echo "$Varcmd5All"
+echo "$Varcmd6All"
+echo "$Varcmd7All"
+echo "$Varcmd8All"
+echo "$Varcmd9All"
+echo "$Varcmd10All"
 UpdatedbCommand2=`echo $UpdatedbCommand`
 $UpdatedbCommand2
 
@@ -215,7 +215,7 @@ case "$MyOSSettingValueLauncher" in
 	;;
 	################## main menu Manjaro Linux done #############################
 
-esac	
+esac
 
 
 ##################################################
@@ -225,13 +225,13 @@ echo "****"
 
 
 	############### setting sysctl Manjaro Linux #######################
-case "$MyOSSettingValueMachine" in	
+case "$MyOSSettingValueMachine" in
 	ManjaroLinux)
 		ManjaroLinuxIPForwardSetting=`$SysctlCommand -a > /etc/sysctl.conf;$SysctlCommand -w net.ipv4.ip_forward=1; $SysctlCommand -p`
 		echo $ManjaroLinuxIPForwardSetting
 		echo "Your sysctl file sysctl was changed and saved in /etc/sysctl.conf.bak"
 	;;
-esac	
+esac
 	############# setting sysctl Manjaro Linux done #######################
 
 
@@ -320,7 +320,7 @@ case "$MyOSSettingValueSquid" in
 		echo "Pluto Internet Privacy using IP: "$MyIPLanManjaroLinux" Port: "$MyPortAdrManjaroLinux""  >> /var/log/ipport.txt
 		echo "`date`" - Setting Squid done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ##########################################################################################
 sleep 0.1
@@ -483,7 +483,7 @@ case "$MyOSSettingValueOpenvpn" in
 		echo $SettingovpnManjaroLinux
 		echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ####################################
 sleep 0.1

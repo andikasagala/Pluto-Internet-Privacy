@@ -90,7 +90,7 @@ case $DetectEarthPlanetFreeBSD in
 
 	*)
 		echo ""
-	;;	
+	;;
 esac
 
 
@@ -106,26 +106,26 @@ MyOSSettingValueTor="FreeBSD"
 MyOSSettingValueShutdown="FreeBSD"
 MyOSSettingValueOpenvpn="FreeBSD"
 
-	Varcmd1All=`mkdir /etc/EarthPlanet`
-	Varcmd2All=`chmod 755 /etc/EarthPlanet`
-	Varcmd3All=`touch /var/log/earth.cfg`
-	Varcmd4All=`chmod 755 /var/log/earth.cfg`
-	Varcmd5All=`touch /var/log/earth.log`
-	Varcmd6All=`chmod 755 /var/log/earth.log`
-	Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
-	Varcmd9All=`mkdir /etc/privoxy`
-	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo $Varcmd1All
-	echo $Varcmd2All
-	echo $Varcmd3All
-	echo $Varcmd4All
-	echo $Varcmd5All
-	echo $Varcmd6All
-	echo $Varcmd7All
-	echo $Varcmd8All
-	echo $Varcmd9All
-	echo $Varcmd10All
+Varcmd1All=`mkdir /etc/EarthPlanet`
+Varcmd2All=`chmod 755 /etc/EarthPlanet`
+Varcmd3All=`touch /var/log/earth.cfg`
+Varcmd4All=`chmod 755 /var/log/earth.cfg`
+Varcmd5All=`touch /var/log/earth.log`
+Varcmd6All=`chmod 755 /var/log/earth.log`
+Varcmd7All=`mkdir /usr/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd9All=`mkdir /etc/privoxy`
+Varcmd10All=`chmod 755 /etc/privoxy`
+echo $Varcmd1All
+echo $Varcmd2All
+echo $Varcmd3All
+echo $Varcmd4All
+echo $Varcmd5All
+echo $Varcmd6All
+echo $Varcmd7All
+echo $Varcmd8All
+echo $Varcmd9All
+echo $Varcmd10All
 /usr/libexec/locate.updatedb
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
 
@@ -149,7 +149,7 @@ sleep 0.1
 echo "****"
 ####################################################
 case "$MyOSSettingValueMachine" in
-FreeBSD)
+	FreeBSD)
 		FreeBSDSysctlBackup=`cp /etc/sysctl.conf /etc/sysctl.conf.bak`
 		echo $FreeBSDSysctlBackup
 		echo "net.inet.ip.forwarding=1"   >> /etc/sysctl.conf
@@ -389,7 +389,7 @@ case "$MyOSSettingValueShutdown" in
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 
-esac	
+esac
 
 ############################################################
 sleep 0.1
@@ -403,7 +403,7 @@ case "$MyOSSettingValueOpenvpn" in
 		echo $SettingovpnFreeBSD
 		echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 
 ####################################

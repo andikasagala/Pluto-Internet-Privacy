@@ -73,14 +73,14 @@ case $DetectEarthPlanetFedora in
 				exit 0
 			;;
 
-		esac	
+		esac
 
 	;;
 
 	*)
 		echo ""
-	;;	
-esac	
+	;;
+esac
 
 ##################################################################
 sleep 0.1
@@ -98,26 +98,26 @@ MyOSSettingValueTor="Fedora"
 MyOSSettingValueShutdown="Fedora"
 MyOSSettingValueOpenvpn="Fedora"
 
-	Varcmd1All=`mkdir /etc/EarthPlanet`
-	Varcmd2All=`chmod 755 /etc/EarthPlanet`
-	Varcmd3All=`touch /var/log/earth.cfg`
-	Varcmd4All=`chmod 755 /var/log/earth.cfg`
-	Varcmd5All=`touch /var/log/earth.log`
-	Varcmd6All=`chmod 755 /var/log/earth.log`
-	Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
-	Varcmd9All=`mkdir /etc/privoxy`
-	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo "$Varcmd1All"
-	echo "$Varcmd2All"
-	echo "$Varcmd3All"
-	echo "$Varcmd4All"
-	echo "$Varcmd5All"
-	echo "$Varcmd6All"
-	echo "$Varcmd7All"
-	echo "$Varcmd8All"
-	echo "$Varcmd9All"
-	echo "$Varcmd10All"
+Varcmd1All=`mkdir /etc/EarthPlanet`
+Varcmd2All=`chmod 755 /etc/EarthPlanet`
+Varcmd3All=`touch /var/log/earth.cfg`
+Varcmd4All=`chmod 755 /var/log/earth.cfg`
+Varcmd5All=`touch /var/log/earth.log`
+Varcmd6All=`chmod 755 /var/log/earth.log`
+Varcmd7All=`mkdir /usr/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd9All=`mkdir /etc/privoxy`
+Varcmd10All=`chmod 755 /etc/privoxy`
+echo "$Varcmd1All"
+echo "$Varcmd2All"
+echo "$Varcmd3All"
+echo "$Varcmd4All"
+echo "$Varcmd5All"
+echo "$Varcmd6All"
+echo "$Varcmd7All"
+echo "$Varcmd8All"
+echo "$Varcmd9All"
+echo "$Varcmd10All"
 UpdatedbCommand2=`echo $UpdatedbCommand`
 $UpdatedbCommand2
 echo "`date`" - Necessary Files installed." " >> /var/log/earth.log
@@ -195,7 +195,7 @@ case "$MyOSSettingValueLauncher" in
 
 		echo "`date`" - Creating file /usr/bin/EarthPlanet/GoToPluto done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ##################################################
 sleep 0.1
@@ -209,7 +209,7 @@ case "$MyOSSettingValueMachine" in
 		echo "Your sysctl file /etc/sysctl.conf was changed and saved in /etc/sysctl.conf.bak"
 		echo "`date`" - Setting machine done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 #############################################################
 sleep 0.1
@@ -230,7 +230,7 @@ case "$MyOSSettingValueHosts" in
 		echo "Your hosts config was changed and saved in /etc/hosts.bak"
 		echo "`date`" - Setting hosts done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ###########################################################################
 sleep 0.1
@@ -300,7 +300,7 @@ case "$MyOSSettingValueSquid" in
 	;;
 	################ setting squid Fedora done #############################################
 
-esac	
+esac
 
 ##########################################################################################
 sleep 0.1
@@ -353,7 +353,7 @@ case "$MyOSSettingValuePrivoxy" in
 		echo "logdir /var/log/privoxy8" >> /etc/privoxy/config8
 		echo "`date`" - Setting Privoxy done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ##############################################################################
 sleep 0.1
@@ -433,7 +433,7 @@ case "$MyOSSettingValueTor" in
 		echo $FedoraChangeTorAccess
 		echo "`date`" - Setting Tor done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 #############################################################################
 sleep 0.1
@@ -448,7 +448,7 @@ case "$MyOSSettingValueShutdown" in
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
 
-esac	
+esac
 
 ############################################################
 sleep 0.1

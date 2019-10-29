@@ -76,12 +76,12 @@ case $DetectEarthPlanetParrotOS in
 			;;
 		esac
 
-	;;	
+	;;
 
 
 	*)
 		echo ""
-	;;	
+	;;
 
 esac
 
@@ -115,26 +115,26 @@ MyOSSettingValueTor="ParrotOS"
 MyOSSettingValueShutdown="ParrotOS"
 MyOSSettingValueOpenvpn="ParrotOS"
 
-	Varcmd1All=`mkdir /etc/EarthPlanet`
-	Varcmd2All=`chmod 755 /etc/EarthPlanet`
-	Varcmd3All=`touch /var/log/earth.cfg`
-	Varcmd4All=`chmod 755 /var/log/earth.cfg`
-	Varcmd5All=`touch /var/log/earth.log`
-	Varcmd6All=`chmod 755 /var/log/earth.log`
-	Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
-	Varcmd9All=`mkdir /etc/privoxy`
-	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo "$Varcmd1All"
-	echo "$Varcmd2All"
-	echo "$Varcmd3All"
-	echo "$Varcmd4All"
-	echo "$Varcmd5All"
-	echo "$Varcmd6All"
-	echo "$Varcmd7All"
-	echo "$Varcmd8All"
-	echo "$Varcmd9All"
-	echo "$Varcmd10All"
+Varcmd1All=`mkdir /etc/EarthPlanet`
+Varcmd2All=`chmod 755 /etc/EarthPlanet`
+Varcmd3All=`touch /var/log/earth.cfg`
+Varcmd4All=`chmod 755 /var/log/earth.cfg`
+Varcmd5All=`touch /var/log/earth.log`
+Varcmd6All=`chmod 755 /var/log/earth.log`
+Varcmd7All=`mkdir /usr/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd9All=`mkdir /etc/privoxy`
+Varcmd10All=`chmod 755 /etc/privoxy`
+echo "$Varcmd1All"
+echo "$Varcmd2All"
+echo "$Varcmd3All"
+echo "$Varcmd4All"
+echo "$Varcmd5All"
+echo "$Varcmd6All"
+echo "$Varcmd7All"
+echo "$Varcmd8All"
+echo "$Varcmd9All"
+echo "$Varcmd10All"
 UpdatedbCommand2=`echo $UpdatedbCommand`
 $UpdatedbCommand2
 
@@ -219,7 +219,7 @@ case "$MyOSSettingValueLauncher" in
 	;;
 	############# main menu Parrot OS done ########################################
 
-esac	
+esac
 
 
 ##################################################
@@ -233,7 +233,7 @@ case "$MyOSSettingValueMachine" in
 		echo $ParrotOSIPForwardSetting
 		echo "Your sysctl file sysctl was changed and saved in /etc/sysctl.conf.bak"
 	;;
-esac	
+esac
 
 #############################################################
 sleep 0.1
@@ -322,7 +322,7 @@ case "$MyOSSettingValueSquid" in
 		echo "`date`" - Setting Squid done." " >> /var/log/earth.log
 	;;
 
-esac	
+esac
 
 ##########################################################################################
 sleep 0.1
@@ -375,7 +375,7 @@ case "$MyOSSettingValuePrivoxy" in
 		echo "logdir /var/log/privoxy8" >> /etc/privoxy/config8
 		echo "`date`" - Setting Privoxy done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ##############################################################################
 sleep 0.1
@@ -456,7 +456,7 @@ case "$MyOSSettingValueTor" in
 		echo "`date`" - Setting Tor done." " >> /var/log/earth.log
 	;;
 
-esac	
+esac
 
 #############################################################################
 sleep 0.1
@@ -472,7 +472,7 @@ case "$MyOSSettingValueShutdown" in
 		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now" >> /usr/bin/EarthPlanet/Shutdown
 		echo "`date` - Setting Shutdown done."  >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ############################################################
 sleep 0.1
@@ -485,7 +485,7 @@ case "$MyOSSettingValueOpenvpn" in
 		echo $SettingovpnParrotOS
 		echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ####################################
 sleep 0.1

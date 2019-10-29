@@ -86,7 +86,7 @@ case "$DetectEarthPlanetDebianCommon" in
 
 	*)
 		echo ""
-	;;	
+	;;
 esac
 
 ##################################################################
@@ -107,26 +107,26 @@ MyOSSettingValueTor="DebianCommon"
 MyOSSettingValueShutdown="OSShutdown"
 MyOSSettingValueOpenvpn="DebianCommon"
 
-	Varcmd1All=`mkdir /etc/EarthPlanet`
-	Varcmd2All=`chmod 755 /etc/EarthPlanet`
-	Varcmd3All=`touch /var/log/earth.cfg`
-	Varcmd4All=`chmod 755 /var/log/earth.cfg`
-	Varcmd5All=`touch /var/log/earth.log`
-	Varcmd6All=`chmod 755 /var/log/earth.log`
-	Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-	Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
-	Varcmd9All=`mkdir /etc/privoxy`
-	Varcmd10All=`chmod 755 /etc/privoxy`
-	echo "$Varcmd1All"
-	echo "$Varcmd2All"
-	echo "$Varcmd3All"
-	echo "$Varcmd4All"
-	echo "$Varcmd5All"
-	echo "$Varcmd6All"
-	echo "$Varcmd7All"
-	echo "$Varcmd8All"
-	echo "$Varcmd9All"
-	echo "$Varcmd10All"
+Varcmd1All=`mkdir /etc/EarthPlanet`
+Varcmd2All=`chmod 755 /etc/EarthPlanet`
+Varcmd3All=`touch /var/log/earth.cfg`
+Varcmd4All=`chmod 755 /var/log/earth.cfg`
+Varcmd5All=`touch /var/log/earth.log`
+Varcmd6All=`chmod 755 /var/log/earth.log`
+Varcmd7All=`mkdir /usr/bin/EarthPlanet`
+Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
+Varcmd9All=`mkdir /etc/privoxy`
+Varcmd10All=`chmod 755 /etc/privoxy`
+echo "$Varcmd1All"
+echo "$Varcmd2All"
+echo "$Varcmd3All"
+echo "$Varcmd4All"
+echo "$Varcmd5All"
+echo "$Varcmd6All"
+echo "$Varcmd7All"
+echo "$Varcmd8All"
+echo "$Varcmd9All"
+echo "$Varcmd10All"
 
 UpdatedbCommand2=`echo $UpdatedbCommand`
 $UpdatedbCommand2
@@ -143,9 +143,9 @@ echo "**"
 
 
 case "$MyOSSettingValueLauncher" in
-DebianCommon)
-		
-		
+	DebianCommon)
+
+
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
 		echo "SquidCommand=\`which squid\`"  >> /usr/bin/EarthPlanet/GoToPluto
@@ -308,7 +308,7 @@ case "$MyOSSettingValueSquid" in
 	######################### setting squid Debian done ####################################
 
 
-esac	
+esac
 
 ##########################################################################################
 sleep 0.1
@@ -367,7 +367,7 @@ case "$MyOSSettingValuePrivoxy" in
 	;;
 	##################### setting privoxy Debian done ###########################
 
-esac	
+esac
 
 
 ##############################################################################
@@ -451,7 +451,7 @@ case "$MyOSSettingValueTor" in
 	;;
 	############## setting tor Debian done ############################
 
-esac	
+esac
 
 #############################################################################
 sleep 0.1
@@ -480,7 +480,7 @@ case "$MyOSSettingValueOpenvpn" in
 		echo $SettingovpnDebianCommon
 		echo "`date`" - Setting ovpn done." " >> /var/log/earth.log
 	;;
-esac	
+esac
 
 ####################################
 sleep 0.1
