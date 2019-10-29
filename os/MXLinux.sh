@@ -1,16 +1,24 @@
 #!/bin/sh
 
-PreSquidCommand=`which squid`
-PrePrivoxyCommand=`which privoxy`
-PreTorCommand=`which tor`
-PreSysctlCommand=`which sysctl`
-PrePoweroffCommand=`which poweroff`
-PreShutdownCommand=`which shutdown`
-SysctlCommand=`echo $PreSysctlCommand`
-PoweroffCommand=`echo $PrePoweroffCommand`
-ShutdownCommand=`echo $PreShutdownCommand`
 UpdatedbCommand=`which updatedb`
 MyType=`which sh`
+
+ComplicatedSysctl=`ls -al /usr/sbin |grep -w sysctl |awk '{print $9 }' |wc -l`
+case "$ComplicatedSysctl" in
+	1)
+		SysctlCommand="/usr/sbin/sysctl"
+	;;
+
+	0)
+		SysctlCommand=`which sysctl`
+	;;
+
+	*)
+		SysctlCommand=`which sysctl`
+	;;
+esac
+
+
 
 ####
 
@@ -95,7 +103,7 @@ esac
 ######
 
 
-MXLinuxInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate -y`
+MXLinuxInstallSoftwares=`apt-get update -y;apt-get install build-essential -y;apt-get install squid -y;apt-get install privoxy -y;apt-get install tor -y;apt-get install openvpn -y; apt-get install psmisc mlocate gawk -y`
 echo $MXLinuxInstallSoftwares
 MyOSSettingValueLauncher="DebianCommon"
 MyOSSettingValueMachine="DebianCommon"
@@ -139,12 +147,62 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 	DebianCommon)
+		ComplicatedSquid=`ls -al /usr/sbin |grep -w squid |awk '{print $9 }' |wc -l`
+		case "$ComplicatedSquid" in
+			1)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			2)
+				SquidCommand="/usr/sbin/squid"
+			;;
+
+			0)
+				SquidCommand=`which squid`
+			;;
+			*)
+				SquidCommand=`which squid`
+			;;
+		esac
+
+		ComplicatedPrivoxy=`ls -al /usr/sbin |grep -w privoxy |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPrivoxy" in
+			1)
+				PrivoxyCommand="/usr/sbin/privoxy"
+			;;
+
+			0)
+				PrivoxyCommand=`which privoxy`
+			;;
+
+			*)
+				PrivoxyCommand=`which privoxy`
+			;;
+		esac
+
+
+                ComplicatedTor=`ls -al /usr/bin |grep -w tor |awk '{print $9 }' |wc -l`
+                case "$ComplicatedTor" in
+                        4)
+                                TorCommand="/usr/bin/tor"
+                        ;;
+
+                        0)
+                                TorCommand=`which tor`
+                        ;;
+
+                        *)
+                                TorCommand=`which tor`
+                        ;;
+                esac
+
+
+
+
+
 
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/bin/EarthPlanet/GoToPluto
-		echo "SquidCommand=\`which squid\`"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "PrivoxyCommand=\`which privoxy\`"  >> /usr/bin/EarthPlanet/GoToPluto
-		echo "TorCommand=\`which tor\`" >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"---== Pluto Internet Privacy ==---\\n\\n\\n\""  >> /usr/bin/EarthPlanet/GoToPluto
 		echo "echo \"Server options:\"" >> /usr/bin/EarthPlanet/GoToPluto
@@ -388,7 +446,7 @@ echo "********"
 
 case "$MyOSSettingValueTor" in
 	DebianCommon)
-		DebianCommonSettingTor=`rm -rf /etc/tor/torrc;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
+		DebianCommonSettingTor=`rm -rf /etc/tor/torrc;rm -rf /var/lib/tor;mkdir /var/lib/tor;chmod 755 /var/lib/tor;mkdir /var/lib/tor2;mkdir /var/lib/tor3;mkdir /var/lib/tor4;mkdir /var/lib/tor5;mkdir /var/lib/tor6;mkdir /var/lib/tor7;mkdir /var/lib/tor8`
 		echo $DebianCommonSettingTor
 
 		#Tor 1
@@ -470,6 +528,59 @@ echo "*********"
 
 case "$MyOSSettingValueShutdown" in
 	MXLinuxShutdown)
+
+		ComplicatedPoweroff=`ls -al /usr/sbin |grep -w poweroff |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				PoweroffCommand="/usr/sbin/poweroff"
+			;;
+
+			0)
+				PoweroffCommand=`which poweroff`
+			;;
+
+			*)
+				PoweroffCommand=`which poweroff`
+			;;
+		esac
+
+		ComplicatedShutdown=`ls -al /usr/sbin |grep -w shutdown |awk '{print $9 }' |wc -l`
+		case "$ComplicatedPoweroff" in
+			1)
+				ShutdownCommand="/usr/sbin/shutdown"
+			;;
+
+			0)
+				ShutdownCommand=`which shutdown`
+			;;
+
+			*)
+				ShutdownCommand=`which shutdown`
+			;;
+		esac
+
+
+		ComplicatedReboot=`ls -al /usr/sbin |grep -w reboot |awk '{print $9 }' |wc -l`
+		case "$ComplicatedReboot" in
+			1)
+				RebootCommand="/usr/sbin/reboot"
+			;;
+
+			2)
+				RebootCommand="/usr/sbin/reboot"
+			;;
+
+			0)
+				RebootCommand=`which reboot`
+			;;
+
+			*)
+				RebootCommand=`which reboot`
+			;;
+		esac
+
+
+
 		echo "echo Doing Shutdown... " >> /usr/bin/EarthPlanet/Shutdown
 		echo "echo \"\`date\` - Doing Shutdown... \" >> /var/log/earth.log "   >> /usr/bin/EarthPlanet/Shutdown
 		echo "$PoweroffCommand;$ShutdownCommand 1;$PoweroffCommand -f;$ShutdownCommand now;/sbin/reboot now" >> /usr/bin/EarthPlanet/Shutdown

@@ -544,7 +544,7 @@ case "$MyOSSettingValueShutdown" in
 		ComplicatedShutdown=`ls -al /usr/sbin |grep -w shutdown |awk '{print $9 }' |wc -l`
 		case "$ComplicatedPoweroff" in
 			1)
-				ShutdownCommand="/usr/sbin/poweroff"
+				ShutdownCommand="/usr/sbin/shutdown"
 			;;
 
 			0)
