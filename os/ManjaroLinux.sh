@@ -195,6 +195,22 @@ case "$MyOSSettingValueLauncher" in
 
 
 
+<<<<<<< HEAD
+		ComplicatedTor=`ls -al /usr/bin |grep -w tor |awk '{print $9 }' |wc -l`
+		case "$ComplicatedTor" in
+		4)
+			TorCommand="/usr/bin/tor"
+		;;
+
+		0)
+			TorCommand=`which tor`
+		;;
+
+		*)
+				TorCommand=`which tor`
+		;;
+		esac
+=======
                 ComplicatedTor=`ls -al /usr/bin |grep -w tor |awk '{print $9 }' |wc -l`
                 case "$ComplicatedTor" in
                         4)
@@ -209,6 +225,7 @@ case "$MyOSSettingValueLauncher" in
                                 TorCommand=`which tor`
                         ;;
                 esac
+>>>>>>> 3ef480fbfb068aa75035890a5cb14885f5c50d71
 
 
 
