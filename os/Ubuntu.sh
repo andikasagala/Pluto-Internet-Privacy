@@ -197,17 +197,6 @@ case "$MyOSSettingValueLauncher" in
 		;;
 		esac
 
-
-
-=======
-		DebianCommonSquidRun=""
-		sleep 2
-		DebianCommonPrivoxyRun=""
-		sleep 2
-		DebianCommonTorRun=""
->>>>>>> 3ef480fbfb068aa75035890a5cb14885f5c50d71
-
-
 		MyPathType=`echo "#!"$MyType`
 		echo $MyPathType >> /usr/local/bin/EarthPlanet/GoToPluto
 		echo "echo \"\\n\\n\\n\""  >> /usr/local/bin/EarthPlanet/GoToPluto
