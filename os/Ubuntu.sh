@@ -122,13 +122,8 @@ Varcmd3All=`touch /var/log/earth.cfg`
 Varcmd4All=`chmod 755 /var/log/earth.cfg`
 Varcmd5All=`touch /var/log/earth.log`
 Varcmd6All=`chmod 755 /var/log/earth.log`
-<<<<<<< HEAD
 Varcmd7All=`mkdir /usr/local/bin/EarthPlanet`
 Varcmd8All=`chmod 755 /usr/local/bin/EarthPlanet`
-=======
-Varcmd7All=`mkdir /usr/bin/EarthPlanet`
-Varcmd8All=`chmod 755 /usr/bin/EarthPlanet`
->>>>>>> 3ef480fbfb068aa75035890a5cb14885f5c50d71
 Varcmd9All=`mkdir /etc/privoxy`
 Varcmd10All=`chmod 755 /etc/privoxy`
 echo "$Varcmd1All"
@@ -141,7 +136,6 @@ echo "$Varcmd7All"
 echo "$Varcmd8All"
 echo "$Varcmd9All"
 echo "$Varcmd10All"
-
 UpdatedbCommand2=`echo $UpdatedbCommand`
 $UpdatedbCommand2
 
