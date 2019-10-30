@@ -148,9 +148,6 @@ echo "***"
 
 case "$MyOSSettingValueLauncher" in
 	DebianCommon)
-<<<<<<< HEAD
-
-
 
 		ComplicatedSquid=`ls -al /usr/sbin |grep -w squid |awk '{print $9 }' |wc -l`
 		case "$ComplicatedSquid" in
