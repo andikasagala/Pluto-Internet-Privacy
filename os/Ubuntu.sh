@@ -640,5 +640,5 @@ echo "\t\t---== Pluto Internet Privacy ==---\t\t"
 echo "\n\n"
 echo "\n\n"
 echo "Done! Run in your console sh /usr/local/bin/EarthPlanet/GoToPluto "
-echo " The logs are stored in /var/log/earth.log \n\n\n"
+echo " The logs are stored in /var/log/earth.log "
 
