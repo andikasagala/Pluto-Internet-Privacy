@@ -247,7 +247,7 @@ case "$MyOsValueGlobal" in
 
 		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu))
 		case "$UnixVerifierUbuntuComplicated" in
-			3)
+			2)
 				echo "I'm Ubuntu, hola Papacito & Mamacita !" ########## tested by coder Ubuntu 19.04 ################
 				sh $TheInstPath/os/Ubuntu.sh
 			;;
