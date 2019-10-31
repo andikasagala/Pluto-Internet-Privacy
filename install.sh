@@ -245,7 +245,7 @@ case "$MyOsValueGlobal" in
 		UnixVerifierArcoLinuxB=`cat /etc/lsb-release |grep -w ArcoLinux -c`
 		UnixVerifierPCLinuxOS=`cat /etc/os-release |grep -w PCLinuxOS -c`
 
-		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu))
+		UnixVerifierUbuntuComplicated=$((UnixVerifierUbuntu + UnixVerifierelementaryOS + UnixVerifierKDENeon + UnixVerifierZorinOS))
 		case "$UnixVerifierUbuntuComplicated" in
 			2)
 				echo "I'm Ubuntu, hola Papacito & Mamacita !" ########## tested by coder Ubuntu 19.04 ################
