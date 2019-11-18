@@ -79,6 +79,11 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 <br><br><br>
 
+<h3>Topology Sketch:</h3>
+- OpenVPN Windows Version: https://drive.google.com/open?id=1GhmQAhrZzEl3R7daPrXsVcLRXmikfiy6
+<br><br><br><br>
+
+
 <h3>Next Features:</h3><br>
 - Option for IPV4 nor IPV6 <br>
 - Strict Privacy and no logs stored in Private Server. Connection speed 1Gbps, location in Germany<br>
