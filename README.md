@@ -1,5 +1,5 @@
 <h2>---== Pluto Internet Privacy ==---</h2>
-<b>Coder: Andika Sagala  </b>	 <br>              
+<b>Coder: Andika Sagala  </b>	 <br>
 	<b>Date: Aug, 2019	</b><br>
 <br><br><br>
 
@@ -9,7 +9,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 <h3>Features:</h3><br>
 - Available for many Unix distro<br>
-- As a secure Proxy server for many clients, ie: Linux, Windows, Android, etc<br>
+- As a secure Proxy server for many clients, ie: Linux, BSD, Windows, Android, etc<br>
 - Public and Private servers routing for Privacy<br>
 <br>
 <br><br><br>
@@ -24,7 +24,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
  <br><br><br>
 
 <h3>Main Purposes:</h3>
-- Anyone is welcome ( unrestricted based on culture, religion, country, etc ) <br>
+- Anyone are welcome ( unrestricted based on culture, religion, country, etc ) <br>
 - Scientist ( Coder, Hacker, Programmer, Security Tester, Physician, Mathematician, Chemist, etc ) <br>
 - Any Laboratory experiments are welcome <br> <br> <br>
 
@@ -36,9 +36,9 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br><br><br>
 
 
-<h3>Warning:</h3><br>
+<h3>Warnings:</h3><br>
 - Do not use for Banking login, Private account login (twitter, facebook, instagram, etc ), etc. Use your default Internet Service Provider for it<br>
-- Scientific purpose only <br>
+- Science purposes only <br>
 - Install it in Unix Operating System<br><br><br>
 
 
@@ -74,22 +74,22 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - openSUSE <br>
 - antiX <br>
 - Deepin <br>
-- to be continued...... <br>
+- to be continue...... <br>
 
 
 <br><br><br>
 
 <h3>Next Features:</h3><br>
-- IPV6 <br>
+- Option for IPV4 nor IPV6 <br>
 - Strict Privacy and no logs stored in Private Server. Connection speed 1Gbps, location in Germany<br>
 - Option for Double strict network security. More slow network speed, but more stable and strict security and privacy <br>
-- CDN Technology ( Content Delivery Network/Using nearest server/more high speed server with your own network/lowest ping) in Private Server<br>
-- Using Private DNS which provided by "Pluto Internet Privacy". Private Network Routing<br>
-- Science Laboratory which provided by "Pluto Internet Privacy". Server which you can do experiment about Networking, Operating System, Scientific Software, etc. Server and access are clean, no logs, no spy, free charge of money. Using your own Operating System ( The Operating System file usually in ISO file reference: https://en.wikipedia.org/wiki/ISO_image ) and Operating System which provided by "Pluto Internet Privacy". Operating System list which provided by "Pluto Internet Privacy" will be written soon here ( Science Laboratory is in limited quantity. Quantity will be upgraded soon depend on Coder's budget and user donation) <br>
-- Important files downloader with strict Privacy and Ecryption. IE: Operating System downloader in ISO format, etc.<br>
+- Option for CDN Technology ( Content Delivery Network/Using nearest server/more high speed server with your own network/lowest ping) in Private Server<br>
+- Option for Using Private DNS which provided by "Pluto Internet Privacy". Private Network Routing<br>
+- Facility of Science Laboratory which provided by "Pluto Internet Privacy". Server which you can do experiment about Networking, Operating System, Scientific Software, etc. Server and access are clean, no logs, no spy, free monthly charge of money. Using your own Operating System ( The Operating System file usually in ISO file reference: https://en.wikipedia.org/wiki/ISO_image) and Operating System which provided by "Pluto Internet Privacy". Operating System list which provided by "Pluto Internet Privacy" will be written soon here ( Science Laboratory is in limited quantity. Quantity will be upgraded soon depend on Coder's budget and user donation) <br>
+- Important files downloader with strict Privacy and Encryption. IE: Operating System downloader in ISO, etc.<br>
 - Desktop Version (Windows)<br>
 - Mobile Version<br>
-- Free charged of money <br>
+- Free monthly charge of money, only user donation without obligation<br>
+- No Advertising for all users <br>
 - Clean, no logs and spy <br>
-- Will be listed on website www.scientificsoftwares.com <br><br><br><br>
-
+- Will be listed on website www.scientificsoftwares.technology <br><br><br><br>
