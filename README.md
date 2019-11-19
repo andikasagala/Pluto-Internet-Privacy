@@ -9,7 +9,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 <h3>Features:</h3><br>
 - Available for many Unix distro<br>
-- As a secure Proxy server for many clients, ie: Linux, BSD, Windows, Android, etc<br>
+- As a secure Proxy server and secure encrypted connection for many clients, also Science Laboratory. Ie: Linux, BSD, Windows, Android, etc<br>
 - Public and Private servers routing for Privacy<br>
 <br>
 <br><br><br>
