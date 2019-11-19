@@ -91,6 +91,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Option for CDN Technology ( Content Delivery Network/Using nearest server/more high speed server with your own network/lowest ping) in Private Server<br>
 - Option for Using Private DNS which provided by "Pluto Internet Privacy". Private Network Routing<br>
 - Facility of Science Laboratory which provided by "Pluto Internet Privacy". Server which you can do experiment about Networking, Operating System, Scientific Software, etc. Server and access are clean, no logs, no spy, free monthly charge of money. Using your own Operating System ( The Operating System file usually in ISO file reference: https://en.wikipedia.org/wiki/ISO_image) and Operating System which provided by "Pluto Internet Privacy". Operating System list which provided by "Pluto Internet Privacy" will be written soon here ( Science Laboratory is in limited quantity. Quantity will be upgraded soon depend on Coder's budget and user donation) <br>
+- Using secure encrypted connection to connect Science Laboratory
 - Important files downloader with strict Privacy and Encryption. IE: Operating System downloader in ISO, etc.<br>
 - Desktop Version (Windows)<br>
 - Mobile Version<br>
