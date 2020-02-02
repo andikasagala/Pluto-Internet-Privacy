@@ -49,7 +49,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 
 <h3>Warnings:</h3><br>
-- Do not use for Banking login, Private account login (twitter, facebook, instagram, etc ) and Bitcoin/Cryptocurrency minning , etc<br>
+- Do not use for Banking login, Private account login (twitter, facebook, instagram, etc ) with Pluto Internet Privacy. And also do not use Bitcoin/Cryptocurrency minning , etc inside the Computer Science Laboratory <br>
 - Science purposes only <br>
 - Install it in Unix Operating System<br><br><br>
 
