@@ -37,6 +37,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br><br><br>
 
 <h3>Science Laboratory Concepts: </h3>
+- Enough just using personal Laptop/Notebook you can connect and use high tech Science Laboratory<br>
 - Networking, DDOS, Virus, Trojan, Software Dev, etc for experiments <br>
 - Clean your internet line using 'Pluto Internet Privacy' before connecting to Science Laboratory <br>
 - Clean internet line will connect and remote the Science Laboratory <br>
