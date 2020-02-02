@@ -30,7 +30,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 
 <h3>Purposes:</h3><br>
-- To keep your privacy while connected to the internet with strong ecryption<br>
+- To keep your privacy while connected to the internet with strong encryption<br>
 - To keep you safe from cyber war<br>
 - Scientific <br>
 <br><br><br>
