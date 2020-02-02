@@ -111,5 +111,5 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Community support chat and forum system <br>
 - Video Cam chat support in Private Chat<br>
 - Send File support in Private Chat <br>
- - Strict encryption of Private Chat betwen user and another user<br>
+- No chat logs stored in server and Strict Encryption of Private Chat betwen user and another user<br>
 - Will be listed on website www.scientificsoftwares.technology <br><br><br><br>
