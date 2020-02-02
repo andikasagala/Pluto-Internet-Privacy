@@ -26,7 +26,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <h3>Main Purposes:</h3>
 - Anyone are welcome ( unrestricted based on culture, religion, country, etc ) <br>
 - Scientist ( Coder, Hacker, Programmer, Security Tester, Physician, Mathematician, Chemist, etc ) <br>
-- Any Laboratory experiments are welcome <br> <br> <br>
+- Any Laboratory experiments are welcome (ie: Networking, DDOS, Virus, Trojan, Software Dev, etc )<br> <br> <br>
 
 
 <h3>Purposes:</h3><br>
