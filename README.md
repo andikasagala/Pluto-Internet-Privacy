@@ -9,6 +9,7 @@
 Pluto Internet Privacy is a tool for internet privacy. It is free and open source, you can develop nor rewrite it into another programming languages also with your own logic thinking method. It is important to keep your internet privacy to avoid Internet Network Virus, Internet Network Spy, Cyber War, etc.<br><br><br>
 
 <h3>Features:</h3><br>
+- Clean, no logs, spy and user registration <br>
 - Available for many Unix distro<br>
 - As a secure Proxy server and secure encrypted connection for many clients, also Science Laboratory. Ie: Linux, BSD, Windows, Android, etc<br>
 - Public and Private servers routing for Privacy<br>
