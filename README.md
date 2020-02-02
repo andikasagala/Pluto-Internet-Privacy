@@ -38,8 +38,8 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br><br><br>
 
 <h3>Science Laboratory Concepts and Features: </h3>
-- High Speed Processing Server<br>
-- GPU Server<br>
+- High Speed Processing Server for Computer Scientist<br>
+- GPU Server for Physician, Astronomer<br>
 - Enough just using personal Laptop/Notebook you can connect and use high tech Science Laboratory<br>
 - Networking, DDOS, Virus, Trojan, Software Dev, Galaxy/Planet Simulation/Exploration, etc for experiments <br>
 - Clean your internet line using 'Pluto Internet Privacy' before connecting to Science Laboratory <br>
@@ -49,7 +49,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 
 
 <h3>Warnings:</h3><br>
-- Do not use for Banking login, Private account login and Bitcoin/Cryptocurrency minning (twitter, facebook, instagram, etc ), etc. Use your default Internet Service Provider for it<br>
+- Do not use for Banking login, Private account login (twitter, facebook, instagram, etc ) and Bitcoin/Cryptocurrency minning , etc. Use your default Internet Service Provider for it<br>
 - Science purposes only <br>
 - Install it in Unix Operating System<br><br><br>
 
