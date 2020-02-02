@@ -109,5 +109,6 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - No Advertising for all users <br>
 - Clean, no logs and spy <br>
 - Community support chat and forum system <br>
+- Video Cam chat support <br>
  - Strict encryption of Private Chat betwen user and another user<br>
 - Will be listed on website www.scientificsoftwares.technology <br><br><br><br>
