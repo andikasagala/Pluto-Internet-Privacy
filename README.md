@@ -106,7 +106,6 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Using secure encrypted connection to connect Science Laboratory <br>
 - Important files downloader with strict Privacy and Encryption. IE: Operating System downloader in ISO, etc.<br>
 - Desktop Version (Windows)<br>
-- Mobile Version<br>
 - Free monthly charge of money, only user donation without obligation<br>
 - No Advertising for all users <br>
 - Clean, no logs and spy <br>
