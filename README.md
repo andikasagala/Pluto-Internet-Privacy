@@ -44,7 +44,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Clean your internet line using 'Pluto Internet Privacy' before connecting to Science Laboratory<br>
 - Clean internet line will connect and remote the Science Laboratory<br>
 - Not the part of war equiptment, just Science Laboratory. Do not use the Laboratory for Live War. Science Laboratory. Science Laboratory. Science Laboratory<br>
-- After you finish using Science Laboratory, all of your experiments will be deleted so the other users will using fresh and new Science Laboratory (P.S: do not forget to backup and download your experiment result before you leaving the Science Laboratory. You can get your experiment result using Pluto Internet Privacy feature, here the network sketch topology sample https://drive.google.com/open?id=1tlCg7dhxJKH-GCrQFEleUQLEN1K6arqI Your experiment result will be scanned with Anti Virus in each server. If your experiment result ie: Trojan, Virus, Software Dev, etc passed all of scanners, then it mean success. And will be downloaded to you. If your experiment result not passed all the scanners, then you need more improvement in Laboratory. )
+- After you finish using Science Laboratory, all of your experiments will be deleted so the other users will using fresh and new Science Laboratory (P.S: do not forget to backup and download your experiment result before you leaving the Science Laboratory. You can get your experiment result using Pluto Internet Privacy feature, here the network sketch topology sample https://drive.google.com/open?id=1tlCg7dhxJKH-GCrQFEleUQLEN1K6arqI Your experiment result will be scanned with Anti Virus in each server. If your experiment result ie: Trojan, Virus, Software Dev, etc passed all of scanners, then it mean success. And will be downloaded to you. If your experiment result not passed all the scanners, then you get nothing in download process. You need more improvement in Science Laboratory. )
 <br>
 - Science Laboratory OS Lists: Windows OS, Unix OS , Your own OS <br>
 - Windows OS using Avira Anti Virus<br>
@@ -52,6 +52,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Computer Science purposed for Mathematician, Chemist, Computer Scientist<br>
 - Graphic Science purposed for Physician, Astronomer
 <br><br><br>
+
 
 
 
