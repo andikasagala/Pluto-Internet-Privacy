@@ -107,7 +107,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 Music Ref: https://www.youtube.com/watch?v=Q8ajcLj212A <br>
 Reading Ref: https://en.wikipedia.org/wiki/Hades <br>
 Note: World War's Anti Virus and Science Laboratory <br>
-Science Ref: https://raw.githubusercontent.com/andikasagala/Pluto-Internet-Privacy/master/stuffs/solar-system.png Pluto Planet is your Machine. Zeus's lightning https://en.wikipedia.org/wiki/Zeus inside the Sun/Front Server sending command using botnet DDOS attack over 500 gbps as part of the defensive security of the whole Anti Virus's network. Another part of defensive securities are virus, trojan,etc called nebula. <br>
+Science Ref: https://raw.githubusercontent.com/andikasagala/Pluto-Internet-Privacy/master/stuffs/solar-system.png Pluto Planet is your Machine. Zeus's lightning https://en.wikipedia.org/wiki/Zeus inside the Star/Front Server sending command using botnet DDOS attack over 500 gbps as part of the defensive security of the whole Anti Virus's network. Another part of defensive securities are virus, trojan,etc called nebula. <br>
 Zeus's Lightning Astronomy/Physics Ref: Universe's light https://www.youtube.com/watch?v=hu6hIhW00Fk<br>
 Nebula Astronomy/Physics Ref: https://www.youtube.com/watch?v=fkWrjrdT3Zg<br>
 <br><br><br><br>
