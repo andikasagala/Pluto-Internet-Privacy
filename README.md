@@ -103,7 +103,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - OpenVPN Windows Version: https://drive.google.com/file/d/1-wQcgRwjzWZieXe1rriEw_imnh3XvdKZ/view Front and Back server using debian ( you can change it with another OS, IE: BSD, Linux, etc ) due to respect the Debian's Founder death. https://en.wikipedia.org/wiki/Ian_Murdock 
 <br><br><br><br>
 
-<h3>Art</h3>
+<h3> Abstract Art</h3>
 Music Ref: https://www.youtube.com/watch?v=Q8ajcLj212A <br>
 Reading Ref: https://en.wikipedia.org/wiki/Hades <br>
 Note: World War's Anti Virus and Science Laboratory <br>
