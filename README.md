@@ -104,7 +104,7 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 <br><br><br><br>
 
 <h3> Abstract Art:</h3>
-- Music Ref: https://www.youtube.com/watch?v=Q8ajcLj212A and https://www.youtube.com/watch?v=6eolspFcjf8 <br>
+- Hades/Pluto Music Ref: https://www.youtube.com/watch?v=Q8ajcLj212A and Zeus's Lightning Music Ref: https://www.youtube.com/watch?v=6eolspFcjf8 <br>
 
 - Reading Ref: https://en.wikipedia.org/wiki/Hades <br>
 - Note: World War's Anti Virus and Science Laboratory <br>
