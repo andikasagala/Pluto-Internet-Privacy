@@ -121,3 +121,16 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - Send File support in Private Chat <br>
 - No chat logs stored in server and Strict Encryption of Private Chat betwen user and another user<br>
 - Will be listed on website www.scientificsoftwares.technology <br><br><br><br>
+
+
+
+
+<br><br>
+
+
+<h3>Coder profiles:</h3> <br>
+Twitter: https://twitter.com/andikasagala3 <br>
+Facebook: https://www.facebook.com/andikaugandacharles.sagala <br>
+LinkedIn: https://linkedin.com/in/andika-sagala <br>
+Youtube: https://www.youtube.com/channel/UCByuR9KOrn1jvjqOkkQnHkg <br>
+
