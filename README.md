@@ -78,7 +78,16 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - minimum 2 Gb Proc <br>
 - minimum 2 Gb RAM<br>
 - Unix OS <br><br><br>
+<br><br>
+<h3>Warning !!! </h3>
 
+
+This source code is not available for the terrorist countries list below :
+- Africa Continent
+- Afghanistan, Sahrawi Arab Democratic Republic, Palestine, Armenia, Azerbaijan, Bahrain, Bangladesh, Brunei, Indonesia, Iran, Iraq, Jordan, Kazakhstan, Kuwait, Kyrgyzstan, Malaysia, Lebanon, Maldives, Oman, Pakistan, Qatar, Saudi Arabia, Syria, Tajikistan, Turkey, Turkmenistan, United Arab Emirates, Uzbekistan, Yemen, Kazakhstan, Papua New Guinea, Federated States of Micronesia, Vanuatu, Tuvalu, Solomon Islands
+, Samoa, Nauru
+
+<br><br>
 <h3>Unix Compatible lists:</h3>
 - Debian <br>
 - Ubuntu<br>
