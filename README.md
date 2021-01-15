@@ -124,6 +124,14 @@ Pluto Internet Privacy is a tool for internet privacy. It is free and open sourc
 - No chat logs stored in server and Strict Encryption of Private Chat betwen user and another user<br>
 - Will be listed on website www.scientificsoftwares.technology <br><br><br><br>
 
+<br><br>
+
+<h3>Warning !!!</h3>
+<br>
+This source code is not available for the countries list below:<br>
+- Africa Continent<br>
+- Afghanistan, Sahrawi Arab Democratic Republic, Palestine, Armenia, Azerbaijan, Bahrain, Bangladesh, Brunei, Indonesia, Iran, Iraq, Jordan, Kazakhstan, Kuwait, Kyrgyzstan, Malaysia, Lebanon, Maldives, Oman, Pakistan, Qatar, Saudi Arabia, Syria, Tajikistan, Turkey, Turkmenistan, United Arab Emirates, Uzbekistan, Yemen, Kazakhstan, Papua New Guinea, Federated States of Micronesia, Vanuatu, Tuvalu, Solomon Islands
+, Samoa, Nauru 	
 
 
 <br><br>
